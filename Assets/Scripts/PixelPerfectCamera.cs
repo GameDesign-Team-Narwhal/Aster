@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PixelPerfectCamera : MonoBehaviour {
@@ -15,7 +15,7 @@ public class PixelPerfectCamera : MonoBehaviour {
 		if (camera.orthographic) {
 			scale = Screen.height/nativeResolution.y;
 			pixelsToUnits *= scale;
-			camera.orthographicSize = (Screen.height / 2.0f) / pixelsToUnits/Size;
+			camera.orthographicSize = (Screen.height / 2.0f) / pixelsToUnits;
 		}
 	}
 
