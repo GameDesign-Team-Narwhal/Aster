@@ -1,9 +1,18 @@
 fileFormatVersion: 2
 guid: 4fe53e8ecf77ea84795e25bf7a769585
-timeCreated: 1456778647
+timeCreated: 1456779137
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Ship-PT-2-FullANI_0
+    21300002: Ship-PT-2-FullANI_1
+    21300004: Ship-PT-2-FullANI_2
+    21300006: Ship-PT-2-FullANI_3
+    21300008: Ship-PT-2-FullANI_4
+    21300010: Ship-PT-2-FullANI_5
+    21300012: Ship-PT-2-FullANI_6
+    21300014: Ship-PT-2-FullANI_7
+    21300016: Ship-PT-2-FullANI_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,29 +35,119 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Ship-PT-2-FullANI_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 41
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 41
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 41
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 41
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_4
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 41
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 7
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_6
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 7
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_7
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 7
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_8
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 7
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
