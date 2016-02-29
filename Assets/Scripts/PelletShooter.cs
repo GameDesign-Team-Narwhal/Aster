@@ -16,13 +16,15 @@ public class PelletShooter : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			GameObject pellet = GameObject.Instantiate(pelletPrefab);
 
+			pellet.transform.position = transform.position;
+
 			Rigidbody2D pelletBody = pellet.GetComponent<Rigidbody2D>();
 
-			pelletBody.velocity = Utils.VecFromAngleMagnitude(pelletBody.rotation, pelletSpeed);
+			pelletBody.velocity = body2D.velocity + Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
 		}
 	}
 }
