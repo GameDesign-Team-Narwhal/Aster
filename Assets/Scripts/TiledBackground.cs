@@ -7,15 +7,13 @@ public class TiledBackground : MonoBehaviour {
 	public bool scaleHorizontially = true;
 	public bool scaleVertically = true;
 
+	public uint numTiles = 10;
+
 	// Use this for initialization
 	void Start () {
-	
-		var newWidth = !scaleHorizontially ? 1 : Mathf.Ceil (Screen.width / (textureSize * PixelPerfectCamera.scale));
-		var newHeight = !scaleVertically ? 1 : Mathf.Ceil (Screen.height / (textureSize * PixelPerfectCamera.scale));
+		transform.localScale = new Vector3 (numTiles * textureSize, numTiles * textureSize, 1);
 
-		transform.localScale = new Vector3 (newWidth * textureSize, newHeight * textureSize, 1);
-
-		GetComponent<Renderer> ().material.mainTextureScale = new Vector3 (newWidth, newHeight, 1);
+		GetComponent<Renderer> ().material.mainTextureScale = new Vector3 (numTiles, numTiles, 1);
 	}
 
 }
