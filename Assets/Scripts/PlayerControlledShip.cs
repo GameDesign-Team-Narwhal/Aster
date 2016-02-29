@@ -20,11 +20,11 @@ public class PlayerControlledShip : MonoBehaviour
 	void Update () {
 	    if(Input.GetKey(KeyCode.LeftArrow))
         {
-            body2d.AddTorque(turningTorque);
+			body2d.rotation += turningTorque;
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
-            body2d.AddTorque(-turningTorque);
+			body2d.rotation += -turningTorque;
         }
 
 
