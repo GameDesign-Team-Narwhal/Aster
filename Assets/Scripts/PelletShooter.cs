@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PelletShooter : MonoBehaviour {
@@ -6,6 +6,8 @@ public class PelletShooter : MonoBehaviour {
 	public GameObject pelletPrefab;
 
 	public float pelletSpeed;
+
+    public Vector2 firingLocation = new Vector2(0, 0);
 
 	Rigidbody2D body2D;
 
@@ -20,11 +22,14 @@ public class PelletShooter : MonoBehaviour {
 		{
 			GameObject pellet = GameObject.Instantiate(pelletPrefab);
 
-			pellet.transform.position = transform.position;
+			pellet.transform.position = transform.TransformPoint(firingLocation);
+            pellet.transform.rotation = transform.rotation;
 
 			Rigidbody2D pelletBody = pellet.GetComponent<Rigidbody2D>();
 
 			pelletBody.velocity = body2D.velocity + Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
+
+            pellet.GetComponent<Projectile>().shooter = gameObject;
 		}
 	}
 }

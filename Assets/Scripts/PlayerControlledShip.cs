@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
-public class PlayerControlledShip : MonoBehaviour
+public class PlayerControlledShip : MonoBehaviour, IShootable
 {
     private Rigidbody2D body2d;
 
@@ -36,5 +37,10 @@ public class PlayerControlledShip : MonoBehaviour
         {
             body2d.AddForce(Utils.VecFromAngleMagnitude(body2d.rotation - 90, backwardThrust));
         }
+    }
+
+    public void OnShotBy(GameObject shooter)
+    {
+        throw new NotImplementedException();
     }
 }
