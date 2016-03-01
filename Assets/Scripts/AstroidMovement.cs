@@ -6,6 +6,7 @@ public class AstroidMovement : MonoBehaviour {
  Rigidbody2D body2d;
 	public float AsteroidSpeed = 1f;
 	public float SpeedOffset = 1f;
+	public float SpawnArea = 1f;
 
 	void Awake ()
 	{
@@ -13,6 +14,8 @@ public class AstroidMovement : MonoBehaviour {
 	}
 	void Start () {
 		var Angle = Random.Range (0, 360);
+		var SpawnLocationX = body2d.transform.position.x + Random.Range (-SpawnArea, SpawnArea);
+		var SpawnLocationY = body2d.transform.position.y + Random.Range (-SpawnArea, SpawnArea);
 		body2d.velocity = Utils.VecFromAngleMagnitude (Angle, AsteroidSpeed + Random.Range (-SpeedOffset, SpeedOffset));
 	}
 	
