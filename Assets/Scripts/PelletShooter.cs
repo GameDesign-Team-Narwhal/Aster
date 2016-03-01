@@ -28,6 +28,8 @@ public class PelletShooter : MonoBehaviour {
 			Rigidbody2D pelletBody = pellet.GetComponent<Rigidbody2D>();
 
 			pelletBody.velocity = body2D.velocity + Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
+
+            pellet.GetComponent<Projectile>().shooter = gameObject;
 		}
 	}
 }
