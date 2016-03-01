@@ -5,6 +5,8 @@ public class GameController : MonoBehaviour {
 
     public static GameController instance;
 
+    public Vector2 levelSizeBackgrounds = new Vector2(0, 0);
+
     public GameObject playerShipPrefab;
     public GameObject asteroidSpawner;
 
@@ -35,9 +37,11 @@ public class GameController : MonoBehaviour {
 
     void ResetGame()
     {
-        foreach(GameObject objectToClean in GameObject.FindGameObjectsWithTag("Projectiles"))
+        foreach(GameObject objectToClean in GameObject.FindGameObjectsWithTag("Cruft to Clean Up"))
         {
             GameObject.Destroy(objectToClean);
         }
+
+        GameObject.Instantiate
     }
 }
