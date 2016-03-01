@@ -1,22 +1,15 @@
 fileFormatVersion: 2
 guid: 5397e98feca686c4f98fe097aa757c6a
-<<<<<<< HEAD
-timeCreated: 1456778872
-=======
-timeCreated: 1456779870
->>>>>>> origin/master
+timeCreated: 1456862408
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Projectile Sheet_0
-<<<<<<< HEAD
-=======
-    21300002: Projectile Sheet_1
-    21300004: Projectile Sheet_2
+    21300002: Projectile Sheet_4
+    21300004: Projectile Sheet_5
     21300006: Projectile Sheet_6
-    21300008: Projectile Sheet_8
-    21300010: Projectile Sheet_9
->>>>>>> origin/master
+    21300008: Projectile Sheet_7
+    21300010: Projectile Sheet_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -65,39 +58,14 @@ TextureImporter:
     - name: Projectile Sheet_0
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 17
-        y: 12
-        width: 16
-=======
         x: 1
         y: 9
         width: 3
         height: 18
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Projectile Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 4
-        width: 7
-        height: 2
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Projectile Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 12
-        width: 15
-        height: 16
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Projectile Sheet_6
+      border: {x: 3, y: 0, z: 0, w: 0}
+    - name: Projectile Sheet_4
       rect:
         serializedVersion: 2
         x: 5
@@ -107,7 +75,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Projectile Sheet_8
+    - name: Projectile Sheet_5
       rect:
         serializedVersion: 2
         x: 12
@@ -117,14 +85,33 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Projectile Sheet_9
+    - name: Projectile Sheet_6
       rect:
         serializedVersion: 2
-        x: 33
-        y: 2
+        x: 17
+        y: 12
         width: 15
->>>>>>> origin/master
         height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Projectile Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Projectile Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 4
+        width: 7
+        height: 2
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
