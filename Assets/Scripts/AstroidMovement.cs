@@ -17,6 +17,7 @@ public class AstroidMovement : MonoBehaviour {
 		var SpawnLocationX = body2d.transform.position.x + Random.Range (-SpawnArea, SpawnArea);
 		var SpawnLocationY = body2d.transform.position.y + Random.Range (-SpawnArea, SpawnArea);
 		body2d.velocity = Utils.VecFromAngleMagnitude (Angle, AsteroidSpeed + Random.Range (-SpeedOffset, SpeedOffset));
+		transform.position = new Vector2 (SpawnLocationX, SpawnLocationY);
 	}
 	
 	// Update is called once per frame
