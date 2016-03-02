@@ -7,6 +7,9 @@ public class Projectile : MonoBehaviour {
 
     public GameObject shooter;
 
+    //if true, the projectile can pass through objects without being destroyed
+    bool penetrating = false;
+
 	void Start () {
 	  
 	}
@@ -25,6 +28,8 @@ public class Projectile : MonoBehaviour {
                     shootable.OnShotBy(shooter);
                 }
             }
+
+            GameObject.Destroy(gameObject);
         }
     }
 }
