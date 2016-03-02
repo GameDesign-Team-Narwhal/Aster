@@ -7,7 +7,7 @@ public class PelletShooter : MonoBehaviour {
 
 	public float pelletSpeed;
 
-    public Vector2 firingLocation = new Vector2(0, 0);
+    public Vector2[] firingLocations;
 
 	Rigidbody2D body2D;
 
@@ -20,16 +20,21 @@ public class PelletShooter : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			GameObject pellet = GameObject.Instantiate(pelletPrefab);
 
-			pellet.transform.position = transform.TransformPoint(firingLocation);
-            pellet.transform.rotation = transform.rotation;
+            foreach(Vector2 firingLocation in firingLocations)
+            {
+                GameObject pellet = GameObject.Instantiate(pelletPrefab);
 
-			Rigidbody2D pelletBody = pellet.GetComponent<Rigidbody2D>();
+                pellet.transform.position = transform.TransformPoint(firingLocation);
+                pellet.transform.rotation = transform.rotation;
 
-			pelletBody.velocity = body2D.velocity + Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
+                Rigidbody2D pelletBody = pellet.GetComponent<Rigidbody2D>();
 
-            pellet.GetComponent<Projectile>().shooter = gameObject;
+                pelletBody.velocity = body2D.velocity + Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
+
+                pellet.GetComponent<Projectile>().shooter = gameObject;
+            }
+
 		}
 	}
 }
