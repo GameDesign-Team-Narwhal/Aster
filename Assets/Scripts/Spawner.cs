@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Spawner : MonoBehaviour {
@@ -15,15 +15,18 @@ public class Spawner : MonoBehaviour {
 		StartCoroutine(EnemyGenerator() );
 	}
 	
-	IEnumerator EnemyGenerator(){
+    public void SpawnOne()
+    {
+        GameObjectUtil.Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform.position); 
+    }
+
+    IEnumerator EnemyGenerator(){
 		
 		yield return new WaitForSeconds (delay);
 		
 		if (active) {
-			var newTransform = transform;
-			
-			GameObjectUtil.Instantiate(prefabs[Random.Range(0, prefabs.Length)], newTransform.position);
-			
+
+            SpawnOne();
 			ResetDelay();
 			
 		}

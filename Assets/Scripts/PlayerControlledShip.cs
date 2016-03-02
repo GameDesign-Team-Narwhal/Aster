@@ -50,6 +50,6 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
     public void OnShotBy(GameObject shooter)
     {
-        throw new NotImplementedException();
+        GameController.instance.OnPlayerKilled();
     }
 }

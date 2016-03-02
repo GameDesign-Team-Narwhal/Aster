@@ -29,7 +29,10 @@ public class Projectile : MonoBehaviour {
                 }
             }
 
-            GameObject.Destroy(gameObject);
+            if(!penetrating)
+            {
+                GameObject.Destroy(gameObject);
+            }
         }
     }
 }

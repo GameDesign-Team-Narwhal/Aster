@@ -8,12 +8,16 @@ public class GameController : MonoBehaviour {
     public Vector2 levelSizeBackgrounds = new Vector2(0, 0);
 
     public GameObject playerShipPrefab;
-    public GameObject asteroidSpawner;
+    public GameObject asteroidSpawnerObject;
     public GameObject camera;
+    public uint asteroidsToPrespawn = 100;
 
     public GameObject playerShipInstance;
 
+
     PlayerFollowingCamera playerFollowingCam;
+    Spawner asteroidSpawner;
+
 
     void Awake()
     {
@@ -25,6 +29,7 @@ public class GameController : MonoBehaviour {
         instance = this;
 
         playerFollowingCam = camera.GetComponent<PlayerFollowingCamera>();
+        asteroidSpawner = asteroidSpawnerObject.GetComponent<Spawner>();
     }
 
 	void Start () {
@@ -35,7 +40,7 @@ public class GameController : MonoBehaviour {
 	
 	}
 
-    void OnPlayerKilled()
+    public void OnPlayerKilled()
     {
 
     }
@@ -45,6 +50,11 @@ public class GameController : MonoBehaviour {
         foreach(GameObject objectToClean in GameObject.FindGameObjectsWithTag("Cruft to Clean Up"))
         {
             GameObject.Destroy(objectToClean);
+        }
+
+        for(uint counter = 0; counter < asteroidsToPrespawn; ++counter)
+        {
+            asteroidSpawner.SpawnOne();
         }
 
         playerShipInstance = GameObject.Instantiate(playerShipPrefab);
