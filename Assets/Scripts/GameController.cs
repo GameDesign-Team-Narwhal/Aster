@@ -9,6 +9,11 @@ public class GameController : MonoBehaviour {
 
     public GameObject playerShipPrefab;
     public GameObject asteroidSpawner;
+    public GameObject camera;
+
+    public GameObject playerShipInstance;
+
+    PlayerFollowingCamera playerFollowingCam;
 
     void Awake()
     {
@@ -19,11 +24,11 @@ public class GameController : MonoBehaviour {
 
         instance = this;
 
-
+        playerFollowingCam = camera.GetComponent<PlayerFollowingCamera>();
     }
 
 	void Start () {
-	
+        ResetGame();
 	}
 	
 	void Update () {
@@ -42,6 +47,7 @@ public class GameController : MonoBehaviour {
             GameObject.Destroy(objectToClean);
         }
 
-        GameObject.Instantiate
+        playerShipInstance = GameObject.Instantiate(playerShipPrefab);
+        playerFollowingCam.player = playerShipInstance;
     }
 }
