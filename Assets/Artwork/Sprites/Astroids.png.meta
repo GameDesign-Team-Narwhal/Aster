@@ -1,0 +1,286 @@
+fileFormatVersion: 2
+guid: 7ccd52fc3fe0f8a45b2c8da4a1a49c75
+timeCreated: 1456866937
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Astroids_0
+    21300002: Astroids_1
+    21300004: Astroids_2
+    21300006: Astroids_3
+    21300008: Astroids_4
+    21300010: Astroids_5
+    21300012: Astroids_6
+    21300014: Astroids_7
+    21300016: Astroids_8
+    21300018: Astroids_9
+    21300020: Astroids_10
+    21300022: Astroids_20
+    21300024: Astroids_21
+    21300026: Astroids_22
+    21300028: Astroids_23
+    21300030: Astroids_24
+    21300032: Astroids_39
+    21300034: Astroids_11
+    21300036: Astroids_12
+    21300038: Astroids_13
+    21300040: Astroids_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Astroids_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 89
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 89
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 89
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 89
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 89
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_5
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 89
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 67
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_7
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 67
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_8
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 67
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 67
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_10
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 67
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 36
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 36
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_22
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 36
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_23
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 36
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_24
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 36
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_39
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 89
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_11
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 67
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_12
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 67
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 5
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Astroids_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 5
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
