@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4fe53e8ecf77ea84795e25bf7a769585
-timeCreated: 1456779406
+guid: c551bc946eea96b45b535e1c905c1797
+timeCreated: 1456951979
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,6 +13,12 @@ TextureImporter:
     21300012: Ship-PT-2-FullANI_6
     21300014: Ship-PT-2-FullANI_7
     21300016: Ship-PT-2-FullANI_8
+    21300018: Ship-PT-2-FullANI_9
+    21300020: Ship-PT-2-FullANI_10
+    21300022: Ship-PT-2-FullANI_11
+    21300024: Ship-PT-2-FullANI_12
+    21300026: Ship-PT-2-FullANI_13
+    21300028: Ship-PT-2-FullANI_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -62,7 +68,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 41
+        y: 103
         width: 17
         height: 27
       alignment: 0
@@ -72,7 +78,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 19
-        y: 41
+        y: 103
         width: 17
         height: 27
       alignment: 0
@@ -82,7 +88,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 37
-        y: 41
+        y: 103
         width: 17
         height: 27
       alignment: 0
@@ -92,7 +98,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 55
-        y: 41
+        y: 103
         width: 17
         height: 27
       alignment: 0
@@ -102,7 +108,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 73
-        y: 41
+        y: 103
         width: 17
         height: 27
       alignment: 0
@@ -112,7 +118,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 7
+        y: 69
         width: 17
         height: 27
       alignment: 0
@@ -122,7 +128,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 19
-        y: 7
+        y: 69
         width: 17
         height: 27
       alignment: 0
@@ -132,9 +138,79 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 37
-        y: 7
+        y: 69
         width: 17
         height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 44
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_9
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 44
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_10
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 42
+        width: 31
+        height: 31
+      alignment: 9
+      pivot: {x: .523563027, y: .425384164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 9
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_12
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 6
+        width: 29
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_13
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 17
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2-FullANI_14
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 7
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
