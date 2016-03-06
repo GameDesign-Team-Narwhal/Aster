@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -9,14 +10,17 @@ public class GameController : MonoBehaviour {
 
     public GameObject playerShipPrefab;
     public GameObject asteroidSpawnerObject;
-    public GameObject camera;
+    public new GameObject camera;
+    public GameObject background;
     public uint asteroidsToPrespawn = 100;
-
+    public Text scoreText;
+    public Text startGameText;
     public GameObject playerShipInstance;
 
-
+    bool gameStarted = false;
     PlayerFollowingCamera playerFollowingCam;
     Spawner asteroidSpawner;
+
 
 
     void Awake()
@@ -33,21 +37,43 @@ public class GameController : MonoBehaviour {
     }
 
 	void Start () {
-        ResetGame();
+        startGameText.text = "Press a key to start";
+        startGameText.enabled = true;
 	}
 	
-	void Update () {
-	
-	}
+	void Update ()
+    {
+	    if(!gameStarted && Input.anyKeyDown)
+        {
+            ResetGame();
+
+        }
+    }
 
     public void OnPlayerKilled()
     {
+        StartCoroutine(explodePlayerShip());
+
+        startGameText.text = "Press a key to restart";
+        startGameText.enabled = true;
+
+        gameStarted = false;
+    }
+
+    IEnumerator explodePlayerShip()
+    {
+        Animator shipAnimator = playerShipInstance.GetComponent<Animator>();
+        shipAnimator.SetTrigger("Explode");
+        yield return StartCoroutine(Utils.WaitForAnimation(shipAnimator));
+        GameObject.Destroy(playerShipInstance);
 
     }
 
     void ResetGame()
     {
 
+        startGameText.enabled = false;
+        gameStarted = true;
 
         foreach (GameObject objectToClean in GameObject.FindGameObjectsWithTag("Cruft to Clean Up"))
         {
@@ -62,4 +88,6 @@ public class GameController : MonoBehaviour {
         playerShipInstance = GameObject.Instantiate(playerShipPrefab);
         playerFollowingCam.player = playerShipInstance;
     }
+
+    void 
 }

@@ -5,17 +5,20 @@ using System;
 public class PlayerControlledShip : MonoBehaviour, IShootable
 {
     private Rigidbody2D body2d;
+    private PelletShooter pelletShooter;
 
     public float turningTorque = 5000f;
     public float forwardThrust = 10000f;
     public float translationalDecelerationFactor = 100f; //force per unit velocity
-    public float rotationalDecelerationFactor = 100f; //torque per angular velocity
+    public float rotationalDecelerationFactor = .01f; //torque per angular velocity
+    public float shotCooldown = .25f; // cooldown time before the plyer can shoot again
 
-
+    float lastShotTime = 0f;
     // Use this for initialization
     void Awake ()
     {
         body2d = GetComponent<Rigidbody2D>();
+        pelletShooter = GetComponent<PelletShooter>();
 	}
 	
 	// Update is called once per frame
@@ -45,7 +48,14 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
             body2d.AddTorque(-1 * body2d.angularVelocity * rotationalDecelerationFactor);
         }
 
-
+        if(Input.GetKey(KeyCode.Space))
+        {
+            if(Time.time - lastShotTime > shotCooldown)
+            {
+                pelletShooter.Shoot();
+                lastShotTime = Time.time;
+            }
+        }
     }
 
     public void OnShotBy(GameObject shooter)

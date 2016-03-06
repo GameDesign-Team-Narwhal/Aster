@@ -4,9 +4,12 @@ using System.Collections;
 public class AstroidMovement : MonoBehaviour {
 
  Rigidbody2D body2d;
+
+    //base speed, not randomized
 	public float AsteroidSpeed = 1f;
 	public float SpeedOffset = 1f;
 	public float SpawnArea = 1f;
+    public float maxRotSpeed = .1f;
 
     public bool fixedLocation = false;
 
@@ -25,6 +28,7 @@ public class AstroidMovement : MonoBehaviour {
             SpawnLocationY += Random.Range(-SpawnArea, SpawnArea);
         }
 		body2d.velocity = Utils.VecFromAngleMagnitude (Angle, AsteroidSpeed + Random.Range (-SpeedOffset, SpeedOffset));
+        body2d.angularVelocity = Random.Range(-maxRotSpeed, maxRotSpeed);
 		transform.position = new Vector2 (SpawnLocationX, SpawnLocationY);
 	}
 	

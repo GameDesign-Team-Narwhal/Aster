@@ -4,16 +4,24 @@ using System;
 
 public class AsteroidBreakup : MonoBehaviour, IShootable
 {
+
+    //stops smaller asteroids from getting insta-destroyed by the other laser in the pair.
+    public float spawnInvulnTime = 1f;
     Animator breakupAnim;
 
-    bool alreadyDead;
+    protected bool alreadyDead;
+
+    //absolute time when the asteroid was created
+    float spawnTime;
 
     public GameObject[] smallerAsteroids;
     public Vector2[] asteroidMinMaxCounts;
 
+    Collider2D physicsCollider;
+
     public void OnShotBy(GameObject shooter)
     {
-        if (!alreadyDead)
+        if (!(alreadyDead || (Time.time - spawnTime) < spawnInvulnTime))
         {
             StartCoroutine(BreakupCoroutine());
 
@@ -24,18 +32,23 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
     void Awake()
     {
         breakupAnim = GetComponent<Animator>();
-
-        if(asteroidMinMaxCounts.Length != smallerAsteroids.Length)
+        foreach(Collider2D collider in GetComponents<Collider2D>())
         {
-            Debug.LogError("Mismatch between number and count of smaller asteroids");
+            //find the non-trigger collider
+            if(!collider.isTrigger)
+            {
+                physicsCollider = collider;
+            }
         }
+
+        if (asteroidMinMaxCounts.Length != smallerAsteroids.Length)
+        {
+            Debug.LogError("Mismatch between number of smaller asteroids and spawn frequencies");
+        }
+
+        spawnTime = Time.time;
+        
     }
-
-
-    // Update is called once per frame
-    void Update () {
-	}
-    
 
     IEnumerator BreakupCoroutine()
     {
@@ -54,8 +67,10 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
             }
         }
 
-        yield return new WaitForSeconds((breakupAnim.GetCurrentAnimatorClipInfo(0).Length) / 2f);
+        //make the asteroid intangible
+        physicsCollider.enabled = false;
 
+        yield return StartCoroutine(Utils.WaitForAnimation(breakupAnim));
 
         GameObject.Destroy(gameObject);
     }

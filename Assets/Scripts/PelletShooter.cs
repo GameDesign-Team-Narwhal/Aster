@@ -7,6 +7,9 @@ public class PelletShooter : MonoBehaviour {
 
 	public float pelletSpeed;
 
+    //controls whether the pellets move at an absolute speed or move relative to the firer's speed.
+    public bool pelletsConstantSpeed = false;
+
     public Vector2[] firingLocations;
 
 	Rigidbody2D body2D;
@@ -17,24 +20,32 @@ public class PelletShooter : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
+	public void Shoot ()
+    {
 
-            foreach(Vector2 firingLocation in firingLocations)
+
+        foreach(Vector2 firingLocation in firingLocations)
+        {
+            GameObject pellet = GameObject.Instantiate(pelletPrefab);
+
+            pellet.transform.position = transform.TransformPoint(firingLocation);
+            pellet.transform.rotation = transform.rotation;
+
+            Rigidbody2D pelletBody = pellet.GetComponent<Rigidbody2D>();
+
+            if (pelletsConstantSpeed)
             {
-                GameObject pellet = GameObject.Instantiate(pelletPrefab);
+                pelletBody.velocity = Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
 
-                pellet.transform.position = transform.TransformPoint(firingLocation);
-                pellet.transform.rotation = transform.rotation;
-
-                Rigidbody2D pelletBody = pellet.GetComponent<Rigidbody2D>();
-
+            }
+            else // the pellet's speed is affected by the speed of the firer
+            {
                 pelletBody.velocity = body2D.velocity + Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
-
-                pellet.GetComponent<Projectile>().shooter = gameObject;
             }
 
-		}
+            pellet.GetComponent<Projectile>().shooter = gameObject;
+        }
+
+		
 	}
 }
