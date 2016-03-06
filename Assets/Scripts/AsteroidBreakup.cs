@@ -27,6 +27,8 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
 
             alreadyDead = true;
         }
+
+        GameController.instance.AddScore(1);
     }
 
     void Awake()

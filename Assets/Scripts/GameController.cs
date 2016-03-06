@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour {
     bool gameStarted = false;
     PlayerFollowingCamera playerFollowingCam;
     Spawner asteroidSpawner;
-
+    int score = 0;
 
 
     void Awake()
@@ -39,9 +39,10 @@ public class GameController : MonoBehaviour {
 	void Start () {
         startGameText.text = "Press a key to start";
         startGameText.enabled = true;
-	}
-	
-	void Update ()
+
+    }
+
+    void Update ()
     {
 	    if(!gameStarted && Input.anyKeyDown)
         {
@@ -57,16 +58,16 @@ public class GameController : MonoBehaviour {
         startGameText.text = "Press a key to restart";
         startGameText.enabled = true;
 
-        gameStarted = false;
     }
 
     IEnumerator explodePlayerShip()
     {
         Animator shipAnimator = playerShipInstance.GetComponent<Animator>();
         shipAnimator.SetTrigger("Explode");
+        yield return null;
         yield return StartCoroutine(Utils.WaitForAnimation(shipAnimator));
         GameObject.Destroy(playerShipInstance);
-
+        gameStarted = false;
     }
 
     void ResetGame()
@@ -74,6 +75,9 @@ public class GameController : MonoBehaviour {
 
         startGameText.enabled = false;
         gameStarted = true;
+
+        score = 0;
+        UpdateScore();
 
         foreach (GameObject objectToClean in GameObject.FindGameObjectsWithTag("Cruft to Clean Up"))
         {
@@ -89,5 +93,14 @@ public class GameController : MonoBehaviour {
         playerFollowingCam.player = playerShipInstance;
     }
 
-    void 
+    public void AddScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        UpdateScore();
+    }
+
+    void UpdateScore()
+    {
+        scoreText.text = "Score: " + score;
+    }
 }
