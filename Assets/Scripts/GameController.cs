@@ -47,7 +47,9 @@ public class GameController : MonoBehaviour {
 
     void ResetGame()
     {
-        foreach(GameObject objectToClean in GameObject.FindGameObjectsWithTag("Cruft to Clean Up"))
+
+
+        foreach (GameObject objectToClean in GameObject.FindGameObjectsWithTag("Cruft to Clean Up"))
         {
             GameObject.Destroy(objectToClean);
         }

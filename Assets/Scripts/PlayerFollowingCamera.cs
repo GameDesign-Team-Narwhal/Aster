@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerFollowingCamera : MonoBehaviour {
@@ -6,8 +6,13 @@ public class PlayerFollowingCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 newPosition = player.transform.position;
-		newPosition.z = -10;
-		transform.position = newPosition;
+
+        if(player != null)
+        {
+            Vector3 newPosition = player.transform.position;
+            newPosition.z = -10;
+            transform.position = newPosition;
+        }
+		
 	}
 }
