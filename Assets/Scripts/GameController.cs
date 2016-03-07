@@ -6,7 +6,6 @@ public class GameController : MonoBehaviour {
 
     public static GameController instance;
 
-    public Vector2 levelSizeBackgrounds = new Vector2(0, 0);
 
     public GameObject playerShipPrefab;
     public GameObject asteroidSpawnerObject;
@@ -16,10 +15,14 @@ public class GameController : MonoBehaviour {
     public Text scoreText;
     public Text startGameText;
     public GameObject playerShipInstance;
+    public uint spawnSafezoneRadius = 20;
 
     bool gameStarted = false;
     PlayerFollowingCamera playerFollowingCam;
     Spawner asteroidSpawner;
+    TiledBackground backgroundTiler;
+    public Vector2 levelSizePx;
+
     int score = 0;
 
 
@@ -34,6 +37,8 @@ public class GameController : MonoBehaviour {
 
         playerFollowingCam = camera.GetComponent<PlayerFollowingCamera>();
         asteroidSpawner = asteroidSpawnerObject.GetComponent<Spawner>();
+        backgroundTiler = background.GetComponent<TiledBackground>();
+        levelSizePx = backgroundTiler.textureSize * backgroundTiler.numTiles;
     }
 
 	void Start () {
@@ -89,7 +94,17 @@ public class GameController : MonoBehaviour {
             asteroidSpawner.SpawnOne();
         }
 
+        Vector3 spawnLocation;
+        //find a spawn location where there aren't any asteroids
+        do
+        {
+            spawnLocation = RandomLocationInLevel();
+            Debug.Log("Trying spawn location:" + spawnLocation);
+        }
+        while (false/*(Physics2D.BoxCast(new Vector2(spawnLocation.x - spawnSafezoneRadius, spawnLocation.y - spawnSafezoneRadius), new Vector2(spawnSafezoneRadius * 2, spawnSafezoneRadius * 2), 0, Vector2.right)) != null*/);
+
         playerShipInstance = GameObject.Instantiate(playerShipPrefab);
+        playerShipInstance.transform.position = spawnLocation;
         playerFollowingCam.player = playerShipInstance;
     }
 
@@ -102,5 +117,13 @@ public class GameController : MonoBehaviour {
     void UpdateScore()
     {
         scoreText.text = "Score: " + score;
+    }
+
+    public Vector3 RandomLocationInLevel()
+    {
+        Vector3 location = new Vector3();
+        location.x = Random.Range(-levelSizePx.x / 2, levelSizePx.x / 2);
+        location.y = Random.Range(-levelSizePx.y / 2, levelSizePx.y / 2);
+        return location;
     }
 }

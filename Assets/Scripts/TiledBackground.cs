@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class TiledBackground : MonoBehaviour {
@@ -7,13 +7,13 @@ public class TiledBackground : MonoBehaviour {
 	public bool scaleHorizontially = true;
 	public bool scaleVertically = true;
 
-	public uint numTiles = 10;
+	public Vector2 numTiles = new Vector2(10, 10);
 
 	// Use this for initialization
 	void Start () {
-		transform.localScale = new Vector3 (numTiles * textureSize, numTiles * textureSize, 1);
+		transform.localScale = new Vector3 (numTiles.x * textureSize, numTiles.y * textureSize, 1);
 
-		GetComponent<Renderer> ().material.mainTextureScale = new Vector3 (numTiles, numTiles, 1);
+		GetComponent<Renderer> ().material.mainTextureScale = new Vector3 (numTiles.x, numTiles.y, 1);
 	}
 
 }
