@@ -101,7 +101,8 @@ public class GameController : MonoBehaviour {
             spawnLocation = RandomLocationInLevel();
             Debug.Log("Trying spawn location:" + spawnLocation);
         }
-        while (false/*(Physics2D.BoxCast(new Vector2(spawnLocation.x - spawnSafezoneRadius, spawnLocation.y - spawnSafezoneRadius), new Vector2(spawnSafezoneRadius * 2, spawnSafezoneRadius * 2), 0, Vector2.right)) != null*/);
+        while (Physics2D.OverlapArea(new Vector2(spawnLocation.x - spawnSafezoneRadius, spawnLocation.y - spawnSafezoneRadius),
+        new Vector2(spawnLocation.x + spawnSafezoneRadius, spawnLocation.y + spawnSafezoneRadius)) != null);
 
         playerShipInstance = GameObject.Instantiate(playerShipPrefab);
         playerShipInstance.transform.position = spawnLocation;
