@@ -17,8 +17,6 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
     public GameObject[] smallerAsteroids;
     public Vector2[] asteroidMinMaxCounts;
 
-    Collider2D physicsCollider;
-
     public void OnShotBy(GameObject shooter)
     {
         if (!(alreadyDead || (Time.time - spawnTime) < spawnInvulnTime))
@@ -34,14 +32,6 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
     void Awake()
     {
         breakupAnim = GetComponent<Animator>();
-        foreach(Collider2D collider in GetComponents<Collider2D>())
-        {
-            //find the non-trigger collider
-            if(!collider.isTrigger)
-            {
-                physicsCollider = collider;
-            }
-        }
 
         if (asteroidMinMaxCounts.Length != smallerAsteroids.Length)
         {
@@ -69,8 +59,12 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
             }
         }
 
-        //make the asteroid intangible
-        physicsCollider.enabled = false;
+        //make the asteroid intangible and stop bullets and players from colliding with it while it is breaking up
+        foreach (Collider2D collider in GetComponents<Collider2D>())
+        {
+            collider.enabled = false;
+        }
+
 
         yield return StartCoroutine(Utils.WaitForAnimation(breakupAnim));
 
