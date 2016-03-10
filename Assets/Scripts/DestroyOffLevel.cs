@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class DestroyOffLevel : MonoBehaviour {
@@ -29,13 +29,20 @@ public class DestroyOffLevel : MonoBehaviour {
 		
 		if (Mathf.Abs (posX) > offscreenX) {
 			
-			if (posX < -2560.03) {
+			if (posX < -GameController.instance.levelSizePx.x / 2)
+            {
 				offscreen = true;
-			} else if (posX > 2560.03) {
+			}
+            else if (posX > GameController.instance.levelSizePx.x / 2)
+            {
 				offscreen = true;
-			}else if (posY < -2560.03){
+			}
+            else if (posY < -GameController.instance.levelSizePx.y / 2)
+            {
 				offscreen = true;
-			}else if (posY > 2560.03){
+			}
+            else if (posY > GameController.instance.levelSizePx.y / 2)
+            {
 				offscreen = true;
 			}
 			

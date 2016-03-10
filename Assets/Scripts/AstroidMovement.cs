@@ -8,7 +8,6 @@ public class AstroidMovement : MonoBehaviour {
     //base speed, not randomized
 	public float AsteroidSpeed = 1f;
 	public float SpeedOffset = 1f;
-	public float SpawnArea = 1f;
     public float maxRotSpeed = .1f;
 
     public bool fixedLocation = false;
@@ -19,17 +18,15 @@ public class AstroidMovement : MonoBehaviour {
 	}
 	void Start () {
 		var Angle = Random.Range (0, 360);
-        var SpawnLocationX = body2d.transform.position.x;
-        var SpawnLocationY = body2d.transform.position.y;
+        Vector3 spawnLocation = body2d.transform.position;
 
         if (!fixedLocation)
         {
-            SpawnLocationX += Random.Range(-SpawnArea, SpawnArea);
-            SpawnLocationY += Random.Range(-SpawnArea, SpawnArea);
+            spawnLocation = GameController.instance.RandomLocationInLevel();
         }
 		body2d.velocity = Utils.VecFromAngleMagnitude (Angle, AsteroidSpeed + Random.Range (-SpeedOffset, SpeedOffset));
         body2d.angularVelocity = Random.Range(-maxRotSpeed, maxRotSpeed);
-		transform.position = new Vector2 (SpawnLocationX, SpawnLocationY);
+        transform.position = spawnLocation;
 	}
 	
 	// Update is called once per frame

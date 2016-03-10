@@ -37,7 +37,8 @@ public class Utils
     */
     public static IEnumerator WaitForAnimation(Animator animator)
     {
-        yield return new WaitForSeconds((animator.GetCurrentAnimatorClipInfo(0).Length) / 2f); //not exactly sure why the divide by 2 is needed
+		var state = animator.GetCurrentAnimatorStateInfo (0);
+        yield return new WaitForSeconds(state.length - state.normalizedTime - .1f);
     }
 }
 
