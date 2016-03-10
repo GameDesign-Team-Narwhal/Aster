@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour {
     }
 
 	void Start () {
-        startGameText.text = "Press a key to start";
+        startGameText.text = "Press any key to start";
         startGameText.enabled = true;
 
     }
@@ -60,7 +60,7 @@ public class GameController : MonoBehaviour {
     {
         StartCoroutine(explodePlayerShip());
 
-        startGameText.text = "Press a key to restart";
+        startGameText.text = "Press any key to restart";
         startGameText.enabled = true;
 
     }
