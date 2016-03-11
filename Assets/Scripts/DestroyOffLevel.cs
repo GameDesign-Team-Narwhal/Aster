@@ -10,11 +10,6 @@ public class DestroyOffLevel : MonoBehaviour {
 	
 	private bool offscreen;
 	private float offscreenX = 0;
-	private Rigidbody2D body2d;
-	
-	void Awake(){
-		body2d = GetComponent<Rigidbody2D> ();
-	}
 	
 	// Use this for initialization
 	void Start () {
