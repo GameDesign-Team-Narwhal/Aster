@@ -40,5 +40,13 @@ public class Utils
 		var state = animator.GetCurrentAnimatorStateInfo (0);
         yield return new WaitForSeconds(state.length - state.normalizedTime - .1f);
     }
+
+    /*
+    Get the angle of a vector from horizontal
+    */
+    public static float VecAngle(Vector2 vector)
+    {
+        return Mathf.Rad2Deg * Mathf.Atan2(vector.y, vector.x);
+    }
 }
 
