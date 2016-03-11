@@ -35,8 +35,6 @@ public class AILightShip : MonoBehaviour, IShootable
             //turn towards player
             float angleError = Utils.VecAngle((playerPosition - ((Vector2)transform.position))) - Utils.VecAngle(Utils.VecFromAngleMagnitude(body2d.rotation + 90, 1));
 
-            Debug.Log("AI error: " + Vector2.Distance(transform.position, playerPosition));
-
             body2d.angularVelocity = maxTurningTorque * angleError;
 
             //move at constant speed
@@ -58,6 +56,11 @@ public class AILightShip : MonoBehaviour, IShootable
 
 	public void OnShotBy(GameObject shooter)
 	{
-		GameObject.Destroy(gameObject);
-	}
+        if(shooter.GetComponent("AILightShip") == null)
+        {
+            GameObject.Destroy(gameObject);
+
+            GameController.instance.AddScore(2);
+        }
+    }
 }
