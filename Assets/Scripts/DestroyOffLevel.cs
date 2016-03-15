@@ -3,63 +3,39 @@ using System.Collections;
 
 public class DestroyOffLevel : MonoBehaviour {
 	
-	public float offset = 16f;
-	
-	public delegate void OnDestroy();
-	public event OnDestroy DestroyCallback;
-	
-	private bool offscreen;
-	private float offscreenX = 0;
-	
+
 	// Use this for initialization
 	void Start () {
-		offscreenX = (Screen.width / PixelPerfectCamera.pixelsToUnits) / 2 + offset;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		var posX = transform.position.x;
-		var posY = transform.position.y;
-		
-		if (Mathf.Abs (posX) > offscreenX) {
-			
-			if (posX < -GameController.instance.levelSizePx.x / 2)
-            {
-				offscreen = true;
-			}
-            else if (posX > GameController.instance.levelSizePx.x / 2)
-            {
-				offscreen = true;
-			}
-            else if (posY < -GameController.instance.levelSizePx.y / 2)
-            {
-				offscreen = true;
-			}
-            else if (posY > GameController.instance.levelSizePx.y / 2)
-            {
-				offscreen = true;
-			}
-			
-		} else {
-			offscreen = false;
+
+
+
+		if (Mathf.Abs(transform.position.x) > GameController.instance.levelSizePx.x / 2)
+        {
+			//Debug.Log("thing crossed x boundary");
+			Vector3 pos = transform.position;
+			pos.x *= -1;
+			transform.position = pos;
 		}
+
+
 		
-		if (offscreen) {
-			OnOutOfBounds();
+		if (Mathf.Abs(transform.position.y) > GameController.instance.levelSizePx.y / 2)
+		{
+			//Debug.Log("thing crossed y boundary");
+			Vector3 pos = transform.position;
+			pos.y *= -1;
+			transform.position = pos;
 		}
+
 		
 	}
 	
-	public void OnOutOfBounds(){
-		offscreen = false;
-		GameObjectUtil.Destroy (gameObject);
-		
-		if (DestroyCallback != null) {
-			DestroyCallback();
-		}
-		
-	}
+
 }
 
 
