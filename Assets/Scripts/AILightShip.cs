@@ -60,7 +60,7 @@ public class AILightShip : MonoBehaviour, IShootable
         {
             GameObject.Destroy(gameObject);
 
-            GameController.instance.AddScore(2);
+            GameController.instance.AddScore(4);
         }
     }
 }
