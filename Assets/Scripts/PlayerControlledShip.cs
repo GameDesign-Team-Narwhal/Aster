@@ -12,6 +12,7 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
     public float translationalDecelerationFactor = 100f; //force per unit velocity
     public float rotationalDecelerationFactor = .01f; //torque per angular velocity
     public float shotCooldown = .25f; // cooldown time before the plyer can shoot again
+	public int Health = 4; 
 
     float lastShotTime = 0f;
     // Use this for initialization
@@ -34,7 +35,9 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
         {
 			body2d.AddTorque(-turningTorque);
         }
-
+		if (Health <= 0) {
+			GameController.instance.OnPlayerKilled();
+		}
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -60,6 +63,11 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
     public void OnShotBy(GameObject shooter)
     {
-        GameController.instance.OnPlayerKilled();
+		if (shooter.GetComponent ("AIHeavyShip") == null) {
+			Health--;
+		} else {
+			Health = Health - 3;
+		}
+      
     }
 }
