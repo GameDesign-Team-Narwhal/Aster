@@ -10,7 +10,7 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 	public float forwardThrust = 1000f;
 	public float shootingRange = 100; //distance from the player at which the AI will begin to shoot 
 	public float shotCooldown = .25f; // cooldown time before the AI can shoot again
-	public int heath = 6;
+	public int Health = 6;
 	float lastShotTime = 0f;
 	// Use this for initialization
 	void Awake ()
@@ -50,7 +50,7 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 					lastShotTime = Time.time;
 				}
 			}
-			if(heath <= 0 )
+			if(Health <= 0 )
 			{
 			GameObject.Destroy(gameObject);
 			
@@ -63,7 +63,7 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 	public void OnShotBy(GameObject shooter)
 	{
 		if (shooter.GetComponent ("AIHeavyShip") == null) {
-			heath--;
+			Health--;
 		}
 	}
 }
