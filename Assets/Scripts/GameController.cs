@@ -13,10 +13,11 @@ public class GameController : MonoBehaviour {
     public GameObject background;
     public uint asteroidsToPrespawn = 100;
     public Text scoreText;
+	public Text HealthText;
     public Text startGameText;
     public GameObject playerShipInstance;
     public uint spawnSafezoneRadius = 20;
-
+	public int PlayerHealth = 4;
     bool gameStarted = false;
     PlayerFollowingCamera playerFollowingCam;
     Spawner asteroidSpawner;
@@ -83,6 +84,8 @@ public class GameController : MonoBehaviour {
 
         score = 0;
         UpdateScore();
+		PlayerHealth = 8;
+		UpdateHealth ();
 
         foreach (GameObject objectToClean in GameObject.FindGameObjectsWithTag("Cruft to Clean Up"))
         {
@@ -127,4 +130,16 @@ public class GameController : MonoBehaviour {
         location.y = Random.Range(-levelSizePx.y / 2, levelSizePx.y / 2);
         return location;
     }
+	public void Damage (int Damage)
+	{
+		PlayerHealth = PlayerHealth - Damage;
+		UpdateHealth ();
+		if (PlayerHealth <= 0) {
+			GameController.instance.OnPlayerKilled();
+		}
+	}
+	void UpdateHealth()
+	{
+		HealthText.text = "Health: " + PlayerHealth;
+	}
 }

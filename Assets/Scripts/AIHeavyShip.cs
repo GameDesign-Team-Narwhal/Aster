@@ -54,7 +54,7 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 			{
 			GameObject.Destroy(gameObject);
 			
-			GameController.instance.AddScore(10);
+			GameController.instance.AddScore(30);
 			}
 		}
 	}
