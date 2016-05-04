@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 1aefb9cd747c25748aa7df7b6e3628c8
-timeCreated: 1456779013
+timeCreated: 1462389592
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -22,6 +22,12 @@ TextureImporter:
     21300030: 2-3-Ani_15
     21300032: 2-3-Ani_16
     21300034: 2-3-Ani_17
+    21300036: Ship Prototype 1_0
+    21300038: Ship Prototype 1_1
+    21300040: Ship Prototype 1_2
+    21300042: Ship Prototype 1_3
+    21300044: Ship Prototype 1_4
+    21300046: Ship Prototype 1_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -71,181 +77,241 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 46
+        y: 115
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_1
       rect:
         serializedVersion: 2
         x: 15
-        y: 46
+        y: 115
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_2
       rect:
         serializedVersion: 2
         x: 29
-        y: 46
+        y: 115
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_3
       rect:
         serializedVersion: 2
         x: 43
-        y: 46
+        y: 115
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_4
       rect:
         serializedVersion: 2
         x: 57
-        y: 46
+        y: 115
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_5
       rect:
         serializedVersion: 2
         x: 71
-        y: 46
+        y: 115
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_6
       rect:
         serializedVersion: 2
         x: 1
-        y: 23
+        y: 92
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_7
       rect:
         serializedVersion: 2
         x: 15
-        y: 23
+        y: 92
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_8
       rect:
         serializedVersion: 2
         x: 29
-        y: 23
+        y: 92
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_9
       rect:
         serializedVersion: 2
         x: 43
-        y: 23
+        y: 92
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_10
       rect:
         serializedVersion: 2
         x: 57
-        y: 23
+        y: 92
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_11
       rect:
         serializedVersion: 2
         x: 71
-        y: 23
+        y: 92
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_12
       rect:
         serializedVersion: 2
         x: 1
-        y: 0
+        y: 69
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_13
       rect:
         serializedVersion: 2
         x: 15
-        y: 0
+        y: 69
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_14
       rect:
         serializedVersion: 2
         x: 29
-        y: 0
+        y: 69
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_15
       rect:
         serializedVersion: 2
         x: 43
-        y: 0
+        y: 69
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_16
       rect:
         serializedVersion: 2
         x: 57
-        y: 0
+        y: 69
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: 2-3-Ani_17
       rect:
         serializedVersion: 2
         x: 71
-        y: 0
+        y: 69
         width: 13
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship Prototype 1_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 44
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship Prototype 1_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 43
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship Prototype 1_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 43
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship Prototype 1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship Prototype 1_4
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 6
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship Prototype 1_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 13
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
