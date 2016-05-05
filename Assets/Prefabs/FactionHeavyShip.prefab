@@ -106,7 +106,7 @@ MonoBehaviour:
   maxTurningTorque: 3
   forwardThrust: 30
   shootingRange: 600
-  shotCooldown: 1
+  shotCooldown: 2.22000003
   Health: 6
 --- !u!114 &11488020
 MonoBehaviour:
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pelletPrefab: {fileID: 195134, guid: 40eadd371e99abd4397ebd3bc4a3e6c8, type: 2}
   pelletSpeed: 700
-  pelletsConstantSpeed: 1
+  pelletsConstantSpeed: 0
   firingLocations:
   - {x: 0, y: 10}
 --- !u!212 &21261306

@@ -15,7 +15,7 @@ GameObject:
   - 61: {fileID: 6143014}
   m_Layer: 0
   m_Name: ProjectileBad
-  m_TagString: Untagged
+  m_TagString: Cruft to Clean Up
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingColor: {r: 1, g: 0, b: 0, a: 1}
-  endingColor: {r: 1, g: 1, b: 1, a: 1}
-  lifetimeSec: 16
+  endingColor: {r: 1, g: .807843149, b: .807843149, a: 1}
+  lifetimeSec: 10
 --- !u!114 &11426478
 MonoBehaviour:
   m_ObjectHideFlags: 1
