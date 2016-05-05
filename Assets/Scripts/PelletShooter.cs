@@ -35,7 +35,7 @@ public class PelletShooter : MonoBehaviour {
 
             if (pelletsConstantSpeed)
             {
-                pelletBody.velocity = Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
+                pelletBody.velocity = new PolarVec2(body2D.rotation + 90, pelletSpeed).Cartesian2D;
 
             }
             else // the pellet's speed is affected by the speed of the firer
