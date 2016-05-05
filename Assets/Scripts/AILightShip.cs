@@ -35,7 +35,7 @@ public class AILightShip : MonoBehaviour, IShootable
             //turn towards player
             //float angleError = Utils.VecAngle((playerPosition - ((Vector2)transform.position))) - Utils.VecAngle(Utils.VecFromAngleMagnitude(body2d.rotation + 90, 1));
 
-			float angleError = PolarVec2.FromCartesian(playerPosition - ((Vector2)transform.position)).A - body2d.rotation + 90;
+			float angleError = PolarVec2.FromCartesian(playerPosition - ((Vector2)transform.position)).A - body2d.rotation + -90;
 
 
             body2d.angularVelocity = maxTurningTorque * angleError;
