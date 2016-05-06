@@ -1,9 +1,25 @@
 fileFormatVersion: 2
 guid: 75f876c151ea7d544936f910a9f07604
-timeCreated: 1462306953
+timeCreated: 1462563769
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Ship-PT-2X2_0
+    21300002: Ship-PT-2X2_1
+    21300004: Ship-PT-2X2_2
+    21300006: Ship-PT-2X2_3
+    21300008: Ship-PT-2X2_4
+    21300010: Ship-PT-2X2_5
+    21300012: Ship-PT-2X2_6
+    21300014: Ship-PT-2X2_7
+    21300016: Ship-PT-2X2_8
+    21300018: Ship-PT-2X2_9
+    21300020: Ship-PT-2X2_10
+    21300022: Ship-PT-2X2_11
+    21300024: Ship-PT-2X2_12
+    21300026: Ship-PT-2X2_13
+    21300028: Ship-PT-2X2_14
+    21300030: Ship-PT-2X2_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,29 +42,189 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Ship-PT-2X2_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 228
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 228
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 228
+        width: 65
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 228
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_4
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 152
+        width: 64
+        height: 75
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_5
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 151
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_6
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 151
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_7
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 151
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 83
+        width: 72
+        height: 62
+      alignment: 9
+      pivot: {x: .5, y: .366702288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_9
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 73
+        width: 77
+        height: 73
+      alignment: 9
+      pivot: {x: .500000179, y: .419134468}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 67
+        width: 83
+        height: 83
+      alignment: 9
+      pivot: {x: .500000179, y: .433618754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 94
+        height: 81
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2
+        width: 78
+        height: 67
+      alignment: 9
+      pivot: {x: .550454736, y: .593981087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_13
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 22
+        width: 51
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_14
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 25
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ship-PT-2X2_15
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 33
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
