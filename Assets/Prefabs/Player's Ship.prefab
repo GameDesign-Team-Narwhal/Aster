@@ -14,7 +14,7 @@ GameObject:
   - 95: {fileID: 9579108}
   - 114: {fileID: 11406058}
   - 114: {fileID: 11449354}
-  - 114: {fileID: 11419848}
+  - 114: {fileID: 11443774}
   m_Layer: 0
   m_Name: Player's Ship
   m_TagString: Untagged
@@ -42,7 +42,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 139636}
   m_Mass: 50
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: .430000007
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   firingLocations:
   - {x: 3, y: 17}
   - {x: -3, y: 17}
---- !u!114 &11419848
+--- !u!114 &11443774
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 139636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4e9bd9cf84751848886bc69dde42390, type: 3}
+  m_Script: {fileID: 11500000, guid: 692d1713f2f5c1e4eb009bf2112fff5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 16

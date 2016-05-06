@@ -38,12 +38,15 @@ public class AILightShip : MonoBehaviour, IShootable
 			Vector2 playerPosition = new Vector2(GameController.instance.playerShipInstance.transform.position.x + 10*CurrentSlopeX, GameController.instance.playerShipInstance.transform.position.y + 10*CurrentSlopeY) ;
 
             //turn towards player
-            float angleError = Utils.VecAngle((playerPosition - ((Vector2)transform.position))) - Utils.VecAngle(Utils.VecFromAngleMagnitude(body2d.rotation + 90, 1));
+            //float angleError = Utils.VecAngle((playerPosition - ((Vector2)transform.position))) - Utils.VecAngle(Utils.VecFromAngleMagnitude(body2d.rotation + 90, 1));
+
+			float angleError = PolarVec2.FromCartesian(playerPosition - ((Vector2)transform.position)).A - body2d.rotation + -90;
+
 
             body2d.angularVelocity = maxTurningTorque * angleError;
 
             //move at constant speed
-            body2d.AddForce(Utils.VecFromAngleMagnitude(body2d.rotation + 90, forwardThrust));
+            body2d.velocity = new PolarVec2(body2d.rotation + 90, forwardThrust).Cartesian2D;
 
             //shoot when in range
             if (Vector2.Distance(transform.position, playerPosition) < shootingRange)
@@ -67,7 +70,7 @@ public class AILightShip : MonoBehaviour, IShootable
 
 	public void OnShotBy(GameObject shooter)
 	{
-        if(shooter.GetComponent("AILightShip") == null)
+        if(shooter.GetComponent<AILightShip>() == null)
         {
             GameObject.Destroy(gameObject);
 

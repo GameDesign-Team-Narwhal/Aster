@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RapOffLevel : MonoBehaviour {
+public class WrapOffLevel : MonoBehaviour {
 	
 	public float offset = 16f;
-	
-	public delegate void OnDestroy();
-	public event OnDestroy DestroyCallback;
 	
 	private bool offscreen;
 	private float offscreenX = 0;
