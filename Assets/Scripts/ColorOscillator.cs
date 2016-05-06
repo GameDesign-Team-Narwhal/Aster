@@ -5,7 +5,7 @@ public class ColorOscillator : MonoBehaviour {
 
 	SpriteRenderer spriteRenderer;
 
-	public float saturation = 1, lightness = .5, alpha = 1;
+	public float saturation = 1, lightness = .5f, alpha = 1;
 	public float currentH = 0;
 
 	public float huePerSecond = 1;
