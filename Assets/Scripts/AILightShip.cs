@@ -10,7 +10,12 @@ public class AILightShip : MonoBehaviour, IShootable
 	public float forwardThrust = 1000f;
     public float shootingRange = 100; //distance from the player at which the AI will begin to shoot 
 	public float shotCooldown = .25f; // cooldown time before the AI can shoot again
-
+	Vector2 Pos = new Vector2(0,0);
+	Vector2 LastPos;
+	bool counter = false;
+	bool counterofcounters = false;
+	float CurrentSlopeY = 0f;
+	float CurrentSlopeX = 0f;
 	float lastShotTime = 0f;
 	// Use this for initialization
 	void Awake ()
@@ -30,7 +35,7 @@ public class AILightShip : MonoBehaviour, IShootable
         if (GameController.instance.playerShipInstance != null) //this is null if the game is not started
         {
 
-            Vector2 playerPosition = GameController.instance.playerShipInstance.transform.position;
+			Vector2 playerPosition = new Vector2(GameController.instance.playerShipInstance.transform.position.x + 10*CurrentSlopeX, GameController.instance.playerShipInstance.transform.position.y + 10*CurrentSlopeY) ;
 
             //turn towards player
             float angleError = Utils.VecAngle((playerPosition - ((Vector2)transform.position))) - Utils.VecAngle(Utils.VecFromAngleMagnitude(body2d.rotation + 90, 1));
@@ -51,6 +56,12 @@ public class AILightShip : MonoBehaviour, IShootable
                 }
             }
         }
+	}
+	void FixedUpdate(){
+		LastPos = Pos;
+		Pos = GameController.instance.playerShipInstance.transform.position;
+		CurrentSlopeY = (LastPos.y - Pos.y);
+		CurrentSlopeX = (LastPos.x - Pos.x);
 	}
 
 

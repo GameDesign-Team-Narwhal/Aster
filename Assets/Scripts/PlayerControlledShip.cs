@@ -61,7 +61,7 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
     {
 		if (shooter.GetComponent ("AIHeavyShip") == null) {
 			GameController.instance.Damage(1);
-		} else {
+		} else{
 			GameController.instance.Damage(3);
 		}
       
