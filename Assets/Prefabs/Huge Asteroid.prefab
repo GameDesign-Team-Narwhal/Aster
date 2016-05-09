@@ -110,10 +110,11 @@ MonoBehaviour:
   - {fileID: 138556, guid: 6f7b0581b1ea6b84ea59be9a87df4507, type: 2}
   - {fileID: 171376, guid: 5f2bb3a59f083484f8d66980a88f92c1, type: 2}
   - {fileID: 158666, guid: 08e3ed9f15f98e140ba6edc66d729a0c, type: 2}
+  - {fileID: 105240, guid: 38bb0871fa0b717458df13445c4807f2, type: 2}
   asteroidMinMaxCounts:
   - {x: 0, y: 1}
   - {x: 1, y: 2}
-  - {x: 0, y: 2}
+  - {x: 2, y: 3}
 --- !u!114 &11448108
 MonoBehaviour:
   m_ObjectHideFlags: 1

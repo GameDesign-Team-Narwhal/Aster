@@ -15,7 +15,7 @@ public class HullRepair : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if(other.Equals(GameController.instance.playerShipInstance))
 		   {
-			GameController.instance.Damage(-3);
+			GameController.instance.Damage(-Health);
 			GameObject.Destroy(gameObject);
 		}
 	}

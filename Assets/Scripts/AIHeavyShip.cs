@@ -65,10 +65,12 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 		}
 	}
 	void FixedUpdate(){
-		LastPos = Pos;
-		Pos = GameController.instance.playerShipInstance.transform.position;
-		CurrentSlopeY = (LastPos.y - Pos.y);
-		CurrentSlopeX = (LastPos.x - Pos.x);
+		if (GameController.instance.playerShipInstance != null) { //this is null if the game is not started
+			LastPos = Pos;
+			Pos = GameController.instance.playerShipInstance.transform.position;
+			CurrentSlopeY = (LastPos.y - Pos.y);
+			CurrentSlopeX = (LastPos.x - Pos.x);
+		}
 	}
 	
 	
