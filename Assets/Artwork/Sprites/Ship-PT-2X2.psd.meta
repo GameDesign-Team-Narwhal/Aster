@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 75f876c151ea7d544936f910a9f07604
-timeCreated: 1462563769
+timeCreated: 1462565582
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -69,9 +69,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 228
+        y: 227
         width: 64
-        height: 70
+        height: 71
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -79,19 +79,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 69
-        y: 228
+        y: 227
         width: 64
-        height: 70
+        height: 71
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Ship-PT-2X2_2
       rect:
         serializedVersion: 2
-        x: 135
-        y: 228
-        width: 65
-        height: 70
+        x: 136
+        y: 227
+        width: 64
+        height: 71
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -99,9 +99,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 203
-        y: 228
+        y: 227
         width: 64
-        height: 70
+        height: 71
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -109,9 +109,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 152
+        y: 155
         width: 64
-        height: 75
+        height: 72
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,9 +119,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 69
-        y: 151
+        y: 155
         width: 64
-        height: 76
+        height: 72
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,9 +129,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 136
-        y: 151
+        y: 155
         width: 64
-        height: 76
+        height: 72
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,31 +139,31 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 203
-        y: 151
+        y: 155
         width: 64
-        height: 76
+        height: 72
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Ship-PT-2X2_8
       rect:
         serializedVersion: 2
-        x: 12
+        x: 16
         y: 83
-        width: 72
+        width: 64
         height: 62
       alignment: 9
-      pivot: {x: .5, y: .366702288}
+      pivot: {x: .513073504, y: .429122061}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Ship-PT-2X2_9
       rect:
         serializedVersion: 2
-        x: 101
+        x: 107
         y: 73
-        width: 77
-        height: 73
-      alignment: 9
-      pivot: {x: .500000179, y: .419134468}
+        width: 64
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Ship-PT-2X2_10
       rect:
@@ -172,8 +172,8 @@ TextureImporter:
         y: 67
         width: 83
         height: 83
-      alignment: 9
-      pivot: {x: .500000179, y: .433618754}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Ship-PT-2X2_11
       rect:
