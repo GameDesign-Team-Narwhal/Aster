@@ -138,7 +138,7 @@ public class GameController : MonoBehaviour {
 			GameController.instance.OnPlayerKilled();
 		}
 	}
-	void UpdateHealth()
+	public void UpdateHealth()
 	{
 		HealthText.text = "Health: " + playerHealth;
 	}

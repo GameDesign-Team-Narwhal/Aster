@@ -54,7 +54,14 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
             {
                 GameObject newAsteroid = GameObject.Instantiate(smallerAsteroids[counter]);
                 newAsteroid.transform.position = transform.position;
-                newAsteroid.GetComponent<AstroidMovement>().fixedLocation = true;
+
+
+				AstroidMovement asterMovement = newAsteroid.GetComponent<AstroidMovement>();
+
+				if(asterMovement != null)
+				{
+					asterMovement.fixedLocation = true;
+				}
 
             }
         }
