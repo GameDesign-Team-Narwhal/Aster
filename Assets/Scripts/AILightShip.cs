@@ -10,6 +10,9 @@ public class AILightShip : MonoBehaviour, IShootable
 	public float forwardThrust = 1000f;
     public float shootingRange = 100; //distance from the player at which the AI will begin to shoot 
 	public float shotCooldown = .25f; // cooldown time before the AI can shoot again
+
+    public float shotPredictionFactor;
+
 	Vector2 Pos = new Vector2(0,0);
 	Vector2 LastPos;
 	bool counter = false;
@@ -17,6 +20,7 @@ public class AILightShip : MonoBehaviour, IShootable
 	float CurrentSlopeY = 0f;
 	float CurrentSlopeX = 0f;
 	float lastShotTime = 0f;
+    PolarVec2 prevTargetPos;
 	// Use this for initialization
 	void Awake ()
 	{
@@ -31,16 +35,22 @@ public class AILightShip : MonoBehaviour, IShootable
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if (GameController.instance.playerShipInstance != null) //this is null if the game is not started
         {
 
-			Vector2 playerPosition = new Vector2(GameController.instance.playerShipInstance.transform.position.x + 10*CurrentSlopeX, GameController.instance.playerShipInstance.transform.position.y + 10*CurrentSlopeY) ;
+            Vector2 targetPosition = GameController.instance.playerShipInstance.transform.position;
+
+            PolarVec2 targetPosPolar = PolarVec2.FromCartesian(targetPosition - ((Vector2)transform.position));
+
+            PolarVec2 targetSpeed = (targetPosPolar - prevTargetPos) / Time.deltaTime;
+
+            PolarVec2 predictedTargetPos = targetPosPolar + targetSpeed * Time.deltaTime * shotPredictionFactor;
 
             //turn towards player
             //float angleError = Utils.VecAngle((playerPosition - ((Vector2)transform.position))) - Utils.VecAngle(Utils.VecFromAngleMagnitude(body2d.rotation + 90, 1));
 
-			float angleError = PolarVec2.FromCartesian(playerPosition - ((Vector2)transform.position)).A - body2d.rotation + -90;
+            float angleError = predictedTargetPos.A - body2d.rotation - 90;
 
 
             body2d.angularVelocity = maxTurningTorque * angleError;
@@ -49,7 +59,7 @@ public class AILightShip : MonoBehaviour, IShootable
             body2d.velocity = new PolarVec2(body2d.rotation + 90, forwardThrust).Cartesian2D;
 
             //shoot when in range
-            if (Vector2.Distance(transform.position, playerPosition) < shootingRange)
+            if (Vector2.Distance(transform.position, targetPosition) < shootingRange)
             {
                 if (Time.time - lastShotTime > shotCooldown)
                 {
@@ -58,13 +68,9 @@ public class AILightShip : MonoBehaviour, IShootable
                     lastShotTime = Time.time;
                 }
             }
+
+            prevTargetPos = targetPosPolar;
         }
-	}
-	void FixedUpdate(){
-		LastPos = Pos;
-		Pos = GameController.instance.playerShipInstance.transform.position;
-		CurrentSlopeY = (LastPos.y - Pos.y);
-		CurrentSlopeX = (LastPos.x - Pos.x);
 	}
 
 

@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour {
     public Text startGameText;
     public GameObject playerShipInstance;
     public uint spawnSafezoneRadius = 20;
-	public int PlayerHealth = 4;
+	public int playerHealth = 4;
     bool gameStarted = false;
     PlayerFollowingCamera playerFollowingCam;
     Spawner asteroidSpawner;
@@ -84,7 +84,7 @@ public class GameController : MonoBehaviour {
 
         score = 0;
         UpdateScore();
-		PlayerHealth = 8;
+		playerHealth = 8;
 		UpdateHealth ();
 
         foreach (GameObject objectToClean in GameObject.FindGameObjectsWithTag("Cruft to Clean Up"))
@@ -132,14 +132,14 @@ public class GameController : MonoBehaviour {
     }
 	public void Damage (int Damage)
 	{
-		PlayerHealth = PlayerHealth - Damage;
+		playerHealth = playerHealth - Damage;
 		UpdateHealth ();
-		if (PlayerHealth <= 0) {
+		if (playerHealth <= 0) {
 			GameController.instance.OnPlayerKilled();
 		}
 	}
 	void UpdateHealth()
 	{
-		HealthText.text = "Health: " + PlayerHealth;
+		HealthText.text = "Health: " + playerHealth;
 	}
 }

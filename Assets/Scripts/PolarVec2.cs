@@ -6,7 +6,7 @@ using UnityEngine;
  * 
  * Angle is in DEGREES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  * */
-public class PolarVec2
+public struct PolarVec2
 {
 	public float A, r;
 
@@ -43,11 +43,6 @@ public class PolarVec2
 		}
 	}
 
-	public PolarVec2 ()
-	{
-		A = 0;
-		r = 0;
-	}
 
 	public PolarVec2 (float A, float r)
 	{
@@ -74,6 +69,67 @@ public class PolarVec2
     public override string ToString()
     {
         return "PolarVec2: A=" + A + "deg, r=" + r;
+    }
+
+    public static PolarVec2 operator+(PolarVec2 a, PolarVec2 b)
+    {
+
+        PolarVec2 result = new PolarVec2();
+
+        result.A = 180 - a.A + b.A;
+        
+        //law of cosines
+        result.r = Mathf.Sqrt(Mathf.Pow(a.r, 2) + Mathf.Pow(b.r, 2) - 2 * a.r * b.r * Mathf.Cos(result.Theta));
+
+        return result;
+    }
+
+    public static PolarVec2 operator-(PolarVec2 a, PolarVec2 b)
+    {
+        if(b.r == 0)
+        {
+            return a;
+        }
+
+        PolarVec2 result = new PolarVec2();
+
+        //law of sines
+        result.A = 180 - Mathf.Rad2Deg * Mathf.Asin((a.r / b.r) * Mathf.Sin(a.Theta - b.Theta)) + b.A;
+
+        //law of cosines
+        result.r = Mathf.Sqrt(Mathf.Pow(a.r, 2) + Mathf.Pow(b.r, 2) - 2 * a.r * b.r * Mathf.Cos(result.Theta));
+
+        return result;
+    }
+
+    // Multiply radius of vector by a scalar.
+    public static PolarVec2 operator*(PolarVec2 vec, float number)
+    {
+        vec.r *= number;
+        return vec;
+    }
+
+    // Divide radius of vector by a scalar.
+    public static PolarVec2 operator/(PolarVec2 vec, float number)
+    {
+        vec.r /= number;
+        return vec;
+    }
+
+    /*
+     Convert the rotation to a euler (pronounced oiler) angle of rotation around the supplied axis.
+    */
+    public Vector3 ToOiler(Axis rotationAxis)
+    {
+        switch(rotationAxis)
+        {
+            case Axis.X:
+                return new Vector3(A - 90, 0, 0);
+            case Axis.Y:
+                return new Vector3(0, A - 90, 0);
+            default:
+                return new Vector3(0, 0, A - 90);
+        } 
     }
 }
 

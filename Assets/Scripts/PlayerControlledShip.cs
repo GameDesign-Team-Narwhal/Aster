@@ -6,12 +6,13 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 {
     private Rigidbody2D body2d;
     private PelletShooter pelletShooter;
+    private Animator animator;
 
     public float turningTorque = 5000f;
     public float forwardThrust = 10000f;
     public float translationalDecelerationFactor = 100f; //force per unit velocity
     public float rotationalDecelerationFactor = .01f; //torque per angular velocity
-    public float shotCooldown = .25f; // cooldown time before the plyer can shoot again
+    public float shotCooldown = .25f; // cooldown time before the player can shoot again
 
     float lastShotTime = 0f;
     // Use this for initialization
@@ -19,25 +20,32 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
     {
         body2d = GetComponent<Rigidbody2D>();
         pelletShooter = GetComponent<PelletShooter>();
+        animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        body2d.AddTorque(0);
+
+        bool engineUsed = false;
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
 			body2d.AddTorque(turningTorque);
+
+            engineUsed = true;
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
 			body2d.AddTorque(-turningTorque);
+
+            engineUsed = true;
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
             body2d.AddForce(Utils.VecFromAngleMagnitude(body2d.rotation + 90, forwardThrust));
+            engineUsed = true;
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
@@ -45,9 +53,13 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
             body2d.AddForce(decelerationForce);
 
             body2d.AddTorque(-1 * body2d.angularVelocity * rotationalDecelerationFactor);
+
+            engineUsed = true;
         }
 
-        if(Input.GetKey(KeyCode.Space))
+        animator.SetBool("EngineOn", engineUsed);
+
+        if (Input.GetKey(KeyCode.Space))
         {
             if(Time.time - lastShotTime > shotCooldown)
             {

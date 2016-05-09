@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11456280}
   - 50: {fileID: 5039698}
   - 61: {fileID: 6191410}
+  - 114: {fileID: 11483130}
   m_Layer: 0
   m_Name: Player Pellet
   m_TagString: Cruft to Clean Up
@@ -71,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d2236da068beb47af7b0a5002382dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingColor: {r: .681186199, g: 0, b: .977941155, a: 1}
-  endingColor: {r: .529411793, g: .922109485, b: 1, a: 1}
+  startingColor: {r: 1, g: 1, b: 1, a: 1}
+  endingColor: {r: 1, g: 1, b: 1, a: 0}
   lifetimeSec: 5
 --- !u!114 &11483096
 MonoBehaviour:
@@ -86,6 +87,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
+--- !u!114 &11483130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7e2f2555a813f4e9d3d5eff14f9998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saturation: 1
+  lightness: .5
+  alpha: 1
+  currentH: 0
+  huePerSecond: 3
 --- !u!212 &21229936
 SpriteRenderer:
   m_ObjectHideFlags: 1
