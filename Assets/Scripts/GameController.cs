@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
 
     public GameObject playerShipPrefab;
     public GameObject asteroidSpawnerObject;
+	public RawImage shieldBarImage;
+	public GameObject shieldBar;
     public new GameObject camera;
     public GameObject background;
     public uint asteroidsToPrespawn = 100;
@@ -41,6 +43,7 @@ public class GameController : MonoBehaviour {
         asteroidSpawner = asteroidSpawnerObject.GetComponent<Spawner>();
         backgroundTiler = background.GetComponent<TiledBackground>();
         levelSizePx = backgroundTiler.textureSize * backgroundTiler.numTiles;
+		shieldBarImage = shieldBar.GetComponent<RawImage>();
     }
 
 	void Start () {
