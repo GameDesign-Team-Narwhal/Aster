@@ -13,6 +13,10 @@ public class AILightShip : MonoBehaviour, IShootable
 
     public float shotPredictionFactor;
 
+	public GameObject playerPosArrow, playerSpeedArrow, predictionArrow;
+
+	private PolarVecArrow playerPosArrowScript, playerSpeedArrowScript, predictionArrowScript;
+
 	Vector2 Pos = new Vector2(0,0);
 	Vector2 LastPos;
 	bool counter = false;
@@ -22,11 +26,16 @@ public class AILightShip : MonoBehaviour, IShootable
 	float CurrentSlopeX = 0f;
 	float lastShotTime = 0f;
     PolarVec2 prevTargetPos;
+
 	// Use this for initialization
 	void Awake ()
 	{
 		body2d = GetComponent<Rigidbody2D>();
 		pelletShooter = GetComponent<PelletShooter>();
+
+		playerPosArrowScript = playerPosArrow.GetComponent<PolarVecArrow>();
+		playerSpeedArrowScript = playerSpeedArrow.GetComponent<PolarVecArrow>();
+		predictionArrowScript = predictionArrow.GetComponent<PolarVecArrow>();
 
 
 	}
@@ -44,7 +53,7 @@ public class AILightShip : MonoBehaviour, IShootable
 
             PolarVec2 targetPosPolar = PolarVec2.FromCartesian(targetPosition - ((Vector2)transform.position));
 
-            PolarVec2 targetSpeed = (targetPosPolar - prevTargetPos) / Time.deltaTime;
+			PolarVec2 targetSpeed = (targetPosPolar - prevTargetPos) / Time.deltaTime;
 
             PolarVec2 predictedTargetPos = targetPosPolar + targetSpeed * Time.deltaTime * shotPredictionFactor;
 
@@ -75,6 +84,22 @@ public class AILightShip : MonoBehaviour, IShootable
 				
 				GameController.instance.AddScore(10);
 			}
+
+			//update visualization
+			if(playerPosArrowScript != null)
+			{
+				playerPosArrowScript.SetVectorToDisplay(targetPosPolar, transform.position);
+
+			}
+			if(playerSpeedArrowScript != null)
+			{
+				playerSpeedArrowScript.SetVectorToDisplay(targetSpeed, targetPosition);
+			}
+			if(predictionArrowScript != null)
+			{
+				predictionArrowScript.SetVectorToDisplay(predictedTargetPos, transform.position);
+			}
+
 
             prevTargetPos = targetPosPolar;
         }

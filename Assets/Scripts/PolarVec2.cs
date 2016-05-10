@@ -43,6 +43,15 @@ public struct PolarVec2
 		}
 	}
 
+	//return a new vector with 1 radius
+	public PolarVec2 normalized
+	{
+		get
+		{
+			return new PolarVec2(this.A, 1);
+		}
+	}
+
 
 	public PolarVec2 (float A, float r)
 	{
@@ -76,10 +85,14 @@ public struct PolarVec2
 
         PolarVec2 result = new PolarVec2();
 
-        result.A = 180 - a.A + b.A;
-        
+		float angleDRad = (180 - a.A + b.A) * Mathf.Deg2Rad;
+
         //law of cosines
-        result.r = Mathf.Sqrt(Mathf.Pow(a.r, 2) + Mathf.Pow(b.r, 2) - 2 * a.r * b.r * Mathf.Cos(result.Theta));
+		result.r = Mathf.Sqrt(Mathf.Pow(a.r, 2) + Mathf.Pow(b.r, 2) - 2 * a.r * b.r * Mathf.Cos(angleDRad));
+
+		result.A = a.A - Mathf.Asin(b.r * Mathf.Sin(angleDRad) / result.r) * Mathf.Rad2Deg;        
+		
+		Debug.Log("A: " + result.A + " EA: " + (a.A + b.A) + "a.r: " + a.r + " b.r: " + b.r + " r: " + result.r);
 
         return result;
     }
@@ -94,11 +107,17 @@ public struct PolarVec2
         PolarVec2 result = new PolarVec2();
 
         //law of sines
-        result.A = 180 - Mathf.Rad2Deg * Mathf.Asin((a.r / b.r) * Mathf.Sin(a.Theta - b.Theta)) + b.A;
+        result.A = 90 - Mathf.Rad2Deg * Mathf.Asin((a.r / b.r) * Mathf.Sin(a.Theta - b.Theta)) + b.A;
 
         //law of cosines
-        result.r = Mathf.Sqrt(Mathf.Pow(a.r, 2) + Mathf.Pow(b.r, 2) - 2 * a.r * b.r * Mathf.Cos(result.Theta));
+		result.r = Mathf.Sqrt(Mathf.Pow(a.r, 2) + Mathf.Pow(b.r, 2) - 2 * a.r * b.r * Mathf.Cos(a.Theta - b.Theta)) * Math.Sign(a.A - b.A);
 
+		//fix corner case with very small differences
+		if(float.IsNaN(result.r))
+		{
+			result.r = 0;
+		}
+		
         return result;
     }
 
@@ -124,11 +143,11 @@ public struct PolarVec2
         switch(rotationAxis)
         {
             case Axis.X:
-                return new Vector3(A - 90, 0, 0);
+                return new Vector3(A, 0, 0);
             case Axis.Y:
-                return new Vector3(0, A - 90, 0);
+                return new Vector3(0, A, 0);
             default:
-                return new Vector3(0, 0, A - 90);
+                return new Vector3(0, 0, A);
         } 
     }
 }
