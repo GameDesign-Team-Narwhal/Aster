@@ -128,7 +128,8 @@ MonoBehaviour:
   startGameText: {fileID: 620137599}
   playerShipInstance: {fileID: 0}
   spawnSafezoneRadius: 20
-  playerHealth: 4
+  playerHealth: 400
+  PlayerDamge: 100
   levelSizePx: {x: 0, y: 0}
 --- !u!4 &554019251
 Transform:
@@ -803,7 +804,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 150184, guid: f9c973c11797ff34695cc3d4a419658e, type: 2}
   active: 1
-  delayRange: {x: 12, y: 20}
+  delayRange: {x: 20, y: 50}
 --- !u!4 &1775318680
 Transform:
   m_ObjectHideFlags: 0

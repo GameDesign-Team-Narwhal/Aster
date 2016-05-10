@@ -13,6 +13,9 @@ GameObject:
   - 114: {fileID: 11469120}
   - 61: {fileID: 6136438}
   - 114: {fileID: 11408368}
+  - 61: {fileID: 6192228}
+  - 95: {fileID: 9572842}
+  - 114: {fileID: 11484808}
   m_Layer: 0
   m_Name: Hullrepair
   m_TagString: Cruft to Clean Up
@@ -27,8 +30,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 463.611816, y: -73.2531967, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1219.92517, y: -797.874756, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,7 +62,37 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 6, y: 7}
+--- !u!61 &6192228
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105240}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 5, y: 6}
+--- !u!95 &9572842
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105240}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b52b3922cfe25f46808efc163fe3951, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11408368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,7 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c977955f991b7449f3723a3a470a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 3
+  Health: 300
+  MaxHealth: 1200
 --- !u!114 &11469120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,9 +117,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d2236da068beb47af7b0a5002382dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingColor: {r: .324137926, g: 1, b: 0, a: 1}
-  endingColor: {r: .048529394, g: .242647052, b: 0, a: 1}
+  startingColor: {r: 1, g: 1, b: 1, a: 1}
+  endingColor: {r: 0, g: 0, b: 0, a: 0}
   lifetimeSec: 100
+--- !u!114 &11484808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692d1713f2f5c1e4eb009bf2112fff5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 16
 --- !u!212 &21282608
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -110,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 5397e98feca686c4f98fe097aa757c6a, type: 3}
+  m_Sprite: {fileID: 21300012, guid: ce2964de7f6a985498567d2a0c195ab6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

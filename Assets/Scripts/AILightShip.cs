@@ -17,6 +17,7 @@ public class AILightShip : MonoBehaviour, IShootable
 	Vector2 LastPos;
 	bool counter = false;
 	bool counterofcounters = false;
+	public int Health = 2;
 	float CurrentSlopeY = 0f;
 	float CurrentSlopeX = 0f;
 	float lastShotTime = 0f;
@@ -68,6 +69,12 @@ public class AILightShip : MonoBehaviour, IShootable
                     lastShotTime = Time.time;
                 }
             }
+			if(Health <= 0 )
+			{
+				GameObject.Destroy(gameObject);
+				
+				GameController.instance.AddScore(10);
+			}
 
             prevTargetPos = targetPosPolar;
         }
@@ -78,9 +85,7 @@ public class AILightShip : MonoBehaviour, IShootable
 	{
         if(shooter.GetComponent<AILightShip>() == null)
         {
-            GameObject.Destroy(gameObject);
-
-            GameController.instance.AddScore(4);
+			Health = Health- GameController.instance.PlayerDamge;
         }
     }
 }

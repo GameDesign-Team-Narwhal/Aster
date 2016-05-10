@@ -15,7 +15,9 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
     float spawnTime;
 
     public GameObject[] smallerAsteroids;
+	public GameObject[] Upgrades;
     public Vector2[] asteroidMinMaxCounts;
+	public int[] UpgradeProb;
 
     public void OnShotBy(GameObject shooter)
     {
@@ -65,6 +67,16 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
 
             }
         }
+		for(uint counter = 0; counter < Upgrades.Length; ++counter)
+		{
+			int Prob = UpgradeProb[counter];
+			int ToSpawn = (int)UnityEngine.Random.Range(1, 100);
+			if(Prob >= ToSpawn)
+			{
+				GameObject newUpgrade = GameObject.Instantiate(Upgrades[counter]);
+				newUpgrade.transform.position = transform.position;
+			}
+		}
 
         //make the asteroid intangible and stop bullets and players from colliding with it while it is breaking up
         foreach (Collider2D collider in GetComponents<Collider2D>())

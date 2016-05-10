@@ -76,8 +76,8 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 	
 	public void OnShotBy(GameObject shooter)
 	{
-		if (shooter.GetComponent ("AIHeavyShip") == null) {
-			Health--;
+		if (shooter.GetComponent<AIHeavyShip>() == null) {
+			Health = Health- GameController.instance.PlayerDamge;
 		}
 	}
 }

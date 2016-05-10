@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec009f325d8376e459011e42a252ac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 2
+  Damage: 200
 --- !u!114 &11422120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,8 +147,10 @@ MonoBehaviour:
   spawnInvulnTime: .5
   smallerAsteroids:
   - {fileID: 158666, guid: 08e3ed9f15f98e140ba6edc66d729a0c, type: 2}
+  Upgrades: []
   asteroidMinMaxCounts:
-  - {x: 1, y: 2}
+  - {x: 2, y: 3}
+  UpgradeProb: 
 --- !u!212 &21265832
 SpriteRenderer:
   m_ObjectHideFlags: 1

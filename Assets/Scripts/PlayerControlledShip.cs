@@ -71,10 +71,10 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
     public void OnShotBy(GameObject shooter)
     {
-		if (shooter.GetComponent ("AIHeavyShip") == null) {
-			GameController.instance.Damage(1);
+		if (shooter.GetComponent<AILightShip>() == null) {
+			GameController.instance.Damage(300);
 		} else{
-			GameController.instance.Damage(3);
+			GameController.instance.Damage(100);
 		}
       
     }

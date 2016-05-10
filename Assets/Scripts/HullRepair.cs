@@ -3,6 +3,7 @@ using System.Collections;
 
 public class HullRepair : MonoBehaviour {
 	public int Health = 0;
+	public int MaxHealth = 1200;
 	Rigidbody2D body2d;
 	// Use this for initialization
 	void Awake ()
@@ -18,11 +19,11 @@ public class HullRepair : MonoBehaviour {
 	{
 		if(other.gameObject.Equals(GameController.instance.playerShipInstance))
 		{
-			if(GameController.instance.playerHealth < 12-Health){
+			if(GameController.instance.playerHealth < MaxHealth-Health){
 			GameController.instance.Damage(-Health);
 			GameObject.Destroy(gameObject);
-			}else if(GameController.instance.playerHealth > 12-Health && GameController.instance.playerHealth < 12){
-				GameController.instance.playerHealth = 12;
+			}else if(GameController.instance.playerHealth > MaxHealth-Health && GameController.instance.playerHealth < MaxHealth){
+				GameController.instance.playerHealth = MaxHealth;
 				GameController.instance.UpdateHealth();
 				GameObject.Destroy(gameObject);
 			}else

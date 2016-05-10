@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec009f325d8376e459011e42a252ac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 4
+  Damage: 400
 --- !u!114 &11470364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +107,7 @@ MonoBehaviour:
   forwardThrust: 30
   shootingRange: 600
   shotCooldown: 2.22000003
-  Health: 6
+  Health: 500
 --- !u!114 &11488020
 MonoBehaviour:
   m_ObjectHideFlags: 1
