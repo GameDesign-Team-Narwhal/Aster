@@ -13,10 +13,6 @@ public class AILightShip : MonoBehaviour, IShootable
 
     public float shotPredictionFactor;
 
-	public GameObject playerPosArrow, playerSpeedArrow, predictionArrow;
-
-	private PolarVecArrow playerPosArrowScript, playerSpeedArrowScript, predictionArrowScript;
-
 	Vector2 Pos = new Vector2(0,0);
 	Vector2 LastPos;
 	bool counter = false;
@@ -32,10 +28,7 @@ public class AILightShip : MonoBehaviour, IShootable
 	{
 		body2d = GetComponent<Rigidbody2D>();
 		pelletShooter = GetComponent<PelletShooter>();
-
-		playerPosArrowScript = playerPosArrow.GetComponent<PolarVecArrow>();
-		playerSpeedArrowScript = playerSpeedArrow.GetComponent<PolarVecArrow>();
-		predictionArrowScript = predictionArrow.GetComponent<PolarVecArrow>();
+		
 
 
 	}
@@ -83,21 +76,6 @@ public class AILightShip : MonoBehaviour, IShootable
 				GameObject.Destroy(gameObject);
 				
 				GameController.instance.AddScore(10);
-			}
-
-			//update visualization
-			if(playerPosArrowScript != null)
-			{
-				//playerPosArrowScript.SetVectorToDisplay(targetPosPolar, transform.position);
-
-			}
-			if(playerSpeedArrowScript != null)
-			{
-				//playerSpeedArrowScript.SetVectorToDisplay(targetSpeed, targetPosition);
-			}
-			if(predictionArrowScript != null)
-			{
-				//predictionArrowScript.SetVectorToDisplay(predictedTargetPos, transform.position);
 			}
 
 

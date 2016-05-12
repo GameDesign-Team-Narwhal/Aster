@@ -106,7 +106,7 @@ MonoBehaviour:
   maxTurningTorque: 3
   forwardThrust: 30
   shootingRange: 600
-  shotCooldown: 4
+  shotCooldown: 2.22000003
   Health: 500
 --- !u!114 &11488020
 MonoBehaviour:

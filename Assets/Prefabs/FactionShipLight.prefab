@@ -18,7 +18,7 @@ GameObject:
   - 114: {fileID: 11499874}
   m_Layer: 0
   m_Name: FactionShipLight
-  m_TagString: Cruft to Clean Up
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.2496338, y: -83.4128418, z: 0}
+  m_LocalPosition: {x: 190.095169, y: 187.691269, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,14 +109,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTurningTorque: 2
-  forwardThrust: 80
+  forwardThrust: 50
   shootingRange: 400
   shotCooldown: .25
-  shotPredictionFactor: 0
-  playerPosArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
-  playerSpeedArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
-  predictionArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
-  Health: 200
+  shotPredictionFactor: 35.1300011
+  playerPosArrow: {fileID: 0}
+  playerSpeedArrow: {fileID: 0}
+  predictionArrow: {fileID: 0}
+  Health: 2
 --- !u!114 &11488982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec009f325d8376e459011e42a252ac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 400
+  Damage: 4
 --- !u!114 &11499874
 MonoBehaviour:
   m_ObjectHideFlags: 1
