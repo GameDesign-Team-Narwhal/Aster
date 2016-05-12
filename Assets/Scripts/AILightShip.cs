@@ -88,16 +88,16 @@ public class AILightShip : MonoBehaviour, IShootable
 			//update visualization
 			if(playerPosArrowScript != null)
 			{
-				playerPosArrowScript.SetVectorToDisplay(targetPosPolar, transform.position);
+				//playerPosArrowScript.SetVectorToDisplay(targetPosPolar, transform.position);
 
 			}
 			if(playerSpeedArrowScript != null)
 			{
-				playerSpeedArrowScript.SetVectorToDisplay(targetSpeed, targetPosition);
+				//playerSpeedArrowScript.SetVectorToDisplay(targetSpeed, targetPosition);
 			}
 			if(predictionArrowScript != null)
 			{
-				predictionArrowScript.SetVectorToDisplay(predictedTargetPos, transform.position);
+				//predictionArrowScript.SetVectorToDisplay(predictedTargetPos, transform.position);
 			}
 
 

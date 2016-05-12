@@ -169,7 +169,7 @@ MonoBehaviour:
   forwardThrust: 3000
   translationalDecelerationFactor: 100
   rotationalDecelerationFactor: .0199999996
-  shotCooldown: .400000006
+  shotCooldown: .5
 --- !u!212 &21277208
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -109,10 +109,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTurningTorque: 2
-  forwardThrust: 50
+  forwardThrust: 80
   shootingRange: 400
   shotCooldown: .25
   shotPredictionFactor: 0
+  playerPosArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
+  playerSpeedArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
+  predictionArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
+  Health: 200
 --- !u!114 &11488982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec009f325d8376e459011e42a252ac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 4
+  Damage: 400
 --- !u!114 &11499874
 MonoBehaviour:
   m_ObjectHideFlags: 1

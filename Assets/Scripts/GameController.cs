@@ -6,7 +6,6 @@ public class GameController : MonoBehaviour {
 
     public static GameController instance;
 
-
     public GameObject playerShipPrefab;
     public GameObject asteroidSpawnerObject;
     public new GameObject camera;
@@ -19,7 +18,8 @@ public class GameController : MonoBehaviour {
     public uint spawnSafezoneRadius = 20;
 	public int playerHealth = 4;
     bool gameStarted = false;
-	public int PlayerDamge = 1;
+	public int PlayerDamge = 100;
+	public float PlayerCooldown = 0.6f;
     PlayerFollowingCamera playerFollowingCam;
     Spawner asteroidSpawner;
     TiledBackground backgroundTiler;
@@ -36,7 +36,6 @@ public class GameController : MonoBehaviour {
         }
 
         instance = this;
-
         playerFollowingCam = camera.GetComponent<PlayerFollowingCamera>();
         asteroidSpawner = asteroidSpawnerObject.GetComponent<Spawner>();
         backgroundTiler = background.GetComponent<TiledBackground>();
@@ -146,5 +145,9 @@ public class GameController : MonoBehaviour {
 	public void PlayerDamgeUp(int Damge)
 	{
 		PlayerDamge = PlayerDamge + Damge;
+	}
+	public void PlayerCoolDownLower (float AmountToLower)
+	{
+		PlayerCooldown = PlayerCooldown - AmountToLower;
 	}
 }
