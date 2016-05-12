@@ -23,6 +23,8 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
 	public bool shieldsActive = false;
 
+	public String team = "Player";
+
     float lastShotTime = 0f;
     // Use this for initialization
     void Awake ()
@@ -79,6 +81,9 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
             }
         }
 
+
+		//handle shields
+
 		if(Input.GetKey(KeyCode.LeftShift) && shieldEnergy > 0)
 		{
 			shieldsSprite.SetActive(true);
@@ -93,47 +98,25 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
 			shieldsActive = false;
 		}
+
+		GameController.instance.shieldBar.UpdateBar(shieldEnergy, maxShields);
     }
 
-    public void OnShotBy(GameObject shooter)
+    public void OnShotBy(GameObject shooter, string team, uint damage)
     {
 		if(shieldsActive)
 		{
 			shieldsColorer.OscillateOnce();
 		}
 		else
-			{if (shooter.GetComponent<AILightShip>() == null) {
-				GameController.instance.Damage(300);
-			} else{
-				GameController.instance.Damage(100);
-			}
+		{
+			GameController.instance.Damage(damage);
 		}
       
     }
 
-//	void UpdateShieldbar()
-//	{
-//		Color tintColor;
-//		
-//		//deal with negative health values (player is dead)
-//		uint clampedShield = shieldEnergy < 0 ? 0 : (uint)shieldEnergy;
-//		float shieldPercentage = ((float)clampedShield) / shieldEnergy;
-//
-//		
-//		
-//		//calculate where to draw it
-//		Rect drawnPart = new Rect(0, 0, shieldPercentage, 1);
-//		
-//		GameController.instance.shieldBarImage.uvRect = drawnPart;
-//		//healthbarRawImage.color = tintColor;
-//		
-//		//now move and scale it to the right place
-//		Vector2 shieldbarPos = GameController.instance.shieldBarImage.rectTransform.anchoredPosition;
-//		
-//		healthbarPos.x = initialXPos - ((initialWidth * (1 - healthPercentage)) / 2); //divide by 2 because it's anchored to the center
-//		
-//		healthbarRawImage.rectTransform.anchoredPosition = healthbarPos;
-//		
-//		healthbarRawImage.rectTransform.sizeDelta = new Vector2(healthPercentage * initialWidth, initialHeight);
-//	}
+	public string GetTeam()
+	{
+		return team;
+	}
 }

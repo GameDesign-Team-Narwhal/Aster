@@ -8,5 +8,8 @@ using UnityEngine;
 
 interface IShootable
 {
-    void OnShotBy(GameObject shooter);
+	//called whan a projectile from a different team hits the entity
+    void OnShotBy(GameObject shooter, string shooterTeam, uint damage);
+
+	string GetTeam();
 }

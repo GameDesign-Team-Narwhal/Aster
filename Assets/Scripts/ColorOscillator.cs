@@ -30,11 +30,21 @@ public class ColorOscillator : MonoBehaviour {
 			{
 				currentH -= 1;
 			}
-			Color newColor = Utils.ColorFromHSL(currentH, saturation, lightness);
-			newColor.a = alpha;
-			//Debug.Log("New color:" + newColor.ToString());
-			
-			spriteRenderer.color = newColor;
+
+			if(!automatic && currentH > 1)
+			{
+				//done oscillating
+				spriteRenderer.color = Color.white;
+			}
+			else
+			{
+				Color newColor = Utils.ColorFromHSL(currentH, saturation, lightness);
+				newColor.a = alpha;
+				//Debug.Log("New color:" + newColor.ToString());
+				
+				spriteRenderer.color = newColor;
+			}
+
 		}
 
 

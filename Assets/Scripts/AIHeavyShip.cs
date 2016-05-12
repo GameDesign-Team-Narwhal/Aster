@@ -12,11 +12,12 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 	public float shotCooldown = .25f; // cooldown time before the AI can shoot again
 	Vector2 Pos = new Vector2(0,0);
 	Vector2 LastPos;
-	bool counter = false;
-	bool counterofcounters = false;
 	float CurrentSlopeY = 0f;
 	float CurrentSlopeX = 0f;
-	public int Health = 6;
+
+	public uint health = 6;
+	public string team = "Enemies";
+
 	float lastShotTime = 0f;
 	// Use this for initialization
 	void Awake ()
@@ -56,12 +57,6 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 					lastShotTime = Time.time;
 				}
 			}
-			if(Health <= 0 )
-			{
-			GameObject.Destroy(gameObject);
-			
-			GameController.instance.AddScore(30);
-			}
 		}
 	}
 	void FixedUpdate(){
@@ -74,10 +69,20 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 	}
 	
 	
-	public void OnShotBy(GameObject shooter)
+	public void OnShotBy(GameObject shooter, string team, uint damage)
 	{
-		if (shooter.GetComponent<AIHeavyShip>() == null) {
-			Health = Health- GameController.instance.PlayerDamge;
+		health -= damage;
+
+		if(health == 0)
+		{
+			GameObject.Destroy(gameObject);
+
+			GameController.instance.AddScore(30);
 		}
+	}
+
+	public string GetTeam()
+	{
+		return team;
 	}
 }
