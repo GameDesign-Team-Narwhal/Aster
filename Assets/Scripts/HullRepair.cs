@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class HullRepair : MonoBehaviour {
@@ -20,7 +20,7 @@ public class HullRepair : MonoBehaviour {
 			}
 			else if(GameController.instance.playerHealth > MaxHealth-Health && GameController.instance.playerHealth < MaxHealth)
 			{
-				GameController.instance.playerHealth = MaxHealth;
+				GameController.instance.playerHealth = (int)MaxHealth;
 				GameController.instance.UpdateHealth();
 				GameObject.Destroy(gameObject);
 			}

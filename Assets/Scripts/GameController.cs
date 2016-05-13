@@ -22,7 +22,8 @@ public class GameController : MonoBehaviour {
     public Text startGameText;
     public GameObject playerShipInstance;
     public uint spawnSafezoneRadius = 20;
-	public uint playerHealth = 4;
+	public int playerHealth = 4;
+    public float playerCooldown = .6f;
 
     bool gameStarted = false;
 
@@ -139,7 +140,7 @@ public class GameController : MonoBehaviour {
         location.y = Random.Range(-levelSizePx.y / 2, levelSizePx.y / 2);
         return location;
     }
-	public void Damage(uint damage)
+	public void Damage(int damage)
 	{
 		playerHealth -=  damage;
 		UpdateHealth ();
@@ -154,12 +155,12 @@ public class GameController : MonoBehaviour {
 
 	public void HealPlayer(uint amount)
 	{
-		playerHealth += amount;
+		playerHealth += (int)amount;
 
 		UpdateHealth();
 	}
-	public void PlayerCoolDownLower (float AmountToLower)
+	public void PlayerCoolDownLower (float amountToLower)
 	{
-		PlayerCooldown = PlayerCooldown - AmountToLower;
+		playerCooldown = playerCooldown - amountToLower;
 	}
 }

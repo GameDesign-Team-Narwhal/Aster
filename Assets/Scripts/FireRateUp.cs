@@ -1,14 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class FireRateUp : MonoBehaviour {
 	public float CoolDownLower = 0.1f;
-	Rigidbody2D body2d;
 	// Use this for initialization
 	void Awake ()
 	{
-		Debug.Log("Fire Rate up");
-		body2d = GetComponent<Rigidbody2D>();
 		Debug.Log("Fire Rate up");
 	}
 	

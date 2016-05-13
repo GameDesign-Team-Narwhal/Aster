@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -15,7 +15,7 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 	float CurrentSlopeY = 0f;
 	float CurrentSlopeX = 0f;
 
-	public uint health = 6;
+	public int health = 6;
 	public string team = "Enemies";
 
 	float lastShotTime = 0f;
@@ -69,11 +69,11 @@ public class AIHeavyShip : MonoBehaviour, IShootable
 	}
 	
 	
-	public void OnShotBy(GameObject shooter, string team, uint damage)
+	public void OnShotBy(GameObject shooter, string team, int damage)
 	{
 		health -= damage;
 
-		if(health == 0)
+		if(health <= 0)
 		{
 			GameObject.Destroy(gameObject);
 

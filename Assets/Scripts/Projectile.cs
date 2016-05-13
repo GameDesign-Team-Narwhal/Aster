@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour {
 
 	public string team = "";
 
-	public uint damage = 2;
+	public int damage = 2;
 
     //if true, the projectile can pass through objects without being destroyed
     bool penetrating = false;

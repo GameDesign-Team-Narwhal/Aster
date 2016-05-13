@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class AIDestoryer : MonoBehaviour {
@@ -10,18 +10,8 @@ public class AIDestoryer : MonoBehaviour {
 	public float shotCooldown = .25f; // cooldown time before the AI can shoot again
 	
 	public float shotPredictionFactor;
-	
-	public GameObject playerPosArrow, playerSpeedArrow, predictionArrow;
-	
-	private PolarVecArrow playerPosArrowScript, playerSpeedArrowScript, predictionArrowScript;
-	
-	Vector2 Pos = new Vector2(0,0);
-	Vector2 LastPos;
-	bool counter = false;
-	bool counterofcounters = false;
-	public int Health = 2;
-	float CurrentSlopeY = 0f;
-	float CurrentSlopeX = 0f;
+
+	public int health = 2;
 	float lastShotTime = 0f;
 	PolarVec2 prevTargetPos;
 	
@@ -30,11 +20,6 @@ public class AIDestoryer : MonoBehaviour {
 	{
 		body2d = GetComponent<Rigidbody2D>();
 		pelletShooter = GetComponent<PelletShooter>();
-		
-		playerPosArrowScript = playerPosArrow.GetComponent<PolarVecArrow>();
-		playerSpeedArrowScript = playerSpeedArrow.GetComponent<PolarVecArrow>();
-		predictionArrowScript = predictionArrow.GetComponent<PolarVecArrow>();
-		
 		
 	}
 	void Start () {
@@ -76,27 +61,6 @@ public class AIDestoryer : MonoBehaviour {
 					lastShotTime = Time.time;
 				}
 			}
-			if(Health <= 0 )
-			{
-				GameObject.Destroy(gameObject);
-				
-				GameController.instance.AddScore(100);
-			}
-			
-			//update visualization
-			if(playerPosArrowScript != null)
-			{
-				//playerPosArrowScript.SetVectorToDisplay(targetPosPolar, transform.position);
-				
-			}
-			if(playerSpeedArrowScript != null)
-			{
-				//playerSpeedArrowScript.SetVectorToDisplay(targetSpeed, targetPosition);
-			}
-			if(predictionArrowScript != null)
-			{
-				//predictionArrowScript.SetVectorToDisplay(predictedTargetPos, transform.position);
-			}
 			
 			
 			prevTargetPos = targetPosPolar;
@@ -104,11 +68,18 @@ public class AIDestoryer : MonoBehaviour {
 	}
 	
 	
-	public void OnShotBy(GameObject shooter)
+	public void OnShotBy(GameObject shooter, string team, int damage)
 	{
 		if(shooter.GetComponent<AIDestoryer>() == null)
 		{
-			Health = Health- GameController.instance.PlayerDamge;
+            health -= damage;
 		}
-	}
+
+        if (health - damage <= 0)
+        {
+            GameObject.Destroy(gameObject);
+
+            GameController.instance.AddScore(100);
+        }
+    }
 }

@@ -13,7 +13,7 @@ public class AILightShip : MonoBehaviour, IShootable
 
     public float shotPredictionFactor;
 
-	public uint health = 2;
+	public int health = 2;
 	public string team = "Enemies";
 
 	float lastShotTime = 0f;
@@ -67,35 +67,19 @@ public class AILightShip : MonoBehaviour, IShootable
             }
 
 
-			//update visualization
-			if(playerPosArrowScript != null)
-			{
-				//playerPosArrowScript.SetVectorToDisplay(targetPosPolar, transform.position);
-
-			}
-			if(playerSpeedArrowScript != null)
-			{
-				//playerSpeedArrowScript.SetVectorToDisplay(targetSpeed, targetPosition);
-			}
-			if(predictionArrowScript != null)
-			{
-				//predictionArrowScript.SetVectorToDisplay(predictedTargetPos, transform.position);
-			}
-
-
             prevTargetPos = targetPosPolar;
         }
 	}
 
 
-	public void OnShotBy(GameObject shooter, string team, uint damage)
+	public void OnShotBy(GameObject shooter, string team, int damage)
 	{
         if(shooter.GetComponent<AILightShip>() == null)
         {
 			health -= damage;
         }
 
-		if(health == 0 )
+		if(health <= 0 )
 		{
 			GameObject.Destroy(gameObject);
 			

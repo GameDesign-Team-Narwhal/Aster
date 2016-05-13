@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DamagePlayerOnContact : MonoBehaviour
 {
-	public uint damage = 4;
+	public int damage = 4;
 
 	void OnTriggerEnter2D(Collider2D other)
     {

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ColorOscillator : MonoBehaviour {
@@ -7,6 +7,8 @@ public class ColorOscillator : MonoBehaviour {
 
 	public float saturation = 1, lightness = .5f, alpha = 1;
 	public float currentH = 0;
+
+    public bool automatic;
 
 	public float huePerSecond = 1;
 
@@ -42,10 +44,17 @@ public class ColorOscillator : MonoBehaviour {
 				spriteRenderer.color = newColor;
 			}
 		}
-		Color newColor = Utils.ColorFromHSL(currentH, saturation, lightness);
-		newColor.a = alpha;
-		//Debug.Log("New color:" + newColor.ToString());
-
-		spriteRenderer.color = newColor;
 	}
+
+    public void OscillateOnce()
+    {
+        if(automatic)
+        {
+            Debug.LogWarning("OscillateOnce() called on automatic ColorOscillator");
+        }
+        else
+        {
+            currentH = 0;
+        }
+    }
 }
