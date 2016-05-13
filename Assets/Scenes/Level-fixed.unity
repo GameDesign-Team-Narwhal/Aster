@@ -162,7 +162,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!1 &554019249
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,8 +192,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerShipPrefab: {fileID: 139636, guid: 5a16a0f3ebb48f943b3fafedc765a948, type: 2}
   asteroidSpawnerObject: {fileID: 455795650}
-  shieldBarImage: {fileID: 0}
-  shieldBar: {fileID: 0}
   camera: {fileID: 847719768}
   background: {fileID: 1480554614}
   asteroidsToPrespawn: 300
@@ -317,7 +315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47707b479198ac46a051b845b8e5f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size: 10
   nativeResolution: {x: 400, y: 300}
 --- !u!81 &847719770
 AudioListener:

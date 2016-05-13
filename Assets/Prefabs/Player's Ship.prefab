@@ -142,6 +142,7 @@ MonoBehaviour:
   firingLocations:
   - {x: 3, y: 17}
   - {x: -3, y: 17}
+  rangeInSec: .600000024
 --- !u!114 &11443774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,12 +171,8 @@ MonoBehaviour:
   translationalDecelerationFactor: 100
   rotationalDecelerationFactor: .0199999996
   shotCooldown: .400000006
-  maxShields: 1000
-  shieldEnergy: 1000
-  shieldUsePerSec: 10
-  shieldRegenPerSec: 2
-  shieldsSprite: {fileID: 0}
-  shieldsActive: 0
+  Desabled: 0
+  DesabledTime: 1.5
 --- !u!212 &21277208
 SpriteRenderer:
   m_ObjectHideFlags: 1

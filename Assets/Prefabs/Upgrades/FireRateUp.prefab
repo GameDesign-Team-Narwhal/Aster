@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0389b33bfc449a14d92bb321a64b5e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoolDownLower: .100000001
+  CoolDownLower: .0500000007
 --- !u!212 &21241752
 SpriteRenderer:
   m_ObjectHideFlags: 1

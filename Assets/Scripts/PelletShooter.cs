@@ -11,7 +11,7 @@ public class PelletShooter : MonoBehaviour {
     public bool pelletsConstantSpeed = false;
 
     public Vector2[] firingLocations;
-
+	public float rangeInSec;
 	Rigidbody2D body2D;
 
 	void Awake()
@@ -42,10 +42,14 @@ public class PelletShooter : MonoBehaviour {
             {
                 pelletBody.velocity = body2D.velocity + Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
             }
-
+			pellet.GetComponent<PelletLifetime>().lifetimeSec = rangeInSec;
             pellet.GetComponent<Projectile>().shooter = gameObject;
         }
 
 		
+	}
+	public void RangeUp(float rangeToUp)
+	{
+		rangeInSec += rangeToUp;
 	}
 }

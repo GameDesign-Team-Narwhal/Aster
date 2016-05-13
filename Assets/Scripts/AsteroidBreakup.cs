@@ -69,9 +69,9 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
         }
 		for(uint counter = 0; counter < Upgrades.Length; ++counter)
 		{
-			int Prob = UpgradeProb[counter];
-			int ToSpawn = (int)UnityEngine.Random.Range(1, 100);
-			if(Prob >= ToSpawn)
+			int prob = UpgradeProb[counter];
+			int toSpawn = (int)UnityEngine.Random.Range(1, 100);
+			if(prob >= toSpawn)
 			{
 				GameObject newUpgrade = GameObject.Instantiate(Upgrades[counter]);
 				newUpgrade.transform.position = transform.position;

@@ -136,6 +136,7 @@ MonoBehaviour:
   pelletsConstantSpeed: 0
   firingLocations:
   - {x: 0, y: 10}
+  rangeInSec: 4
 --- !u!212 &21261306
 SpriteRenderer:
   m_ObjectHideFlags: 1
