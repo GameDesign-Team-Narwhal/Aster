@@ -14,7 +14,6 @@ GameObject:
   - 50: {fileID: 5085618}
   - 114: {fileID: 11447564}
   - 114: {fileID: 11477582}
-  - 114: {fileID: 11488982}
   - 114: {fileID: 11499874}
   m_Layer: 0
   m_Name: FactionShipLight
@@ -94,6 +93,8 @@ MonoBehaviour:
   pelletPrefab: {fileID: 129508, guid: e72d53b1290fccf429c33245047b0bd1, type: 2}
   pelletSpeed: 500
   pelletsConstantSpeed: 1
+  pelletDamage: 2
+  pelletTeam: Enemies
   firingLocations:
   - {x: 3, y: 17}
   - {x: -3, y: 17}
@@ -114,22 +115,8 @@ MonoBehaviour:
   shootingRange: 400
   shotCooldown: .5
   shotPredictionFactor: 0
-  playerPosArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
-  playerSpeedArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
-  predictionArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
-  Health: 200
---- !u!114 &11488982
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec009f325d8376e459011e42a252ac40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 400
+  health: 2
+  team: Enemies
 --- !u!114 &11499874
 MonoBehaviour:
   m_ObjectHideFlags: 1

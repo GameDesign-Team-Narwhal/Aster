@@ -124,6 +124,8 @@ MonoBehaviour:
   pelletPrefab: {fileID: 184610, guid: 34b55c47be1606441b393f78d4a08925, type: 2}
   pelletSpeed: 350
   pelletsConstantSpeed: 1
+  pelletDamage: 2
+  pelletTeam: Enemies
   firingLocations:
   - {x: 1, y: 1}
   - {x: -1, y: 1}
@@ -144,10 +146,7 @@ MonoBehaviour:
   shootingRange: 500
   shotCooldown: 2
   shotPredictionFactor: 0
-  playerPosArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
-  playerSpeedArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
-  predictionArrow: {fileID: 199808, guid: ca73a0d77189dd94cb86ab6bcd229f43, type: 2}
-  Health: 1000
+  health: 2
 --- !u!114 &11495992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,10 +155,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 170820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec009f325d8376e459011e42a252ac40, type: 3}
+  m_Script: {fileID: 11500000, guid: 6642b30b360979241a61f373ed896d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 350
+  damage: 4
 --- !u!212 &21260148
 SpriteRenderer:
   m_ObjectHideFlags: 1

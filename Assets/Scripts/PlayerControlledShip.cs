@@ -12,13 +12,13 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
     public float forwardThrust = 10000f;
     public float translationalDecelerationFactor = 100f; //force per unit velocity
     public float rotationalDecelerationFactor = .01f; //torque per angular velocity
-    public float shotCooldown = .25f; // cooldown time before the player can shoot again
 	public uint maxShields = 1000;
 	public float shieldEnergy = 1000;
 	public float shieldUsePerSec = 10;
 	public float shieldRegenPerSec = 2;
 
 	public GameObject shieldsSprite;
+    private ColorOscillator shieldsColorer;
 
 	public bool shieldsActive = false;
 
@@ -35,7 +35,9 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
         body2d = GetComponent<Rigidbody2D>();
         pelletShooter = GetComponent<PelletShooter>();
         animator = GetComponent<Animator>();
-	}
+
+        shieldsColorer = shieldsSprite.GetComponent<ColorOscillator>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -75,7 +77,7 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
         if (Input.GetKey(KeyCode.Space))
         {
-            if(Time.time - lastShotTime > shotCooldown)
+            if(Time.time - lastShotTime > GameController.instance.playerCooldown)
             {
                 pelletShooter.Shoot();
                 lastShotTime = Time.time;
@@ -104,10 +106,9 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 		if (Time.time - TimeStartDesabled > DesabledTime) {
 			Desabled = false;
 		}
-		UpdateCoolDown ();
     }
 
-    public void OnShotBy(GameObject shooter, string team, uint damage)
+    public void OnShotBy(GameObject shooter, string team, int damage)
     {
 		if(shieldsActive)
 		{
@@ -133,8 +134,4 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 		return team;
       
     }
-	public void UpdateCoolDown()
-	{
-		shotCooldown = GameController.instance.PlayerCooldown;
-	}
 }

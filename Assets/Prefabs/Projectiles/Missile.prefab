@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
+  team: Enemies
+  damage: 2
   acceleration: 8.60000038
   startingVelocity: 22.7999992
   thingToHomeOn: {fileID: 0}

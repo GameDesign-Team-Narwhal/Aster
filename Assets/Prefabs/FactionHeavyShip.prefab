@@ -88,10 +88,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 150184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec009f325d8376e459011e42a252ac40, type: 3}
+  m_Script: {fileID: 11500000, guid: 6642b30b360979241a61f373ed896d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 400
+  damage: 4
 --- !u!114 &11470364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +107,8 @@ MonoBehaviour:
   forwardThrust: 30
   shootingRange: 600
   shotCooldown: 4
-  Health: 500
+  health: 6
+  team: Enemies
 --- !u!114 &11488020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +135,8 @@ MonoBehaviour:
   pelletPrefab: {fileID: 195134, guid: 40eadd371e99abd4397ebd3bc4a3e6c8, type: 2}
   pelletSpeed: 700
   pelletsConstantSpeed: 0
+  pelletDamage: 2
+  pelletTeam: Enemies
   firingLocations:
   - {x: 0, y: 10}
   rangeInSec: 4

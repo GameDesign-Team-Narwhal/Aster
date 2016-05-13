@@ -52,7 +52,7 @@ public class PelletShooter : MonoBehaviour {
 
 			//set projectile's properties
 			Projectile projectileScript = pellet.GetComponent<Projectile>();
-			projectileScript.damage = pelletDamage;
+			projectileScript.damage = (int)pelletDamage;
 			projectileScript.shooter = gameObject;
 			projectileScript.team = pelletTeam;
 >>>>>>> origin/master

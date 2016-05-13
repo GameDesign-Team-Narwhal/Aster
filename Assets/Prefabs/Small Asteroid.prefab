@@ -133,10 +133,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInvulnTime: 1
+  score: 1
+  team: Asteroids
   smallerAsteroids: []
-  Upgrades: []
+  upgrades: []
   asteroidMinMaxCounts: []
-  UpgradeProb: 
+  upgradeProb: 
 --- !u!114 &11484920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,10 +147,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 158666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec009f325d8376e459011e42a252ac40, type: 3}
+  m_Script: {fileID: 11500000, guid: 6642b30b360979241a61f373ed896d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 50
+  damage: 4
 --- !u!212 &21216820
 SpriteRenderer:
   m_ObjectHideFlags: 1
