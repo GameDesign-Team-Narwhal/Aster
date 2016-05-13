@@ -7,7 +7,6 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
     private Rigidbody2D body2d;
     private PelletShooter pelletShooter;
     private Animator animator;
-	private ColorOscillator shieldsColorer;
 
     public float turningTorque = 5000f;
     public float forwardThrust = 10000f;
@@ -25,6 +24,10 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
 	public String team = "Player";
 
+
+	public bool Desabled = false;
+	public float DesabledTime = 1.5f;
+	float TimeStartDesabled = 0f;
     float lastShotTime = 0f;
     // Use this for initialization
     void Awake ()
@@ -32,8 +35,6 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
         body2d = GetComponent<Rigidbody2D>();
         pelletShooter = GetComponent<PelletShooter>();
         animator = GetComponent<Animator>();
-
-		shieldsColorer = shieldsSprite.GetComponent<ColorOscillator>();
 	}
 	
 	// Update is called once per frame
@@ -42,25 +43,25 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
         bool engineUsed = false;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) && Desabled == false)
         {
 			body2d.AddTorque(turningTorque);
 
             engineUsed = true;
         }
-        if(Input.GetKey(KeyCode.RightArrow))
+		if(Input.GetKey(KeyCode.RightArrow) && Desabled == false)
         {
 			body2d.AddTorque(-turningTorque);
 
             engineUsed = true;
         }
 
-        if (Input.GetKey(KeyCode.UpArrow))
+		if (Input.GetKey(KeyCode.UpArrow) && Desabled == false)
         {
             body2d.AddForce(Utils.VecFromAngleMagnitude(body2d.rotation + 90, forwardThrust));
             engineUsed = true;
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+		else if (Input.GetKey(KeyCode.DownArrow) && Desabled == false)
         {
             Vector2 decelerationForce = new Vector2(-1 * body2d.velocity.x * translationalDecelerationFactor, -1 * body2d.velocity.y * translationalDecelerationFactor);
             body2d.AddForce(decelerationForce);
@@ -100,6 +101,10 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 		}
 
 		GameController.instance.shieldBar.UpdateBar(shieldEnergy, maxShields);
+		if (Time.time - TimeStartDesabled > DesabledTime) {
+			Desabled = false;
+		}
+		UpdateCoolDown ();
     }
 
     public void OnShotBy(GameObject shooter, string team, uint damage)
@@ -111,12 +116,25 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 		else
 		{
 			GameController.instance.Damage(damage);
+			
+			if (shooter.GetComponent<AIDestoryer> () != null) 
+			{
+				Desabled = true;
+				TimeStartDesabled = Time.time;
+			}
 		}
+		
+
       
     }
 
 	public string GetTeam()
 	{
 		return team;
+      
+    }
+	public void UpdateCoolDown()
+	{
+		shotCooldown = GameController.instance.PlayerCooldown;
 	}
 }

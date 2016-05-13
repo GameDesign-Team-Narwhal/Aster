@@ -24,8 +24,6 @@ public class AILightShip : MonoBehaviour, IShootable
 	{
 		body2d = GetComponent<Rigidbody2D>();
 		pelletShooter = GetComponent<PelletShooter>();
-		
-
 
 	}
 	void Start () {
@@ -68,6 +66,21 @@ public class AILightShip : MonoBehaviour, IShootable
                 }
             }
 
+
+			//update visualization
+			if(playerPosArrowScript != null)
+			{
+				//playerPosArrowScript.SetVectorToDisplay(targetPosPolar, transform.position);
+
+			}
+			if(playerSpeedArrowScript != null)
+			{
+				//playerSpeedArrowScript.SetVectorToDisplay(targetSpeed, targetPosition);
+			}
+			if(predictionArrowScript != null)
+			{
+				//predictionArrowScript.SetVectorToDisplay(predictedTargetPos, transform.position);
+			}
 
 
             prevTargetPos = targetPosPolar;

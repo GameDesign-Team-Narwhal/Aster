@@ -113,11 +113,12 @@ MonoBehaviour:
   Upgrades:
   - {fileID: 105240, guid: 38bb0871fa0b717458df13445c4807f2, type: 2}
   - {fileID: 178468, guid: 6711d652114de1743ad52cba609c04b3, type: 2}
+  - {fileID: 199490, guid: bfa7ae9f8021b6e45a2e2f319d9959b3, type: 2}
   asteroidMinMaxCounts:
   - {x: 5, y: 10}
   - {x: 0, y: 2}
   - {x: 1, y: 3}
-  UpgradeProb: 1e0000000a000000
+  UpgradeProb: 1e0000000a0000000a000000
 --- !u!114 &11448108
 MonoBehaviour:
   m_ObjectHideFlags: 1
