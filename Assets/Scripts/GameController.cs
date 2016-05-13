@@ -8,24 +8,30 @@ public class GameController : MonoBehaviour {
 
     public GameObject playerShipPrefab;
     public GameObject asteroidSpawnerObject;
+
+	public Bar healthBar;
+	public Bar shieldBar;
+	public GameObject shieldBarObject;
+	public GameObject healthBarObject;
+
     public new GameObject camera;
     public GameObject background;
     public uint asteroidsToPrespawn = 100;
     public Text scoreText;
-	public Text HealthText;
+	public Text healthText;
     public Text startGameText;
     public GameObject playerShipInstance;
     public uint spawnSafezoneRadius = 20;
-	public int playerHealth = 4;
+	public uint playerHealth = 4;
+
     bool gameStarted = false;
-	public int PlayerDamge = 100;
-	public float PlayerCooldown = 0.6f;
+
     PlayerFollowingCamera playerFollowingCam;
     Spawner asteroidSpawner;
     TiledBackground backgroundTiler;
     public Vector2 levelSizePx;
 
-    int score = 0;
+    uint score = 0;
 
 
     void Awake()
@@ -40,6 +46,9 @@ public class GameController : MonoBehaviour {
         asteroidSpawner = asteroidSpawnerObject.GetComponent<Spawner>();
         backgroundTiler = background.GetComponent<TiledBackground>();
         levelSizePx = backgroundTiler.textureSize * backgroundTiler.numTiles;
+		
+		shieldBar = shieldBarObject.GetComponent<Bar>();
+		healthBar = healthBarObject.GetComponent<Bar>();
     }
 
 	void Start () {
@@ -112,7 +121,7 @@ public class GameController : MonoBehaviour {
         playerFollowingCam.player = playerShipInstance;
     }
 
-    public void AddScore(int scoreToAdd)
+    public void AddScore(uint scoreToAdd)
     {
         score += scoreToAdd;
         UpdateScore();
@@ -130,9 +139,9 @@ public class GameController : MonoBehaviour {
         location.y = Random.Range(-levelSizePx.y / 2, levelSizePx.y / 2);
         return location;
     }
-	public void Damage (int Damage)
+	public void Damage(uint damage)
 	{
-		playerHealth = playerHealth - Damage;
+		playerHealth -=  damage;
 		UpdateHealth ();
 		if (playerHealth <= 0) {
 			GameController.instance.OnPlayerKilled();
@@ -140,11 +149,14 @@ public class GameController : MonoBehaviour {
 	}
 	public void UpdateHealth()
 	{
-		HealthText.text = "Health: " + playerHealth;
+		healthText.text = "Health: " + playerHealth;
 	}
-	public void PlayerDamgeUp(int Damge)
+
+	public void HealPlayer(uint amount)
 	{
-		PlayerDamge = PlayerDamge + Damge;
+		playerHealth += amount;
+
+		UpdateHealth();
 	}
 	public void PlayerCoolDownLower (float AmountToLower)
 	{

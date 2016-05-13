@@ -13,6 +13,18 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
     public float translationalDecelerationFactor = 100f; //force per unit velocity
     public float rotationalDecelerationFactor = .01f; //torque per angular velocity
     public float shotCooldown = .25f; // cooldown time before the player can shoot again
+	public uint maxShields = 1000;
+	public float shieldEnergy = 1000;
+	public float shieldUsePerSec = 10;
+	public float shieldRegenPerSec = 2;
+
+	public GameObject shieldsSprite;
+
+	public bool shieldsActive = false;
+
+	public String team = "Player";
+
+
 	public bool Desabled = false;
 	public float DesabledTime = 1.5f;
 	float TimeStartDesabled = 0f;
@@ -69,24 +81,56 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
                 lastShotTime = Time.time;
             }
         }
+
+
+		//handle shields
+
+		if(Input.GetKey(KeyCode.LeftShift) && shieldEnergy > 0)
+		{
+			shieldsSprite.SetActive(true);
+			shieldEnergy -= shieldUsePerSec * Time.deltaTime;
+
+			shieldsActive = true;
+		}
+		else
+		{
+			shieldsSprite.SetActive(false);
+			shieldEnergy += shieldRegenPerSec * Time.deltaTime;
+
+			shieldsActive = false;
+		}
+
+		GameController.instance.shieldBar.UpdateBar(shieldEnergy, maxShields);
 		if (Time.time - TimeStartDesabled > DesabledTime) {
 			Desabled = false;
 		}
 		UpdateCoolDown ();
     }
 
-    public void OnShotBy(GameObject shooter)
+    public void OnShotBy(GameObject shooter, string team, uint damage)
     {
-		if (shooter.GetComponent<AILightShip> ()) {
-			GameController.instance.Damage (100);
-
-		} else if (shooter.GetComponent<AIHeavyShip> ()) {
-			GameController.instance.Damage (300);
-		} else if (shooter.GetComponent<AIDestoryer> ()) {
-			Desabled = true;
-			TimeStartDesabled = Time.time;
-			GameController.instance.Damage (240);
+		if(shieldsActive)
+		{
+			shieldsColorer.OscillateOnce();
 		}
+		else
+		{
+			GameController.instance.Damage(damage);
+			
+			if (shooter.GetComponent<AIDestoryer> () != null) 
+			{
+				Desabled = true;
+				TimeStartDesabled = Time.time;
+			}
+		}
+		
+
+      
+    }
+
+	public string GetTeam()
+	{
+		return team;
       
     }
 	public void UpdateCoolDown()

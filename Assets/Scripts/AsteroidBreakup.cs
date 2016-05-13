@@ -7,6 +7,10 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
 
     //stops smaller asteroids from getting insta-destroyed by the other laser in the pair.
     public float spawnInvulnTime = 1f;
+
+	public uint score = 1;
+	public string team = "Asteroids";
+
     Animator breakupAnim;
 
     protected bool alreadyDead;
@@ -15,20 +19,24 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
     float spawnTime;
 
     public GameObject[] smallerAsteroids;
-	public GameObject[] Upgrades;
+	public GameObject[] upgrades;
     public Vector2[] asteroidMinMaxCounts;
-	public int[] UpgradeProb;
+	public int[] upgradeProb;
 
-    public void OnShotBy(GameObject shooter)
+    public void OnShotBy(GameObject shooter, string shooterTeam, uint damage)
     {
-        if (!(alreadyDead || (Time.time - spawnTime) < spawnInvulnTime))
-        {
-            StartCoroutine(BreakupCoroutine());
+		//shots from enemies can't destroy asteroids
+		if(!shooterTeam.Equals("Enemies"))
+		{
+	        if (!(alreadyDead || (Time.time - spawnTime) < spawnInvulnTime))
+	        {
+	            StartCoroutine(BreakupCoroutine());
 
-            alreadyDead = true;
-        }
+	            alreadyDead = true;
+	        }
 
-        GameController.instance.AddScore(1);
+	        GameController.instance.AddScore(score);
+		}
     }
 
     void Awake()
@@ -67,13 +75,16 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
 
             }
         }
-		for(uint counter = 0; counter < Upgrades.Length; ++counter)
+		for(uint counter = 0; counter < upgrades.Length; ++counter)
 		{
-			int prob = UpgradeProb[counter];
+			int prob = upgradeProb[counter];
 			int toSpawn = (int)UnityEngine.Random.Range(1, 100);
 			if(prob >= toSpawn)
+			int Prob = upgradeProb[counter];
+			int ToSpawn = (int)UnityEngine.Random.Range(1, 100);
+			if(Prob >= ToSpawn)
 			{
-				GameObject newUpgrade = GameObject.Instantiate(Upgrades[counter]);
+				GameObject newUpgrade = GameObject.Instantiate(upgrades[counter]);
 				newUpgrade.transform.position = transform.position;
 			}
 		}
@@ -89,4 +100,9 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
 
         GameObject.Destroy(gameObject);
     }
+
+	public string GetTeam()
+	{
+		return team;
+	}
 }

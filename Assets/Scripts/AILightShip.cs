@@ -13,17 +13,9 @@ public class AILightShip : MonoBehaviour, IShootable
 
     public float shotPredictionFactor;
 
-	public GameObject playerPosArrow, playerSpeedArrow, predictionArrow;
+	public uint health = 2;
+	public string team = "Enemies";
 
-	private PolarVecArrow playerPosArrowScript, playerSpeedArrowScript, predictionArrowScript;
-
-	Vector2 Pos = new Vector2(0,0);
-	Vector2 LastPos;
-	bool counter = false;
-	bool counterofcounters = false;
-	public int Health = 2;
-	float CurrentSlopeY = 0f;
-	float CurrentSlopeX = 0f;
 	float lastShotTime = 0f;
     PolarVec2 prevTargetPos;
 
@@ -32,11 +24,6 @@ public class AILightShip : MonoBehaviour, IShootable
 	{
 		body2d = GetComponent<Rigidbody2D>();
 		pelletShooter = GetComponent<PelletShooter>();
-
-		playerPosArrowScript = playerPosArrow.GetComponent<PolarVecArrow>();
-		playerSpeedArrowScript = playerSpeedArrow.GetComponent<PolarVecArrow>();
-		predictionArrowScript = predictionArrow.GetComponent<PolarVecArrow>();
-
 
 	}
 	void Start () {
@@ -78,12 +65,7 @@ public class AILightShip : MonoBehaviour, IShootable
                     lastShotTime = Time.time;
                 }
             }
-			if(Health <= 0 )
-			{
-				GameObject.Destroy(gameObject);
-				
-				GameController.instance.AddScore(10);
-			}
+
 
 			//update visualization
 			if(playerPosArrowScript != null)
@@ -106,11 +88,23 @@ public class AILightShip : MonoBehaviour, IShootable
 	}
 
 
-	public void OnShotBy(GameObject shooter)
+	public void OnShotBy(GameObject shooter, string team, uint damage)
 	{
         if(shooter.GetComponent<AILightShip>() == null)
         {
-			Health = Health- GameController.instance.PlayerDamge;
+			health -= damage;
         }
+
+		if(health == 0 )
+		{
+			GameObject.Destroy(gameObject);
+			
+			GameController.instance.AddScore(10);
+		}
     }
+
+	public string GetTeam()
+	{
+		return team;
+	}
 }

@@ -32,6 +32,26 @@ public class Utils
         return resultList;
     }
 
+	/*
+		Get the behavior with an interface from an object.  If it has multiple behaviors with the interface, the first one is returned.
+
+		If no behaviours can be found, returns null.
+    */
+	public static T GetBehaviorWithInterface<T>(GameObject objectToSearch) where T : class
+	{
+		MonoBehaviour[] list = objectToSearch.GetComponents<MonoBehaviour>();
+		foreach (MonoBehaviour mb in list)
+		{
+			if (mb is T)
+			{
+				//found one
+				return (T)((System.Object)mb);
+			}
+		}
+		
+		return null;
+	}
+
     /*
         Wait for the current animation clip to f
     */
