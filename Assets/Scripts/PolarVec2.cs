@@ -92,7 +92,7 @@ public struct PolarVec2
 
 		result.A = a.A - Mathf.Asin(b.r * Mathf.Sin(angleDRad) / result.r) * Mathf.Rad2Deg;        
 		
-		Debug.Log("A: " + result.A + " EA: " + (a.A + b.A) + "a.r: " + a.r + " b.r: " + b.r + " r: " + result.r);
+		//Debug.Log("A: " + result.A + " EA: " + (a.A + b.A) + "a.r: " + a.r + " b.r: " + b.r + " r: " + result.r);
 
         return result;
     }

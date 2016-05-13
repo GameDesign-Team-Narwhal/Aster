@@ -25,16 +25,15 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
 
     public void OnShotBy(GameObject shooter, string shooterTeam, int damage)
     {
-		//shots from enemies can't destroy asteroids
-		if(!shooterTeam.Equals("Enemies"))
+
+        if (!(alreadyDead || (Time.time - spawnTime) < spawnInvulnTime))
+        {
+            StartCoroutine(BreakupCoroutine());
+
+            alreadyDead = true;
+        }
+        if (shooterTeam.Equals("Player"))
 		{
-	        if (!(alreadyDead || (Time.time - spawnTime) < spawnInvulnTime))
-	        {
-	            StartCoroutine(BreakupCoroutine());
-
-	            alreadyDead = true;
-	        }
-
 	        GameController.instance.AddScore(score);
 		}
     }

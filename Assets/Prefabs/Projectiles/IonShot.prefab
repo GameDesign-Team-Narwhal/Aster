@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 170820, guid: df3f2e4bd2056e241ba8b0db41f40054, type: 2}
+  team: Enemies
+  damage: 2
 --- !u!212 &21283268
 SpriteRenderer:
   m_ObjectHideFlags: 1

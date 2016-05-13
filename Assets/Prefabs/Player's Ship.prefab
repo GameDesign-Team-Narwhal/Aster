@@ -140,6 +140,8 @@ MonoBehaviour:
   pelletPrefab: {fileID: 125552, guid: 43a0570e57766194bb04719b13b9c52d, type: 2}
   pelletSpeed: 500
   pelletsConstantSpeed: 1
+  pelletDamage: 2
+  pelletTeam: 
   firingLocations:
   - {x: 3, y: 17}
   - {x: -3, y: 17}
@@ -158,8 +160,8 @@ MonoBehaviour:
   lightness: .5
   alpha: 1
   currentH: 2
-  huePerSecond: 4
   automatic: 0
+  huePerSecond: 4
 --- !u!114 &11443774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,13 +189,15 @@ MonoBehaviour:
   forwardThrust: 3000
   translationalDecelerationFactor: 100
   rotationalDecelerationFactor: .0199999996
-  shotCooldown: .400000006
   maxShields: 1000
   shieldEnergy: 1000
   shieldUsePerSec: 10
   shieldRegenPerSec: 2
   shieldsSprite: {fileID: 183420}
   shieldsActive: 0
+  team: Player
+  Desabled: 0
+  DesabledTime: 1.5
 --- !u!212 &21277208
 SpriteRenderer:
   m_ObjectHideFlags: 1

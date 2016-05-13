@@ -87,6 +87,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
+  team: Player
+  damage: 2
 --- !u!114 &11483130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,6 +104,7 @@ MonoBehaviour:
   lightness: .5
   alpha: 1
   currentH: 0
+  automatic: 0
   huePerSecond: 3
 --- !u!212 &21229936
 SpriteRenderer:

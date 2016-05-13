@@ -19,25 +19,31 @@ public class Projectile : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
     {
         //make sure they're not hitting themselves
-        if(!other.gameObject.Equals(shooter))
+        if (!other.gameObject.Equals(shooter))
         {
             IShootable shootableBehavior = Utils.GetBehaviorWithInterface<IShootable>(other.gameObject);
 
-			if(shootableBehavior != null && CanDamage(shootableBehavior.GetTeam()))
-			{
-	
-				shootableBehavior.OnShotBy(shooter, team, damage);
-				
-				if(!penetrating)
-				{
-					GameObject.Destroy(gameObject);
-				}
-			}
-			else if(!penetrating) //hit a non-shootable object, like a rock.  destroy.
-			{
-				GameObject.Destroy(gameObject);
-	        }
-		}
+            if (shootableBehavior != null && CanDamage(shootableBehavior.GetTeam()))
+            {
+
+                shootableBehavior.OnShotBy(shooter, team, damage);
+
+                if (!penetrating)
+                {
+                    GameObject.Destroy(gameObject);
+                }
+            }
+            else
+            {
+                Debug.Log("Projectile hit a non-shootable object");
+                if (!penetrating) //hit a non-shootable object, like a rock.  destroy.
+                {
+                    GameObject.Destroy(gameObject);
+
+                }
+
+            }
+        }
     }
 
 	//trturn tru if this projectile can damage
