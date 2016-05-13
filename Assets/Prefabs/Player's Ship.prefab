@@ -31,13 +31,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 493894}
   - 212: {fileID: 21296248}
+  - 114: {fileID: 11409852}
   m_Layer: 0
-  m_Name: Sheilds
+  m_Name: Shields
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &429084
 Transform:
   m_ObjectHideFlags: 1
@@ -45,7 +46,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.5776672, y: -33.5287781, z: 0}
+  m_LocalPosition: {x: 113.518829, y: 154.51828, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 493894}
@@ -142,6 +143,23 @@ MonoBehaviour:
   firingLocations:
   - {x: 3, y: 17}
   - {x: -3, y: 17}
+--- !u!114 &11409852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7e2f2555a813f4e9d3d5eff14f9998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saturation: 1
+  lightness: .5
+  alpha: 1
+  currentH: 2
+  huePerSecond: 4
+  automatic: 0
 --- !u!114 &11443774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -170,6 +188,12 @@ MonoBehaviour:
   translationalDecelerationFactor: 100
   rotationalDecelerationFactor: .0199999996
   shotCooldown: .400000006
+  maxShields: 1000
+  shieldEnergy: 1000
+  shieldUsePerSec: 10
+  shieldRegenPerSec: 2
+  shieldsSprite: {fileID: 183420}
+  shieldsActive: 0
 --- !u!212 &21277208
 SpriteRenderer:
   m_ObjectHideFlags: 1

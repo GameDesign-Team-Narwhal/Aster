@@ -10,6 +10,9 @@ public class PelletShooter : MonoBehaviour {
     //controls whether the pellets move at an absolute speed or move relative to the firer's speed.
     public bool pelletsConstantSpeed = false;
 
+	public uint pelletDamage = 2;
+	public string pelletTeam = "";
+
     public Vector2[] firingLocations;
 
 	Rigidbody2D body2D;
@@ -43,7 +46,11 @@ public class PelletShooter : MonoBehaviour {
                 pelletBody.velocity = body2D.velocity + Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
             }
 
-            pellet.GetComponent<Projectile>().shooter = gameObject;
+			//set projectile's properties
+			Projectile projectileScript = pellet.GetComponent<Projectile>();
+			projectileScript.damage = pelletDamage;
+			projectileScript.shooter = gameObject;
+			projectileScript.team = pelletTeam;
         }
 
 		
