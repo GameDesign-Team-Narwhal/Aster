@@ -42,65 +42,78 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 	// Update is called once per frame
 	void Update () {
 
-
         bool engineUsed = false;
 
-        if (Input.GetKey(KeyCode.LeftArrow) && Desabled == false)
-        {
-			body2d.AddTorque(turningTorque);
 
-            engineUsed = true;
+        //handle shields
+
+        if (Input.GetKey(KeyCode.LeftShift) && shieldEnergy > 0)
+        {
+            shieldsSprite.SetActive(true);
+            shieldEnergy -= shieldUsePerSec * Time.deltaTime;
+
+            shieldsActive = true;
         }
-		if(Input.GetKey(KeyCode.RightArrow) && Desabled == false)
+        else
         {
-			body2d.AddTorque(-turningTorque);
+            shieldsSprite.SetActive(false);
 
-            engineUsed = true;
-        }
-
-		if (Input.GetKey(KeyCode.UpArrow) && Desabled == false)
-        {
-            body2d.AddForce(Utils.VecFromAngleMagnitude(body2d.rotation + 90, forwardThrust));
-            engineUsed = true;
-        }
-		else if (Input.GetKey(KeyCode.DownArrow) && Desabled == false)
-        {
-            Vector2 decelerationForce = new Vector2(-1 * body2d.velocity.x * translationalDecelerationFactor, -1 * body2d.velocity.y * translationalDecelerationFactor);
-            body2d.AddForce(decelerationForce);
-
-            body2d.AddTorque(-1 * body2d.angularVelocity * rotationalDecelerationFactor);
-
-            engineUsed = true;
-        }
-
-        animator.SetBool("EngineOn", engineUsed);
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            if(Time.time - lastShotTime > GameController.instance.playerCooldown)
+            if (shieldEnergy < maxShields)
             {
-                pelletShooter.Shoot();
-                lastShotTime = Time.time;
+                shieldEnergy += Mathf.Clamp(shieldRegenPerSec * Time.deltaTime, 0, maxShields);
+            }
+
+            shieldsActive = false;
+
+            //handle other input, if shields are not in use
+
+            if (Input.GetKey(KeyCode.LeftArrow) && Desabled == false)
+            {
+                body2d.AddTorque(turningTorque);
+
+                engineUsed = true;
+            }
+            if (Input.GetKey(KeyCode.RightArrow) && Desabled == false)
+            {
+                body2d.AddTorque(-turningTorque);
+
+                engineUsed = true;
+            }
+
+            if (Input.GetKey(KeyCode.UpArrow) && Desabled == false)
+            {
+                body2d.AddForce(Utils.VecFromAngleMagnitude(body2d.rotation + 90, forwardThrust));
+                engineUsed = true;
+            }
+            else if (Input.GetKey(KeyCode.DownArrow) && Desabled == false)
+            {
+                Vector2 decelerationForce = new Vector2(-1 * body2d.velocity.x * translationalDecelerationFactor, -1 * body2d.velocity.y * translationalDecelerationFactor);
+                body2d.AddForce(decelerationForce);
+
+                body2d.AddTorque(-1 * body2d.angularVelocity * rotationalDecelerationFactor);
+
+                engineUsed = true;
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (Time.time - lastShotTime > GameController.instance.playerCooldown)
+                {
+                    pelletShooter.Shoot();
+                    lastShotTime = Time.time;
+                }
             }
         }
 
 
-		//handle shields
+        
 
-		if(Input.GetKey(KeyCode.LeftShift) && shieldEnergy > 0)
-		{
-			shieldsSprite.SetActive(true);
-			shieldEnergy -= shieldUsePerSec * Time.deltaTime;
+        animator.SetBool("EngineOn", engineUsed);
 
-			shieldsActive = true;
-		}
-		else
-		{
-			shieldsSprite.SetActive(false);
-			shieldEnergy += shieldRegenPerSec * Time.deltaTime;
 
-			shieldsActive = false;
-		}
+
+
+
 
 		GameController.instance.shieldBar.UpdateBar(shieldEnergy, maxShields);
 		if (Time.time - TimeStartDesabled > DesabledTime) {
