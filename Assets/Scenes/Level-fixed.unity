@@ -206,7 +206,7 @@ MonoBehaviour:
   spawnSafezoneRadius: 20
   playerHealth: 0
   playerCooldown: .600000024
-  maxPlayerHealth: 70
+  maxPlayerHealth: 1200
   levelSizePx: {x: 0, y: 0}
 --- !u!4 &554019251
 Transform:

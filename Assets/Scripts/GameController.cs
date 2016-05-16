@@ -156,9 +156,9 @@ public class GameController : MonoBehaviour {
         healthBar.UpdateBar(playerHealth, maxPlayerHealth);
 	}
 
-	public void HealPlayer(uint amount)
+	public void HealPlayer(int amount)
 	{
-		playerHealth += (int)amount;
+		playerHealth += amount;
 
 		UpdateHealth();
 	}

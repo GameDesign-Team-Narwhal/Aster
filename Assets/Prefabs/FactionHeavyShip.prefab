@@ -135,7 +135,7 @@ MonoBehaviour:
   pelletPrefab: {fileID: 195134, guid: 40eadd371e99abd4397ebd3bc4a3e6c8, type: 2}
   pelletSpeed: 700
   pelletsConstantSpeed: 0
-  pelletDamage: 2
+  pelletDamage: 300
   pelletTeam: Enemies
   firingLocations:
   - {x: 0, y: 10}

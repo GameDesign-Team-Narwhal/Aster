@@ -145,6 +145,7 @@ MonoBehaviour:
   firingLocations:
   - {x: 3, y: 17}
   - {x: -3, y: 17}
+  rangeInSec: 0
 --- !u!114 &11409852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,8 +192,8 @@ MonoBehaviour:
   rotationalDecelerationFactor: .0199999996
   maxShields: 100
   shieldEnergy: 100
-  shieldUsePerSec: 10
-  shieldRegenPerSec: 2
+  shieldUsePerSec: 50
+  shieldRegenPerSec: 20
   shieldsSprite: {fileID: 183420}
   shieldsActive: 0
   team: Player

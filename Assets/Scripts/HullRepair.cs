@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class HullRepair : MonoBehaviour {
-	public uint MaxHealth = 1200;
+	public int health = 300;
 	// Use this for initialization
 	void Awake ()
 	{
@@ -12,19 +12,20 @@ public class HullRepair : MonoBehaviour {
 	{
 		if(other.gameObject.Equals(GameController.instance.playerShipInstance))
 		{
-			if(GameController.instance.playerHealth + MaxHealth > GameController.instance.maxPlayerHealth)
+			if(GameController.instance.playerHealth + health < GameController.instance.maxPlayerHealth)
 			{
-				GameController.instance.HealPlayer(MaxHealth);
+				GameController.instance.HealPlayer(health);
                 GameController.instance.UpdateHealth();
 				GameObject.Destroy(gameObject);
 			}
-			else
+			else if(GameController.instance.playerHealth + health > GameController.instance.maxPlayerHealth)
 			{
-				GameController.instance.maxPlayerHealth = MaxHealth;
-                GameController.instance.playerHealth = (int)MaxHealth;
-
+				GameController.instance.playerHealth = (int)GameController.instance.maxPlayerHealth;
                 GameController.instance.UpdateHealth();
 				GameObject.Destroy(gameObject);
+			}else
+			{
+
 			}
 	
 		}

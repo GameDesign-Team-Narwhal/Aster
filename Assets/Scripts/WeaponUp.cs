@@ -17,7 +17,9 @@ public class WeaponUp : MonoBehaviour {
 
 		if(other.gameObject.Equals(GameController.instance.playerShipInstance))
 		{
-			GameController.instance.HealPlayer(damageIncrease);
+		//	GameObject Player = GameObject.Instantiate(other);
+			PelletShooter PS = other.GetComponent<PelletShooter>();
+			PS.pelletDamage += damageIncrease;
 			GameObject.Destroy(gameObject);
 		}
 	}
