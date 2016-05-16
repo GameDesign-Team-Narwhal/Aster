@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: 1f63848e0704cb44ba972d72c2fffbb6
+timeCreated: 1463426611
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ShieldBar_0
+    21300002: ShieldBar_1
+    21300004: ShieldBar_2
+    21300006: ShieldBar_3
+    21300008: ShieldBar_4
+    21300010: ShieldBar_5
+    21300012: ShieldBar_6
+    21300014: ShieldBar_7
+    21300016: ShieldBar_8
+    21300018: ShieldBar_9
+    21300020: ShieldBar_10
+    21300022: ShieldBar_11
+    21300024: ShieldBar_12
+    21300026: ShieldBar_13
+    21300028: ShieldBar_14
+    21300030: ShieldBar_15
+    21300032: ShieldBar_16
+    21300034: ShieldBar_17
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ShieldBar_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 78
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 78
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_2
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 78
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_3
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 78
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_4
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 78
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_5
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 78
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_6
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 78
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_7
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 78
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_8
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 78
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 11
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_10
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 11
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_11
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 11
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_12
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 11
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_13
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 11
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_14
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 11
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_15
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 11
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_16
+      rect:
+        serializedVersion: 2
+        x: 1401
+        y: 11
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ShieldBar_17
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 11
+        width: 198
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
