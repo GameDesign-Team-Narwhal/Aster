@@ -276,8 +276,9 @@ MonoBehaviour:
   startGameText: {fileID: 620137599}
   playerShipInstance: {fileID: 0}
   spawnSafezoneRadius: 20
-  playerHealth: 400
+  playerHealth: 0
   playerCooldown: .600000024
+  maxPlayerHealth: 70
   levelSizePx: {x: 0, y: 0}
 --- !u!4 &554019251
 Transform:

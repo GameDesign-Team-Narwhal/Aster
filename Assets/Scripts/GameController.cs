@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour {
     public uint spawnSafezoneRadius = 20;
 	public int playerHealth = 4;
     public float playerCooldown = .6f;
+    public uint maxPlayerHealth;
 
     bool gameStarted = false;
 
@@ -94,7 +95,7 @@ public class GameController : MonoBehaviour {
 
         score = 0;
         UpdateScore();
-		playerHealth = 800;
+		playerHealth = (int)maxPlayerHealth;
 		UpdateHealth ();
 
         foreach (GameObject objectToClean in GameObject.FindGameObjectsWithTag("Cruft to Clean Up"))
@@ -151,6 +152,8 @@ public class GameController : MonoBehaviour {
 	public void UpdateHealth()
 	{
 		healthText.text = "Health: " + playerHealth;
+
+        healthBar.UpdateBar(playerHealth, maxPlayerHealth);
 	}
 
 	public void HealPlayer(uint amount)
