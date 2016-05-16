@@ -14,7 +14,7 @@ public class PelletShooter : MonoBehaviour {
 	public string pelletTeam = "";
 
     public Vector2[] firingLocations;
-
+	public float rangeInSec;
 	Rigidbody2D body2D;
 
 	void Awake()
@@ -45,14 +45,23 @@ public class PelletShooter : MonoBehaviour {
             {
                 pelletBody.velocity = body2D.velocity + Utils.VecFromAngleMagnitude(body2D.rotation + 90, pelletSpeed);
             }
+<<<<<<< HEAD
+			pellet.GetComponent<PelletLifetime>().lifetimeSec = rangeInSec;
+            pellet.GetComponent<Projectile>().shooter = gameObject;
+=======
 
 			//set projectile's properties
 			Projectile projectileScript = pellet.GetComponent<Projectile>();
 			projectileScript.damage = (int)pelletDamage;
 			projectileScript.shooter = gameObject;
 			projectileScript.team = pelletTeam;
+>>>>>>> origin/master
         }
 
 		
+	}
+	public void RangeUp(float rangeToUp)
+	{
+		rangeInSec += rangeToUp;
 	}
 }
