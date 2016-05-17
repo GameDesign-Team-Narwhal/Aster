@@ -1,22 +1,17 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
-public class FireRateUp : MonoBehaviour {
-	public float CoolDownLower = 0.1f;
-	// Use this for initialization
-	void Awake ()
-	{
-	
-	}
-	
-	void OnTriggerEnter2D(Collider2D other)
-	{
+public class FireRateUp : Upgrade {
+	public float cooldownReduction = 0.1f;
 
-		if(other.gameObject.Equals(GameController.instance.playerShipInstance))
-		{
+    protected override void BuffPlayer(GameObject player)
+    {
+        GameController.instance.PlayerCoolDownLower(cooldownReduction);
+    }
 
-			GameController.instance.PlayerCoolDownLower(CoolDownLower);
-			GameObject.Destroy(gameObject);
-		}
-	}
+    protected override string GetMessage()
+    {
+        return "Fire Rate Up!";
+    }
 }

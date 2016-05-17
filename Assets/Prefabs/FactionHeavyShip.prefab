@@ -100,14 +100,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 150184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05c81f6aa9ab3af48834afc116d10fed, type: 3}
+  m_Script: {fileID: 11500000, guid: 17d44c919f6303445b3b07d5f2d5754c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTurningTorque: 3
-  forwardThrust: 30
-  shootingRange: 600
-  shotCooldown: 4
-  health: 430
+  maxTurningTorque: 4
+  forwardThrust: 35
+  shootingRange: 400
+  shotCooldown: 3
+  shotPredictionFactor: 50
+  shotDistancePredictionFactor: .100000001
+  health: 600
+  pointValue: 30
   team: Enemies
 --- !u!114 &11488020
 MonoBehaviour:

@@ -130,7 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fdd1fb6ab92be94a8abe35701a45ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: .100000001
+  upgradeText: {fileID: 0}
+  rangeBonus: .100000001
 --- !u!212 &21293750
 SpriteRenderer:
   m_ObjectHideFlags: 1
