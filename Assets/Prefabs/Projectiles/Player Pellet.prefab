@@ -104,7 +104,7 @@ MonoBehaviour:
   lightness: .5
   alpha: 1
   currentH: 0
-  automatic: 0
+  automatic: 1
   huePerSecond: 3
 --- !u!212 &21229936
 SpriteRenderer:

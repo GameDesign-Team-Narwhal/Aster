@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class WeaponUp : MonoBehaviour {
 	public uint damageIncrease = 1;
+    public GameObject upgradeText;
+
 	// Use this for initialization
 	void Awake ()
 	{
@@ -20,7 +22,11 @@ public class WeaponUp : MonoBehaviour {
 		//	GameObject Player = GameObject.Instantiate(other);
 			PelletShooter PS = other.GetComponent<PelletShooter>();
 			PS.pelletDamage += damageIncrease;
-			GameObject.Destroy(gameObject);
+
+            GameObject instantiatedText = Instantiate(upgradeText);
+            instantiatedText.GetComponent<UpgradeText>().text = "Damage Up!";
+            instantiatedText.transform.position = transform.position;
+			Destroy(gameObject);
 		}
 	}
 }

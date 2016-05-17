@@ -50,7 +50,12 @@ public class AILightShip : MonoBehaviour, IShootable
             float angleError = predictedTargetPos.A - body2d.rotation - 90;
 
 
-            body2d.angularVelocity = maxTurningTorque * angleError;
+            float newAngularVelocity = maxTurningTorque * angleError;
+
+            if(!float.IsNaN(newAngularVelocity))
+            {
+                body2d.angularVelocity = newAngularVelocity;
+            }
 
             //move at constant speed
             body2d.velocity = new PolarVec2(body2d.rotation + 90, forwardThrust).Cartesian2D;

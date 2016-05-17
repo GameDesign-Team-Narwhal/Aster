@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Damage/Pellet Lifetime")]
 public class PelletLifetime : MonoBehaviour
 {
 	public Color startingColor, endingColor;

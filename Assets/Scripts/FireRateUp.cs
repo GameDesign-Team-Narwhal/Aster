@@ -11,7 +11,6 @@ public class FireRateUp : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log("Fire Rate up");
 	}
 	void OnTriggerEnter2D(Collider2D other)
 	{

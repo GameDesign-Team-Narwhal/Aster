@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Damage/Pellet Shooter")]
 public class PelletShooter : MonoBehaviour {
 
 	public GameObject pelletPrefab;

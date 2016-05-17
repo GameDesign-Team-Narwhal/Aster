@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 //Script for for a GUI indicator bar which shows a percentage of something, like health or XP
 [RequireComponent (typeof (RawImage))]
+[AddComponentMenu("UI/Bar")]
 public class Bar : MonoBehaviour 
 {
 	private RawImage barImage;

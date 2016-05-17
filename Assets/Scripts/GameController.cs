@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour {
     PlayerFollowingCamera playerFollowingCam;
     Spawner asteroidSpawner;
     TiledBackground backgroundTiler;
+    uint prespawnedAsteroids; //manually spawned asteroids since the game has started. Manual spawning stops when this value == asteroidsToPrespawn.
     public Vector2 levelSizePx;
 
     uint score = 0;
@@ -44,18 +45,18 @@ public class GameController : MonoBehaviour {
         }
 
         instance = this;
+
+    }
+
+	void Start () {
         playerFollowingCam = camera.GetComponent<PlayerFollowingCamera>();
         asteroidSpawner = asteroidSpawnerObject.GetComponent<Spawner>();
         backgroundTiler = background.GetComponent<TiledBackground>();
         levelSizePx = backgroundTiler.textureSize * backgroundTiler.numTiles;
-		
-		shieldBar = shieldBarObject.GetComponent<Bar>();
-		healthBar = healthBarObject.GetComponent<Bar>();
-    }
 
-	void Start () {
-        startGameText.text = "Press any key to start";
-        startGameText.enabled = true;
+        shieldBar = shieldBarObject.GetComponent<Bar>();
+        healthBar = healthBarObject.GetComponent<Bar>();
+        ResetGame();
 
     }
 
@@ -65,6 +66,12 @@ public class GameController : MonoBehaviour {
         {
             ResetGame();
 
+        }
+
+        if(prespawnedAsteroids < asteroidsToPrespawn)
+        {
+            asteroidSpawner.SpawnOne();
+            ++prespawnedAsteroids;
         }
     }
 
@@ -94,6 +101,7 @@ public class GameController : MonoBehaviour {
         gameStarted = true;
 
         score = 0;
+        prespawnedAsteroids = 0;
         UpdateScore();
 		playerHealth = (int)maxPlayerHealth;
 		UpdateHealth ();
@@ -103,10 +111,7 @@ public class GameController : MonoBehaviour {
             GameObject.Destroy(objectToClean);
         }
 
-        for(uint counter = 0; counter < asteroidsToPrespawn; ++counter)
-        {
-            asteroidSpawner.SpawnOne();
-        }
+
 
         Vector3 spawnLocation;
         //find a spawn location where there aren't any asteroids
