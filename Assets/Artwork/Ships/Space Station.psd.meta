@@ -1,11 +1,43 @@
 fileFormatVersion: 2
 guid: 229a444c3dedd0440b88979b93c6174c
-timeCreated: 1463424326
+timeCreated: 1463513173
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Space Station_0
     21300002: Space Station_1
+    21300004: Space Station_2
+    21300006: Space Station_3
+    21300008: Space Station_4
+    21300010: Space Station_5
+    21300012: Space Station_6
+    21300014: Space Station_7
+    21300016: Space Station_8
+    21300018: Space Station_9
+    21300020: Space Station_10
+    21300022: Space Station_11
+    21300024: Space Station_12
+    21300026: Space Station_13
+    21300028: Space Station_14
+    21300030: Space Station_15
+    21300032: Space Station_16
+    21300034: Space Station_17
+    21300036: Space Station_18
+    21300038: Space Station_19
+    21300040: Space Station_20
+    21300042: Space Station_21
+    21300044: Space Station_22
+    21300046: Space Station_23
+    21300048: Space Station_24
+    21300050: Space Station_25
+    21300052: Space Station_26
+    21300054: Space Station_27
+    21300056: Space Station_28
+    21300058: Space Station_29
+    21300060: Space Station_30
+    21300062: Space Station_32
+    21300064: Space Station_34
+    21300066: Space Station_35
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,9 +91,79 @@ TextureImporter:
         width: 38
         height: 40
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Space Station_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 548
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 591
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_3
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 558
+        width: 10
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_4
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 548
+        width: 10
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_5
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 496
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_6
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 569
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_7
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 569
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_8
       rect:
         serializedVersion: 2
         x: 3
@@ -69,7 +171,257 @@ TextureImporter:
         width: 38
         height: 40
       alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_9
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 546
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_10
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 532
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_11
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 467
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_12
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 502
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_13
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 490
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_14
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 485
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_15
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 397
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_16
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 397
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_17
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 441
+        width: 23
+        height: 20
+      alignment: 0
       pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_18
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 396
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_19
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 419
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_20
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 396
+        width: 42
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_21
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 420
+        width: 38
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_22
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 370
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_23
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 372
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_24
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 301
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_25
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 301
+        width: 90
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_26
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 341
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_27
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 317
+        width: 30
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_28
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 317
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_29
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 284
+        width: 34
+        height: 20
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_30
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 241
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_32
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 241
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_34
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 207
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Space Station_35
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 208
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

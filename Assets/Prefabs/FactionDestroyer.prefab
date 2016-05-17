@@ -11,11 +11,11 @@ GameObject:
   - 212: {fileID: 21260148}
   - 95: {fileID: 9599448}
   - 50: {fileID: 5022752}
-  - 68: {fileID: 6859236}
   - 114: {fileID: 11495992}
   - 114: {fileID: 11456138}
   - 114: {fileID: 11420202}
   - 114: {fileID: 11491198}
+  - 58: {fileID: 5876660}
   m_Layer: 0
   m_Name: FactionDestroyer
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -841.586853, y: -1307.42065, z: 0}
+  m_LocalPosition: {x: 59.3759804, y: 1567.04248, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,8 +50,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!68 &6859236
-EdgeCollider2D:
+--- !u!58 &5876660
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -60,27 +60,9 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-  - {x: 6.65423584, y: -12.7755127}
-  - {x: -6.70568848, y: -13.314209}
-  - {x: -22.1287231, y: -.200683594}
-  - {x: -23.5418701, y: 19.9794922}
-  - {x: -32.1026001, y: 35.378418}
-  - {x: -18.5638428, y: 30.0865479}
-  - {x: -6.25543213, y: 35.7576904}
-  - {x: -11.135498, y: 23.0013428}
-  - {x: -11.8063354, y: 13.7738037}
-  - {x: -3.67449951, y: 4.6282959}
-  - {x: 2.9151001, y: 4.65881348}
-  - {x: 12.1349487, y: 15.0003662}
-  - {x: 11.8832397, y: 22.7581787}
-  - {x: 5.67071533, y: 34.5148926}
-  - {x: 18.2825317, y: 29.6950684}
-  - {x: 30.6520996, y: 35.336792}
-  - {x: 25.4088745, y: 21.8172607}
-  - {x: 22.7722778, y: -.314086914}
-  - {x: 6.12139893, y: -13.4306641}
+  m_Offset: {x: 0, y: 12}
+  serializedVersion: 2
+  m_Radius: 28
 --- !u!95 &9599448
 Animator:
   serializedVersion: 3
@@ -122,13 +104,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pelletPrefab: {fileID: 125440, guid: da562f37f7a614b4fb80c4b976bd089d, type: 2}
-  pelletSpeed: 350
-  pelletsConstantSpeed: 1
+  pelletSpeed: 1000
+  pelletsConstantSpeed: 0
   pelletDamage: 250
   pelletTeam: Enemies
   firingLocations:
-  - {x: 1, y: 1}
-  - {x: -1, y: 1}
+  - {x: 10, y: 30}
+  - {x: -10, y: 30}
   rangeInSec: 5
 --- !u!114 &11491198
 MonoBehaviour:
@@ -141,10 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac811eb63ad3c74c8177547439cf6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTurningTorque: 1
+  maxTurningTorque: 3
   forwardThrust: 20
   shootingRange: 500
-  shotCooldown: 2
+  shotCooldown: .0199999996
   shotPredictionFactor: 0
   health: 1200
 --- !u!114 &11495992

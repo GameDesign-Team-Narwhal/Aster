@@ -14,6 +14,7 @@ public class AILightShip : MonoBehaviour, IShootable
     public float shotPredictionFactor;
 
 	public int health = 2;
+    public uint pointValue = 0;
 	public string team = "Enemies";
 
 	float lastShotTime = 0f;
@@ -79,16 +80,13 @@ public class AILightShip : MonoBehaviour, IShootable
 
 	public void OnShotBy(GameObject shooter, string team, int damage)
 	{
-        if(shooter.GetComponent<AILightShip>() == null)
-        {
-			health -= damage;
-        }
+        health -= damage;
 
 		if(health <= 0 )
 		{
 			GameObject.Destroy(gameObject);
 			
-			GameController.instance.AddScore(10);
+			GameController.instance.AddScore(pointValue);
 		}
     }
 

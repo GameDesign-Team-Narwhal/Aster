@@ -6,18 +6,15 @@ public class FireRateUp : MonoBehaviour {
 	// Use this for initialization
 	void Awake ()
 	{
-		Debug.Log("Fire Rate up");
+	
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log("Fire Rate up");
+
 		if(other.gameObject.Equals(GameController.instance.playerShipInstance))
 		{
-			Debug.Log("Fire Rate up");
+
 			GameController.instance.PlayerCoolDownLower(CoolDownLower);
 			GameObject.Destroy(gameObject);
 		}

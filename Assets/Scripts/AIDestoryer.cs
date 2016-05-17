@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class AIDestoryer : MonoBehaviour {
+public class AIDestoryer : MonoBehaviour, IShootable {
 	private Rigidbody2D body2d;
 	private PelletShooter pelletShooter;
 	public float maxTurningTorque = 5000f; //effectively a P constant
@@ -14,6 +14,7 @@ public class AIDestoryer : MonoBehaviour {
 	public int health = 2;
 	float lastShotTime = 0f;
 	PolarVec2 prevTargetPos;
+	public string team = "Enemies";
 	
 	// Use this for initialization
 	void Awake ()
@@ -70,16 +71,21 @@ public class AIDestoryer : MonoBehaviour {
 	
 	public void OnShotBy(GameObject shooter, string team, int damage)
 	{
-		if(shooter.GetComponent<AIDestoryer>() == null)
+		if(shooter.GetComponent<AILightShip>() == null)
 		{
-            health -= damage;
+			Debug.Log("damage taken");
+			health -= damage;
 		}
-
-        if (health - damage <= 0)
-        {
-            GameObject.Destroy(gameObject);
-
-            GameController.instance.AddScore(100);
-        }
+		
+		if(health <= 0 )
+		{
+			GameObject.Destroy(gameObject);
+			
+			GameController.instance.AddScore(150);
+		}
     }
+	public string GetTeam()
+	{
+		return team;
+	}
 }
