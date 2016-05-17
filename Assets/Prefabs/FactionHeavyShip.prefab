@@ -107,7 +107,7 @@ MonoBehaviour:
   forwardThrust: 30
   shootingRange: 600
   shotCooldown: 4
-  health: 6
+  health: 430
   team: Enemies
 --- !u!114 &11488020
 MonoBehaviour:

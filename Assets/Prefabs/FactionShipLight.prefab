@@ -115,7 +115,7 @@ MonoBehaviour:
   shootingRange: 400
   shotCooldown: .5
   shotPredictionFactor: 0
-  health: 2
+  health: 200
   team: Enemies
 --- !u!114 &11499874
 MonoBehaviour:
