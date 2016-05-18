@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fdd1fb6ab92be94a8abe35701a45ec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeText: {fileID: 0}
+  upgradeText: {fileID: 136932, guid: c25655f0ede00094599237b2841824de, type: 2}
   rangeBonus: .100000001
 --- !u!212 &21293750
 SpriteRenderer:
