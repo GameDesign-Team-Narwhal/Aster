@@ -1,32 +1,19 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
-public class WeaponUp : MonoBehaviour {
+public class WeaponUp : Upgrade {
 	public uint damageIncrease = 1;
-    public GameObject upgradeText;
 
-	// Use this for initialization
-	void Awake ()
-	{
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	void OnTriggerEnter2D(Collider2D other)
-	{
+    protected override void BuffPlayer(GameObject player)
+    {
+        PelletShooter PS = player.GetComponent<PelletShooter>();
+        PS.pelletDamage += damageIncrease;
 
-		if(other.gameObject.Equals(GameController.instance.playerShipInstance))
-		{
-		//	GameObject Player = GameObject.Instantiate(other);
-			PelletShooter PS = other.GetComponent<PelletShooter>();
-			PS.pelletDamage += damageIncrease;
+    }
 
-            GameObject instantiatedText = Instantiate(upgradeText);
-            instantiatedText.GetComponent<UpgradeText>().text = "Damage Up!";
-            instantiatedText.transform.position = transform.position;
-			Destroy(gameObject);
-		}
-	}
+    protected override string GetMessage()
+    {
+        return "Damage Up!";
+    }
 }

@@ -1,33 +1,18 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
-public class HullRepair : MonoBehaviour {
+public class HullRepair : Upgrade {
 	public int health = 300;
-	// Use this for initialization
-	void Awake ()
-	{
-	}
 
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if(other.gameObject.Equals(GameController.instance.playerShipInstance))
-		{
-			if(GameController.instance.playerHealth + health < GameController.instance.maxPlayerHealth)
-			{
-				GameController.instance.HealPlayer(health);
-                GameController.instance.UpdateHealth();
-				GameObject.Destroy(gameObject);
-			}
-			else if(GameController.instance.playerHealth + health > GameController.instance.maxPlayerHealth)
-			{
-				GameController.instance.playerHealth = (int)GameController.instance.maxPlayerHealth;
-                GameController.instance.UpdateHealth();
-				GameObject.Destroy(gameObject);
-			}else
-			{
+    protected override void BuffPlayer(GameObject player)
+    {
+        GameController.instance.playerHealth = (int)Mathf.Clamp(GameController.instance.playerHealth + health, 0, GameController.instance.maxPlayerHealth);
+        GameController.instance.UpdateHealth();     
+    }
 
-			}
-	
-		}
-	}
+    protected override string GetMessage()
+    {
+        return "Hull Repaired";
+    }
 }
