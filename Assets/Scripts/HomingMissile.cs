@@ -20,6 +20,8 @@ public class HomingMissile : Projectile
 
 	void Awake()
 	{
+        base.Awake();
+
 		body2d = GetComponent<Rigidbody2D>();
 		thingToHomeOn = GameController.instance.playerShipInstance;
 		currentVelocity = startingVelocity;

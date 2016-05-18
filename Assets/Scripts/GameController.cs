@@ -79,21 +79,13 @@ public class GameController : MonoBehaviour {
 
     public void OnPlayerKilled()
     {
-        StartCoroutine(explodePlayerShip());
+        Animator shipAnimator = playerShipInstance.GetComponent<Animator>();
+        shipAnimator.SetTrigger("Explode");
 
         startGameText.text = "Press any key to restart";
         startGameText.enabled = true;
 
-    }
 
-    IEnumerator explodePlayerShip()
-    {
-        Animator shipAnimator = playerShipInstance.GetComponent<Animator>();
-        shipAnimator.SetTrigger("Explode");
-        yield return null;
-        yield return StartCoroutine(Utils.WaitForAnimation(shipAnimator));
-        GameObject.Destroy(playerShipInstance);
-        gameStarted = false;
     }
 
     void ResetGame()
@@ -176,4 +168,9 @@ public class GameController : MonoBehaviour {
 	{
 		playerCooldown = playerCooldown - amountToLower;
 	}
+
+    public void StopGame()
+    {
+        gameStarted = false;
+    }
 }
