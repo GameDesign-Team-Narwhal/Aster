@@ -13,7 +13,7 @@ public class Jukebox : MonoBehaviour {
     int lastSongIndex = -1; //start at invalid value, so any clip can be played
 
     // Use this for initialization
-    void Start ()
+    void Awake ()
     {
         audioSource = GetComponent<AudioSource>();
 	}
