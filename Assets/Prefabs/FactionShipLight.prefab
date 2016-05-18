@@ -93,7 +93,7 @@ MonoBehaviour:
   pelletPrefab: {fileID: 129508, guid: e72d53b1290fccf429c33245047b0bd1, type: 2}
   pelletSpeed: 500
   pelletsConstantSpeed: 1
-  pelletDamage: 200
+  pelletDamage: 0
   pelletTeam: Enemies
   firingLocations:
   - {x: 3, y: 17}
@@ -110,12 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d44c919f6303445b3b07d5f2d5754c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTurningTorque: 6
+  maxTurningTorque: 4
   forwardThrust: 50
-  shootingRange: 100
+  shootingRange: 400
   shotCooldown: 1
   shotPredictionFactor: 50
-  shotDistancePredictionFactor: .100000001
+  shotDistancePredictionFactor: .0250000004
+  playerAngularSpeedThreshold: 100
   health: 200
   pointValue: 10
   team: Enemies

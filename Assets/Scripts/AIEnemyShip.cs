@@ -14,6 +14,9 @@ public class AIEnemyShip : MonoBehaviour, IShootable
     public float shotPredictionFactor = 50;
     public float shotDistancePredictionFactor = .1f;
 
+    //if the player is moving slower than this around the AI, shot prediction will be disabled.
+    public float playerAngularSpeedThreshold = 50;
+
 	public int health = 2;
     public uint pointValue = 0;
 	public string team = "Enemies";
@@ -44,7 +47,17 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 
 			PolarVec2 targetSpeed = (targetPosPolar - prevTargetPos) / Time.deltaTime;
 
-            PolarVec2 predictedTargetPos = targetPosPolar + targetSpeed * Time.deltaTime * shotPredictionFactor * shotDistancePredictionFactor * targetPosPolar.r;
+
+            PolarVec2 predictedTargetPos;
+            if (Mathf.Abs(targetSpeed.r) < playerAngularSpeedThreshold)
+            {
+                predictedTargetPos = targetPosPolar;
+            }
+            else
+            {
+                predictedTargetPos = targetPosPolar + targetSpeed * Time.deltaTime * shotPredictionFactor * shotDistancePredictionFactor * targetPosPolar.r;
+            }
+
 
             //turn towards player
             float angleError = predictedTargetPos.A - body2d.rotation - 90;

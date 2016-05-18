@@ -105,10 +105,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTurningTorque: 4
   forwardThrust: 35
-  shootingRange: 400
+  shootingRange: 600
   shotCooldown: 3
   shotPredictionFactor: 50
   shotDistancePredictionFactor: .100000001
+  playerAngularSpeedThreshold: 100
   health: 600
   pointValue: 30
   team: Enemies
