@@ -131,11 +131,15 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 		{
 			GameController.instance.Damage(damage);
 			
-			//if (shooter.GetComponent<AIDestoryer> () != null) 
-			//{
-			//	Desabled = true;
-			//	TimeStartDesabled = Time.time;
-			//}
+			if (shooter.GetComponent<PelletShooter>() != null) 
+			{
+				PelletShooter PS = shooter.GetComponent<PelletShooter>();
+				if(PS.pelletPrefab.name.Contains("Ion"))
+				{
+				Desabled = true;
+				TimeStartDesabled = Time.time;
+				}
+			}
 		}
 		
 
