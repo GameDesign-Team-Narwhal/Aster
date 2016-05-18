@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour {
     PlayerFollowingCamera playerFollowingCam;
     Spawner asteroidSpawner;
     TiledBackground backgroundTiler;
+    Jukebox jukebox;
     uint prespawnedAsteroids; //manually spawned asteroids since the game has started. Manual spawning stops when this value == asteroidsToPrespawn.
     public Vector2 levelSizePx;
 
@@ -52,6 +53,7 @@ public class GameController : MonoBehaviour {
         playerFollowingCam = camera.GetComponent<PlayerFollowingCamera>();
         asteroidSpawner = asteroidSpawnerObject.GetComponent<Spawner>();
         backgroundTiler = background.GetComponent<TiledBackground>();
+        jukebox = GetComponent<Jukebox>();
         levelSizePx = backgroundTiler.textureSize * backgroundTiler.numTiles;
 
         shieldBar = shieldBarObject.GetComponent<Bar>();
@@ -126,6 +128,9 @@ public class GameController : MonoBehaviour {
         playerShipInstance = GameObject.Instantiate(playerShipPrefab);
         playerShipInstance.transform.position = spawnLocation;
         playerFollowingCam.player = playerShipInstance;
+
+        //play a new song
+        jukebox.PlayNewSong();
     }
 
     public void AddScore(uint scoreToAdd)

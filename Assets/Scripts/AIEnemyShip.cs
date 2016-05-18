@@ -2,16 +2,20 @@ using UnityEngine;
 using System.Collections;
 using System;
 
-public class AILightShip : MonoBehaviour, IShootable
+public class AIEnemyShip : MonoBehaviour, IShootable
 {
 	private Rigidbody2D body2d;
 	private PelletShooter pelletShooter;
-	public float maxTurningTorque = 5000f; //effectively a P constant
-	public float forwardThrust = 1000f;
+	public float maxTurningTorque = 4; //effectively a P constant
+	public float forwardThrust = 35;
     public float shootingRange = 100; //distance from the player at which the AI will begin to shoot 
 	public float shotCooldown = .25f; // cooldown time before the AI can shoot again
 
-    public float shotPredictionFactor;
+    public float shotPredictionFactor = 50;
+    public float shotDistancePredictionFactor = .1f;
+
+    //if the player is moving slower than this around the AI, shot prediction will be disabled.
+    public float playerAngularSpeedThreshold = 50;
 
 	public int health = 2;
     public uint pointValue = 0;
@@ -43,11 +47,19 @@ public class AILightShip : MonoBehaviour, IShootable
 
 			PolarVec2 targetSpeed = (targetPosPolar - prevTargetPos) / Time.deltaTime;
 
-            PolarVec2 predictedTargetPos = targetPosPolar + targetSpeed * Time.deltaTime * shotPredictionFactor;
+
+            PolarVec2 predictedTargetPos;
+            if (Mathf.Abs(targetSpeed.r) < playerAngularSpeedThreshold)
+            {
+                predictedTargetPos = targetPosPolar;
+            }
+            else
+            {
+                predictedTargetPos = targetPosPolar + targetSpeed * Time.deltaTime * shotPredictionFactor * shotDistancePredictionFactor * targetPosPolar.r;
+            }
+
 
             //turn towards player
-            //float angleError = Utils.VecAngle((playerPosition - ((Vector2)transform.position))) - Utils.VecAngle(Utils.VecFromAngleMagnitude(body2d.rotation + 90, 1));
-
             float angleError = predictedTargetPos.A - body2d.rotation - 90;
 
 
