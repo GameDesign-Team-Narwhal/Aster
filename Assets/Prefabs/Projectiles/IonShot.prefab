@@ -11,8 +11,9 @@ GameObject:
   - 212: {fileID: 21283268}
   - 50: {fileID: 5043478}
   - 114: {fileID: 11445436}
-  - 114: {fileID: 11451186}
-  - 61: {fileID: 6139956}
+  - 114: {fileID: 11450214}
+  - 95: {fileID: 9577008}
+  - 61: {fileID: 6108702}
   m_Layer: 0
   m_Name: IonShot
   m_TagString: Cruft to Clean Up
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 184610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -821.93219, y: -1278.26624, z: 0}
+  m_LocalPosition: {x: 98.8386917, y: -51.6425323, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,7 +48,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6139956
+--- !u!61 &6108702
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -57,9 +58,26 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 1.09142303, y: .642059326}
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 10.7468033, y: 8.56389236}
+--- !u!95 &9577008
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184610}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71aec42d059f31649a23cbd4abe62f5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11445436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,7 +92,7 @@ MonoBehaviour:
   startingColor: {r: 0, g: .00689673424, b: 1, a: 1}
   endingColor: {r: .807843149, g: .833022296, b: 1, a: 1}
   lifetimeSec: 5
---- !u!114 &11451186
+--- !u!114 &11450214
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -112,7 +130,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 5397e98feca686c4f98fe097aa757c6a, type: 3}
+  m_Sprite: {fileID: 21300010, guid: dfa35057d88dd1243b79f166b42a7312, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
