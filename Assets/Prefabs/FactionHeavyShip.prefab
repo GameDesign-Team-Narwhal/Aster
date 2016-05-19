@@ -9,13 +9,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 446092}
   - 212: {fileID: 21261306}
-  - 114: {fileID: 11470364}
   - 58: {fileID: 5880730}
   - 50: {fileID: 5095086}
   - 114: {fileID: 11413872}
   - 114: {fileID: 11488020}
   - 114: {fileID: 11495350}
   - 95: {fileID: 9520764}
+  - 114: {fileID: 11422256}
   m_Layer: 0
   m_Name: FactionHeavyShip
   m_TagString: Untagged
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 4
---- !u!114 &11470364
+--- !u!114 &11422256
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -100,18 +100,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 150184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d44c919f6303445b3b07d5f2d5754c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fd7694662a41294dac4ef6a7d8f91d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTurningTorque: 4
+  maxTurningTorque: 2
   forwardThrust: 35
-  shootingRange: 600
+  shootingRange: 400
   shotCooldown: 3
-  shotPredictionFactor: 50
+  shotPredictionFactor: 1
   shotDistancePredictionFactor: .100000001
-  playerAngularSpeedThreshold: 100
+  playerAngularSpeedThreshold: 50
   health: 600
-  pointValue: 30
+  pointValue: 40
   team: Enemies
 --- !u!114 &11488020
 MonoBehaviour:

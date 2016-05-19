@@ -13,8 +13,8 @@ GameObject:
   - 61: {fileID: 6179542}
   - 50: {fileID: 5085618}
   - 114: {fileID: 11447564}
-  - 114: {fileID: 11477582}
   - 114: {fileID: 11499874}
+  - 114: {fileID: 11461084}
   m_Layer: 0
   m_Name: FactionShipLight
   m_TagString: Cruft to Clean Up
@@ -93,13 +93,13 @@ MonoBehaviour:
   pelletPrefab: {fileID: 129508, guid: e72d53b1290fccf429c33245047b0bd1, type: 2}
   pelletSpeed: 500
   pelletsConstantSpeed: 1
-  pelletDamage: 0
+  pelletDamage: 100
   pelletTeam: Enemies
   firingLocations:
   - {x: 3, y: 17}
   - {x: -3, y: 17}
   rangeInSec: 1
---- !u!114 &11477582
+--- !u!114 &11461084
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -107,16 +107,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d44c919f6303445b3b07d5f2d5754c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fd7694662a41294dac4ef6a7d8f91d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTurningTorque: 4
+  maxTurningTorque: 6
   forwardThrust: 50
-  shootingRange: 400
+  shootingRange: 300
   shotCooldown: 1
-  shotPredictionFactor: 50
-  shotDistancePredictionFactor: .0250000004
-  playerAngularSpeedThreshold: 100
+  shotPredictionFactor: 1
+  shotDistancePredictionFactor: .100000001
+  playerAngularSpeedThreshold: 50
   health: 200
   pointValue: 10
   team: Enemies

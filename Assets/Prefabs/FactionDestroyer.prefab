@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11456138}
   - 114: {fileID: 11420202}
   - 58: {fileID: 5876660}
-  - 114: {fileID: 11461340}
+  - 114: {fileID: 11432290}
   m_Layer: 0
   m_Name: FactionDestroyer
   m_TagString: Untagged
@@ -92,6 +92,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 16
+--- !u!114 &11432290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fd7694662a41294dac4ef6a7d8f91d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTurningTorque: 4
+  forwardThrust: 35
+  shootingRange: 400
+  shotCooldown: 4
+  shotPredictionFactor: 1
+  shotDistancePredictionFactor: .100000001
+  playerAngularSpeedThreshold: 50
+  health: 1200
+  pointValue: 100
+  team: Enemies
 --- !u!114 &11456138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,33 +124,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b88cec0e5b17540af2a977ff604f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pelletPrefab: {fileID: 0}
-  pelletSpeed: 0
-  pelletsConstantSpeed: 0
-  pelletDamage: 2
-  pelletTeam: 
-  firingLocations: []
+  pelletPrefab: {fileID: 184610, guid: 34b55c47be1606441b393f78d4a08925, type: 2}
+  pelletSpeed: 300
+  pelletsConstantSpeed: 1
+  pelletDamage: 200
+  pelletTeam: Enemies
+  firingLocations:
+  - {x: 10, y: 50}
+  - {x: -10, y: 50}
   rangeInSec: 0
---- !u!114 &11461340
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d44c919f6303445b3b07d5f2d5754c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTurningTorque: 3
-  forwardThrust: 20
-  shootingRange: 400
-  shotCooldown: 4
-  shotPredictionFactor: 50
-  shotDistancePredictionFactor: .100000001
-  health: 1200
-  pointValue: 150
-  team: Enemies
 --- !u!114 &11495992
 MonoBehaviour:
   m_ObjectHideFlags: 1
