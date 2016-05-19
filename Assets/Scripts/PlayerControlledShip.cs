@@ -152,4 +152,14 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 		return team;
       
     }
+
+    //called by the explosion animation when it ends
+    public void OnDestuctionAnimationEnd()
+    {
+        GameController.instance.StopGame();
+        GameObject.Destroy(gameObject);
+
+        Debug.Log("Player Killed!");
+
+    }
 }

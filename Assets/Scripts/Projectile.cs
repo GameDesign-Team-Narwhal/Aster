@@ -11,11 +11,22 @@ public class Projectile : MonoBehaviour {
 
 	public int damage = 2;
 
+    //true if the projectile has an explosion animation with a call to OnDestructionAnimationComplete() at the end.
+    public bool hasDestructionAnimation = false;
+
+    //name of the trigger for the destruction animation
+    //only used if hasDestructionAnimation is true
+    public string destructionTriggerName = "Destroy";
+
     //if true, the projectile can pass through objects without being destroyed
     bool penetrating = false;
+    Animator animator;
 
+	public void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
-	
 	void OnTriggerEnter2D(Collider2D other)
     {
         //make sure they're not hitting themselves
@@ -30,13 +41,27 @@ public class Projectile : MonoBehaviour {
 
                 if (!penetrating)
                 {
-                    GameObject.Destroy(gameObject);
+                    if(hasDestructionAnimation)
+                    {
+                        if(animator == null)
+                        {
+                            Debug.LogWarning("Destruction animation set to play on projectile without animator");
+                        }
+                        else
+                        {
+                            animator.SetTrigger(destructionTriggerName);
+                        }
+                    }
+                    else
+                    {
+                        GameObject.Destroy(this);
+                    }
                 }
             }
             else
             {
-                Debug.Log("Projectile hit a non-shootable object");
-                if (!penetrating) //hit a non-shootable object, like a rock.  destroy.
+                //Debug.Log("Projectile hit a non-shootable object, like a teammate or a rock");
+                if (!penetrating) //hit a non-shootable object, like a rock (though not an asteroid).  destroy.
                 {
                     GameObject.Destroy(gameObject);
 
@@ -46,7 +71,7 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-	//trturn tru if this projectile can damage
+	//returns true if this projectile can damage something on the provided team
 	public bool CanDamage(string otherTeam)
 	{
 		if(string.IsNullOrEmpty(otherTeam))
@@ -56,4 +81,9 @@ public class Projectile : MonoBehaviour {
 
 		return !otherTeam.Equals(team);
 	}
+
+    public void OnDestructionAnimationComplete()
+    {
+        GameObject.Destroy(gameObject);
+    }
 }

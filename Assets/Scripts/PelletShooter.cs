@@ -16,11 +16,17 @@ public class PelletShooter : MonoBehaviour {
 
     public Vector2[] firingLocations;
 	public float rangeInSec;
+
+    //if true, play the AudioSource on this component when a shot is fired
+    public bool playSound;
+
 	Rigidbody2D body2D;
+    AudioSource audioSource;
 
 	void Awake()
 	{
 		body2D = GetComponent<Rigidbody2D> ();
+        audioSource = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -54,6 +60,22 @@ public class PelletShooter : MonoBehaviour {
 			projectileScript.team = pelletTeam;
         }
 
+        if (playSound)
+        {
+            if (audioSource == null)
+            {
+                Debug.LogWarning("This PelletShooter is set to play audio, byt there is no AudioSOurce attached to it.");
+            }
+            else
+            {
+                if(audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+
+                audioSource.Play();
+            }
+        }
 		
 	}
 	public void RangeUp(float rangeToUp)
