@@ -110,6 +110,7 @@ MonoBehaviour:
   pelletTeam: 
   firingLocations: []
   rangeInSec: 0
+  playSound: 0
 --- !u!114 &11461340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,17 +119,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 170820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17d44c919f6303445b3b07d5f2d5754c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fd7694662a41294dac4ef6a7d8f91d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTurningTorque: 3
-  forwardThrust: 20
-  shootingRange: 400
-  shotCooldown: 4
+  maxTurningTorque: 4
+  forwardThrust: 35
+  shootingRange: 100
+  shotCooldown: .25
   shotPredictionFactor: 50
   shotDistancePredictionFactor: .100000001
-  health: 1200
-  pointValue: 150
+  playerAngularSpeedThreshold: 50
+  health: 2
+  pointValue: 0
   team: Enemies
 --- !u!114 &11495992
 MonoBehaviour:

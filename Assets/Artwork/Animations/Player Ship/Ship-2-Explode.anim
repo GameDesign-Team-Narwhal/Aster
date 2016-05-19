@@ -29,6 +29,8 @@ AnimationClip:
       value: {fileID: 21300024, guid: c551bc946eea96b45b535e1c905c1797, type: 3}
     - time: .5
       value: {fileID: 21300026, guid: c551bc946eea96b45b535e1c905c1797, type: 3}
+    - time: .600000024
+      value: {fileID: 21300026, guid: c551bc946eea96b45b535e1c905c1797, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -53,10 +55,11 @@ AnimationClip:
     - {fileID: 21300022, guid: c551bc946eea96b45b535e1c905c1797, type: 3}
     - {fileID: 21300024, guid: c551bc946eea96b45b535e1c905c1797, type: 3}
     - {fileID: 21300026, guid: c551bc946eea96b45b535e1c905c1797, type: 3}
+    - {fileID: 21300026, guid: c551bc946eea96b45b535e1c905c1797, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .600000024
+    m_StopTime: .700000048
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -75,4 +78,11 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: .600000024
+    functionName: OnDestuctionAnimationEnd
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
