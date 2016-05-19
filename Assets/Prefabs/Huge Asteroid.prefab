@@ -121,7 +121,7 @@ MonoBehaviour:
   - {x: 5, y: 10}
   - {x: 0, y: 2}
   - {x: 1, y: 3}
-  upgradeProb: 1e0000000a0000000a0000000a000000
+  upgradeProb: 0a0000001e0000000a0000000f000000
 --- !u!114 &11448108
 MonoBehaviour:
   m_ObjectHideFlags: 1

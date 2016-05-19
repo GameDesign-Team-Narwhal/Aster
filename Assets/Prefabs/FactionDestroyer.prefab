@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11456138}
   - 114: {fileID: 11420202}
   - 58: {fileID: 5876660}
-  - 114: {fileID: 11461340}
+  - 114: {fileID: 11432290}
   m_Layer: 0
   m_Name: FactionDestroyer
   m_TagString: Untagged
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 16
---- !u!114 &11456138
+--- !u!114 &11432290
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 170820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7b88cec0e5b17540af2a977ff604f47, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fd7694662a41294dac4ef6a7d8f91d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pelletPrefab: {fileID: 0}
