@@ -12,10 +12,10 @@ GameObject:
   - 95: {fileID: 9599448}
   - 50: {fileID: 5022752}
   - 114: {fileID: 11495992}
-  - 114: {fileID: 11456138}
   - 114: {fileID: 11420202}
   - 58: {fileID: 5876660}
   - 114: {fileID: 11432290}
+  - 114: {fileID: 11461340}
   m_Layer: 0
   m_Name: FactionDestroyer
   m_TagString: Untagged
@@ -103,17 +103,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd7694662a41294dac4ef6a7d8f91d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pelletPrefab: {fileID: 0}
-  pelletSpeed: 0
-  pelletsConstantSpeed: 0
-  pelletDamage: 2
-  pelletTeam: 
-  firingLocations: []
-  rangeInSec: 0
-  playSound: 0
+  maxTurningTorque: 4
+  forwardThrust: 35
+  shootingRange: 100
+  shotCooldown: .25
+  shotPredictionFactor: 50
+  shotDistancePredictionFactor: .100000001
+  playerAngularSpeedThreshold: 50
+  health: 2
+  pointValue: 0
+  team: Enemies
 --- !u!114 &11461340
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170820}
