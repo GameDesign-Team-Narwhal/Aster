@@ -20,7 +20,9 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 	public int health = 2;
     public uint pointValue = 0;
 	public string team = "Enemies";
-
+	public bool Desabled;
+	public float DesabledTime = 0;
+	public float TimeStartDesabled = 0f;
 	float lastShotTime = 0f;
     PolarVec2 prevTargetPos;
 
@@ -38,7 +40,7 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (GameController.instance.playerShipInstance != null) //this is null if the game is not started
+        if (GameController.instance.playerShipInstance != null && Desabled == false) //this is null if the game is not started
         {
 
             Vector2 targetPosition = GameController.instance.playerShipInstance.transform.position;
@@ -86,11 +88,16 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 
 
             prevTargetPos = targetPosPolar;
+		
         }
+		if(Time.time - TimeStartDesabled > DesabledTime)
+		{
+			Desabled = false;
+		}
 	}
 
 
-	public void OnShotBy(GameObject shooter, string team, int damage)
+	public void OnShotBy(GameObject shooter, string team, int damage, float ion)
 	{
         health -= damage;
 
@@ -99,6 +106,11 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 			GameObject.Destroy(gameObject);
 			
 			GameController.instance.AddScore(pointValue);
+		}
+		if (ion != 0) {
+			Desabled = true;
+			DesabledTime = ion;
+			TimeStartDesabled = Time.time;
 		}
     }
 

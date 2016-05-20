@@ -88,7 +88,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
   team: Player
+  ion: 3.5
   damage: 2
+  hasDestructionAnimation: 0
+  destructionTriggerName: Destroy
 --- !u!114 &11483130
 MonoBehaviour:
   m_ObjectHideFlags: 1

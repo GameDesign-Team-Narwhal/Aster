@@ -105,11 +105,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
   team: Enemies
+  ion: 0
   damage: 2
   hasDestructionAnimation: 1
   destructionTriggerName: Explode
-  acceleration: 8.60000038
-  startingVelocity: 22.7999992
+  acceleration: 10
+  startingVelocity: 50
   thingToHomeOn: {fileID: 0}
 --- !u!212 &21217828
 SpriteRenderer:

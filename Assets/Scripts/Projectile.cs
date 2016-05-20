@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour {
     public GameObject shooter;
 
 	public string team = "";
-
+	public float ion = 0;
 	public int damage = 2;
 
     //true if the projectile has an explosion animation with a call to OnDestructionAnimationComplete() at the end.
@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour {
             if (shootableBehavior != null && CanDamage(shootableBehavior.GetTeam()))
             {
 
-                shootableBehavior.OnShotBy(shooter, team, damage);
+                shootableBehavior.OnShotBy(shooter, team, damage, ion);
 
                 if (!penetrating)
                 {

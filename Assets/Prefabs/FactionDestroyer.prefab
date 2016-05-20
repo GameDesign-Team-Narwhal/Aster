@@ -11,11 +11,9 @@ GameObject:
   - 212: {fileID: 21260148}
   - 95: {fileID: 9599448}
   - 50: {fileID: 5022752}
-  - 114: {fileID: 11495992}
-  - 114: {fileID: 11420202}
   - 58: {fileID: 5876660}
-  - 114: {fileID: 11432290}
-  - 114: {fileID: 11461340}
+  - 114: {fileID: 11403142}
+  - 114: {fileID: 11427550}
   m_Layer: 0
   m_Name: FactionDestroyer
   m_TagString: Untagged
@@ -80,19 +78,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11420202
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 692d1713f2f5c1e4eb009bf2112fff5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offset: 16
---- !u!114 &11432290
+--- !u!114 &11403142
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,36 +91,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTurningTorque: 4
   forwardThrust: 35
-  shootingRange: 100
-  shotCooldown: .25
-  shotPredictionFactor: 50
+  shootingRange: 500
+  shotCooldown: 3
+  shotPredictionFactor: 1
   shotDistancePredictionFactor: .100000001
-  playerAngularSpeedThreshold: 50
-  health: 2
-  pointValue: 0
+  playerAngularSpeedThreshold: 1
+  health: 1500
+  pointValue: 100
   team: Enemies
---- !u!114 &11461340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fd7694662a41294dac4ef6a7d8f91d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTurningTorque: 4
-  forwardThrust: 35
-  shootingRange: 100
-  shotCooldown: .25
-  shotPredictionFactor: 50
-  shotDistancePredictionFactor: .100000001
-  playerAngularSpeedThreshold: 50
-  health: 2
-  pointValue: 0
-  team: Enemies
---- !u!114 &11495992
+  Desabled: 0
+  DesabledTime: 0
+  TimeStartDesabled: 0
+--- !u!114 &11427550
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -142,10 +110,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 170820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6642b30b360979241a61f373ed896d38, type: 3}
+  m_Script: {fileID: 11500000, guid: e7b88cec0e5b17540af2a977ff604f47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  pelletPrefab: {fileID: 184610, guid: 34b55c47be1606441b393f78d4a08925, type: 2}
+  pelletSpeed: 400
+  pelletsConstantSpeed: 1
+  pelletDamage: 250
+  pelletTeam: Enemies
+  firingLocations:
+  - {x: 15, y: 30}
+  - {x: -15, y: 30}
+  rangeInSec: 0
+  playSound: 0
 --- !u!212 &21260148
 SpriteRenderer:
   m_ObjectHideFlags: 1

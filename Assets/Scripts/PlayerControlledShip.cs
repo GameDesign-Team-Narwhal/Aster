@@ -121,7 +121,7 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 		}
     }
 
-    public void OnShotBy(GameObject shooter, string team, int damage)
+    public void OnShotBy(GameObject shooter, string team, int damage, float ion)
     {
 		if(shieldsActive)
 		{
