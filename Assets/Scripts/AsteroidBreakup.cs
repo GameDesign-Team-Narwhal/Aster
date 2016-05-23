@@ -23,7 +23,7 @@ public class AsteroidBreakup : MonoBehaviour, IShootable
     public Vector2[] asteroidMinMaxCounts;
 	public int[] upgradeProb;
 
-    public void OnShotBy(GameObject shooter, string shooterTeam, int damage)
+    public void OnShotBy(GameObject shooter, string shooterTeam, int damage, float ion)
     {
 
         if (!(alreadyDead || (Time.time - spawnTime) < spawnInvulnTime))
