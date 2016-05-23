@@ -118,11 +118,13 @@ MonoBehaviour:
   - {fileID: 178468, guid: 6711d652114de1743ad52cba609c04b3, type: 2}
   - {fileID: 178508, guid: 29c830049283f16428d54d9debea7036, type: 2}
   - {fileID: 128924, guid: ae89d1738f9544d4084cacf3342e44bf, type: 2}
+  - {fileID: 189816, guid: 111ae625ca326474aaf2ab5e18a084e8, type: 2}
+  - {fileID: 137384, guid: 11729c93245f8684298eda458982ca05, type: 2}
   asteroidMinMaxCounts:
   - {x: 5, y: 10}
   - {x: 0, y: 2}
   - {x: 1, y: 3}
-  upgradeProb: 0a0000001e0000000a0000000f00000005000000
+  upgradeProb: 070000001e0000000a0000000f000000050000000a0000000a000000
 --- !u!114 &11448108
 MonoBehaviour:
   m_ObjectHideFlags: 1

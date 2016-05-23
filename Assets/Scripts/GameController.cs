@@ -25,7 +25,9 @@ public class GameController : MonoBehaviour {
 	public int playerHealth = 4;
     public float playerCooldown = .6f;
     public uint maxPlayerHealth;
-
+	public float Regen = 0;
+	public float nextHealthTime = 1;
+	public float lastTimeRegen = 0;
     bool gameStarted = false;
 
     PlayerFollowingCamera playerFollowingCam;
@@ -67,7 +69,6 @@ public class GameController : MonoBehaviour {
 	    if(!gameStarted && Input.anyKeyDown)
         {
             ResetGame();
-
         }
 
         if(prespawnedAsteroids < asteroidsToPrespawn)
@@ -75,6 +76,17 @@ public class GameController : MonoBehaviour {
             asteroidSpawner.SpawnOne();
             ++prespawnedAsteroids;
         }
+		if (Time.time - lastTimeRegen > nextHealthTime) {
+
+			if (Regen + playerHealth > maxPlayerHealth) {
+				playerHealth = (int)maxPlayerHealth;
+				UpdateHealth ();
+			} else {
+				playerHealth += (int)Regen;
+				UpdateHealth ();
+			}
+			lastTimeRegen = Time.time;
+		}
     }
 
     public void OnPlayerKilled()

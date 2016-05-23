@@ -8,7 +8,7 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
     private PelletShooter pelletShooter;
     private Animator animator;
 
-    public float turningTorque = 5000f;
+    public float turningTorque = 5;
     public float forwardThrust = 10000f;
     public float translationalDecelerationFactor = 100f; //force per unit velocity
     public float rotationalDecelerationFactor = .01f; //torque per angular velocity
@@ -38,6 +38,8 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
         shieldsColorer = shieldsSprite.GetComponent<ColorOscillator>();
     }
+
+	float lastTurningError = 0;
 	
 	// Update is called once per frame
 	void Update () {
@@ -80,6 +82,42 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
                 engineUsed = true;
             }
 
+			//calculate mouse position on screen as a percentage, from -100% to 100%
+//			Vector2 mousePosPercentage = Input.mousePosition;
+//			mousePosPercentage.x -= Screen.width/2.0f;
+//			mousePosPercentage.x /= Screen.width/2.0f;
+//			mousePosPercentage.y -= Screen.height/2.0f;
+//			mousePosPercentage.y /= Screen.height/2.0f;
+//
+//			PolarVec2 mousePos = PolarVec2.FromCartesian(mousePosPercentage);
+//
+//
+//			body2d.rotation = mousePos.A - 90;
+//
+//			float angleError = Utils.AngleDistance(body2d.rotation + 90f, mousePos.A, true);
+//
+//			Debug.Log("target: " + Utils.NormalizeAngle(mousePos.A) + ", current: " + (Utils.NormalizeAngle(body2d.rotation + 90)) + ", error: " + angleError);
+//
+//			body2d.AddTorque(angleError * turningTorqueConstant - lastTurningError * .005f);
+//
+//			lastTurningError = angleError;
+//            if (Input.GetKey(KeyCode.Mouse1) && Desabled == false)
+//            {
+//                Vector2 decelerationForce = new Vector2(-1 * body2d.velocity.x * translationalDecelerationFactor, -1 * body2d.velocity.y * translationalDecelerationFactor);
+//                body2d.AddForce(decelerationForce);
+//
+//                body2d.AddTorque(-1 * body2d.angularVelocity * rotationalDecelerationFactor);
+//
+//                engineUsed = true;
+//            }
+//			else if (mousePos.r > .25 && Desabled == false)
+//			{
+//				body2d.AddForce(Utils.VecFromAngleMagnitude(body2d.rotation + 90, mousePos.r * forwardThrust));
+//				engineUsed = true;
+//			}
+
+
+
             if (Input.GetKey(KeyCode.UpArrow) && Desabled == false)
             {
                 body2d.AddForce(Utils.VecFromAngleMagnitude(body2d.rotation + 90, forwardThrust));
@@ -94,6 +132,8 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
                 engineUsed = true;
             }
+
+
 
             if (Input.GetKey(KeyCode.Space))
             {
@@ -112,8 +152,7 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
 
 
-
-
+		
 
 		GameController.instance.shieldBar.UpdateBar(shieldEnergy, maxShields);
 		if (Time.time - TimeStartDesabled > DesabledTime) {

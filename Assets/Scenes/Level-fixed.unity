@@ -209,6 +209,9 @@ MonoBehaviour:
   playerHealth: 0
   playerCooldown: .600000024
   maxPlayerHealth: 1200
+  Regen: 0
+  nextHealthTime: 1
+  lastTimeRegen: 0
   levelSizePx: {x: 0, y: 0}
 --- !u!4 &554019251
 Transform:
