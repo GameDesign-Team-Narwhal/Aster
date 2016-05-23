@@ -1,43 +1,46 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &129508
+--- !u!1 &137384
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 418570}
-  - 212: {fileID: 21214326}
-  - 50: {fileID: 5039008}
-  - 114: {fileID: 11402830}
-  - 114: {fileID: 11426478}
-  - 61: {fileID: 6143014}
+  - 4: {fileID: 470648}
+  - 212: {fileID: 21277776}
+  - 50: {fileID: 5027608}
+  - 114: {fileID: 11417540}
+  - 61: {fileID: 6168608}
+  - 61: {fileID: 6192484}
+  - 95: {fileID: 9559142}
+  - 114: {fileID: 11443946}
+  - 114: {fileID: 11450758}
   m_Layer: 0
-  m_Name: ProjectileBad
+  m_Name: HullRegen
   m_TagString: Cruft to Clean Up
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &418570
+--- !u!4 &470648
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129508}
+  m_GameObject: {fileID: 137384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3136.59424, y: -529.06958, z: 0}
+  m_LocalPosition: {x: 547.140503, y: -355.209869, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5039008
+--- !u!50 &5027608
 Rigidbody2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129508}
+  m_GameObject: {fileID: 137384}
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
@@ -47,56 +50,94 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6143014
+--- !u!61 &6168608
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129508}
+  m_GameObject: {fileID: 137384}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
---- !u!114 &11402830
+  m_Size: {x: 6, y: 7}
+--- !u!61 &6192484
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137384}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 5, y: 6}
+--- !u!95 &9559142
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137384}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b52b3922cfe25f46808efc163fe3951, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11417540
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129508}
+  m_GameObject: {fileID: 137384}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07d2236da068beb47af7b0a5002382dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingColor: {r: 1, g: .448529422, b: .448529422, a: 1}
+  startingColor: {r: 1, g: 1, b: 1, a: 1}
   endingColor: {r: 0, g: 0, b: 0, a: 0}
-  lifetimeSec: 3
---- !u!114 &11426478
+  lifetimeSec: 40
+--- !u!114 &11443946
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129508}
+  m_GameObject: {fileID: 137384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7ad738832804a04a8e3b0134754e098, type: 3}
+  m_Script: {fileID: 11500000, guid: 692d1713f2f5c1e4eb009bf2112fff5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shooter: {fileID: 100796, guid: 7acc4bca434006345b788690164fc4b9, type: 2}
-  team: Enemies
-  ion: 0
-  damage: 2
-  hasDestructionAnimation: 0
-  destructionTriggerName: Destroy
---- !u!212 &21214326
+  offset: 16
+--- !u!114 &11450758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea194f81daba2d843a43d6d213224a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeText: {fileID: 136932, guid: c25655f0ede00094599237b2841824de, type: 2}
+  amountToIncress: 4
+--- !u!212 &21277776
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129508}
+  m_GameObject: {fileID: 137384}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -115,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 5397e98feca686c4f98fe097aa757c6a, type: 3}
+  m_Sprite: {fileID: 21300012, guid: ce2964de7f6a985498567d2a0c195ab6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -126,5 +167,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 129508}
+  m_RootGameObject: {fileID: 137384}
   m_IsPrefabParent: 1

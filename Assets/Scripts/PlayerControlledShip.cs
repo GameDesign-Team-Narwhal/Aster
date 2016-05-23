@@ -152,8 +152,7 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
 
 
-
-
+		
 
 		GameController.instance.shieldBar.UpdateBar(shieldEnergy, maxShields);
 		if (Time.time - TimeStartDesabled > DesabledTime) {
