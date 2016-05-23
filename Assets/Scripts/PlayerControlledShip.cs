@@ -38,8 +38,6 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 
         shieldsColorer = shieldsSprite.GetComponent<ColorOscillator>();
     }
-
-	float lastTurningError = 0;
 	
 	// Update is called once per frame
 	void Update () {
