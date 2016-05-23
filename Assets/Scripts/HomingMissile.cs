@@ -18,7 +18,7 @@ public class HomingMissile : Projectile
 	private Rigidbody2D body2d;
 	private float currentVelocity;
 
-	void Awake()
+	new void Awake()
 	{
         base.Awake();
 

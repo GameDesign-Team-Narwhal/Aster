@@ -108,5 +108,43 @@ public class Utils
 		if(t < 2/3f) return p + (q - p) * (2/3f - t) * 6;
 		return p;
 	}
+
+	//Makes an angle between 0 and 360
+	public static float NormalizeAngle(float angle)
+	{
+		angle = angle % 360f;
+
+		if(angle < 0)
+		{
+			angle += 360;
+		}
+
+		return angle;
+	}
+
+
+	/**
+    * Finds the shortest distance between two angles.
+    *
+    * @param angle1 angle
+    * @param angle2 angle
+    * @param shortWay if true, go the shorter way to make moves always <= 180
+    * @return shortest angular distance between
+    */
+
+	//copied from FRC robot code
+	public static float AngleDistance(float angle1, float angle2, bool shortWay)
+	{
+		float dist = NormalizeAngle(angle2) - NormalizeAngle(angle1);
+		
+		if(shortWay && Math.Abs(dist) > 180)
+		{
+			float sgn = Mathf.Sign(dist);
+			return -sgn * (360 - Math.Abs(dist));
+		}
+		
+		return dist;
+	}
 }
+
 
