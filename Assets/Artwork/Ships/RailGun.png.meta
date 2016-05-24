@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: f1c50bd53532b6545aa91f49673c14b0
+timeCreated: 1464121138
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RailGun_1
+    21300002: RailGun_2
+    21300004: RailGun_3
+    21300006: RailGun_4
+    21300008: RailGun_5
+    21300010: RailGun_6
+    21300012: RailGun_7
+    21300014: RailGun_8
+    21300016: RailGun_9
+    21300018: RailGun_10
+    21300020: RailGun_11
+    21300022: RailGun_12
+    21300024: RailGun_13
+    21300026: RailGun_14
+    21300028: RailGun_15
+    21300030: RailGun_16
+    21300032: RailGun_17
+    21300034: RailGun_18
+    21300036: RailGun_19
+    21300038: RailGun_20
+    21300040: RailGun_21
+    21300042: RailGun_22
+    21300044: RailGun_23
+    21300046: RailGun_24
+    21300048: RailGun_25
+    21300050: RailGun_26
+    21300052: RailGun_27
+    21300054: RailGun_28
+    21300056: RailGun_29
+    21300058: RailGun_30
+    21300060: RailGun_31
+    21300062: RailGun_32
+    21300064: RailGun_33
+    21300066: RailGun_34
+    21300068: RailGun_35
+    21300070: RailGun_36
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: RailGun_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 216
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 216
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 186
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_4
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 186
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 189
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_6
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 189
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_7
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 189
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 153
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_9
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 153
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_10
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 153
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_11
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 153
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_12
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 152
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_13
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 152
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_15
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 125
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_16
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 125
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_17
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 125
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_18
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 122
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_19
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 122
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_21
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 96
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_22
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 96
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_23
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 96
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 66
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_25
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 66
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_26
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 66
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_27
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 66
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_28
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 66
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_29
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 66
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 34
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_31
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 34
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_32
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 34
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_33
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 40
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_34
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 43
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_35
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RailGun_36
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 3
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
