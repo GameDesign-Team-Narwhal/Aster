@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 76796a3cc14a9c340bbdb670689c9c3c
-timeCreated: 1463599979
+timeCreated: 1464115119
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -63,7 +63,7 @@ TextureImporter:
         width: 25
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Disabled Ships_1
       rect:
@@ -73,7 +73,7 @@ TextureImporter:
         width: 25
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Disabled Ships_2
       rect:
@@ -83,7 +83,7 @@ TextureImporter:
         width: 13
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Disabled Ships_3
       rect:
@@ -93,7 +93,7 @@ TextureImporter:
         width: 13
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Disabled Ships_4
       rect:
@@ -102,8 +102,8 @@ TextureImporter:
         y: 41
         width: 17
         height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Disabled Ships_5
       rect:
@@ -112,8 +112,8 @@ TextureImporter:
         y: 41
         width: 17
         height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .300000012}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -4,6 +4,7 @@ using System;
 
 public class AIEnemyShip : MonoBehaviour, IShootable
 {
+	private Animator animator;
 	private Rigidbody2D body2d;
 	private PelletShooter pelletShooter;
 	public float maxTurningTorque = 4; //effectively a P constant
@@ -20,7 +21,7 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 	public int health = 2;
     public uint pointValue = 0;
 	public string team = "Enemies";
-	public bool Desabled;
+	public bool Desabled = false;
 	public float DesabledTime = 0;
 	public float TimeStartDesabled = 0f;
 	float lastShotTime = 0f;
@@ -31,7 +32,7 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 	{
 		body2d = GetComponent<Rigidbody2D>();
 		pelletShooter = GetComponent<PelletShooter>();
-
+		animator = GetComponent<Animator>();
 	}
 	void Start () {
 
@@ -90,10 +91,14 @@ public class AIEnemyShip : MonoBehaviour, IShootable
             prevTargetPos = targetPosPolar;
 		
         }
+
 		if(Time.time - TimeStartDesabled > DesabledTime)
 		{
 			Desabled = false;
 		}
+		Debug.Log ("working");
+		animator.SetBool ("Desabled", Desabled);
+
 	}
 
 

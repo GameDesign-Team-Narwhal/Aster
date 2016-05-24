@@ -147,7 +147,7 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
         
 
         animator.SetBool("EngineOn", engineUsed);
-
+		animator.SetBool ("Disabled", Desabled);
 
 
 		
@@ -156,6 +156,9 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 		if (Time.time - TimeStartDesabled > DesabledTime) {
 			Desabled = false;
 		}
+	
+
+		
     }
 
     public void OnShotBy(GameObject shooter, string team, int damage, float ion)
