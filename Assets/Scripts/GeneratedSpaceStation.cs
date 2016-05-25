@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 public class GeneratedSpaceStation : MonoBehaviour {
-
+	/*
 	public List<Vector2> attachmentPoints = new List<Vector2>();
 	public List<float> attachmentAngles = new List<float>();
 	public GameObject markerPrefab;
@@ -36,6 +36,6 @@ public class GeneratedSpaceStation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		foreach(GameObject marker
-	}
+		//foreach(GameObject marker
+	}*/
 }

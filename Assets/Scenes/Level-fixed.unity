@@ -208,7 +208,7 @@ MonoBehaviour:
   spawnSafezoneRadius: 20
   playerHealth: 0
   playerCooldown: .600000024
-  maxPlayerHealth: 1200
+  maxPlayerHealth: 429496729
   Regen: 0
   nextHealthTime: 1
   lastTimeRegen: 0
