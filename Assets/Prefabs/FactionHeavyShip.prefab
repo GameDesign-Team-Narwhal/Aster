@@ -18,7 +18,7 @@ GameObject:
   - 114: {fileID: 11422256}
   m_Layer: 0
   m_Name: FactionHeavyShip
-  m_TagString: Untagged
+  m_TagString: Cruft to Clean Up
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,9 @@ MonoBehaviour:
   health: 600
   pointValue: 40
   team: Enemies
+  Desabled: 0
+  DesabledTime: 0
+  TimeStartDesabled: 0
 --- !u!114 &11488020
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -227,8 +227,8 @@ MonoBehaviour:
   pelletDamage: 150
   pelletTeam: Player
   firingLocations:
-  - {x: 3, y: 17}
-  - {x: -3, y: 17}
+  - {x: 3, y: 12}
+  - {x: -3, y: 12}
   rangeInSec: 0
   playSound: 1
 --- !u!114 &11409852
