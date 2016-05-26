@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 public class GeneratedSpaceStation : MonoBehaviour {
@@ -20,15 +20,17 @@ public class GeneratedSpaceStation : MonoBehaviour {
 			Debug.LogError("Mismatch between attachment point and angle list lengths!");
 			return;
 		}
-		numAttachments = attachmentPoints.Count;
+		numAttachments = (uint)attachmentPoints.Count;
 
 		if(visualizeAttachments)
 		{
-			attachmentMarkers = new List<GameObject>(numAttachments);
+			attachmentMarkers = new List<GameObject>((int)numAttachments);
 			
 			for(int counter = 0; counter < numAttachments; ++counter)
 			{
-				attachmentMarkers.Add(GameObject.Instantiate(markerPrefab));
+                GameObject marker = GameObject.Instantiate(markerPrefab);
+
+                attachmentMarkers.Add(marker);
 			}
 		}
 	}
@@ -36,6 +38,15 @@ public class GeneratedSpaceStation : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		foreach(GameObject marker
+        if(visualizeAttachments)
+        {
+            for(int markerIndex = 0; markerIndex < numAttachments; ++markerIndex)
+            {
+                GameObject marker = attachmentMarkers[markerIndex];
+
+                marker.transform.position = transform.TransformPoint(attachmentPoints[markerIndex]);
+                marker.transform.rotation = Quaternion.Euler(0, 0, attachmentAngles[markerIndex]);
+            }
+        }
 	}
 }
