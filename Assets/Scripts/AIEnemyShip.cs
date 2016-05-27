@@ -108,9 +108,8 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 
 		if(health <= 0 )
 		{
-			GameObject.Destroy(gameObject);
-			
-			GameController.instance.AddScore(pointValue);
+			animator.SetTrigger("Destruction");
+
 		}
 		if (ion != 0) {
 			Desabled = true;
@@ -122,5 +121,11 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 	public string GetTeam()
 	{
 		return team;
+	}
+	public void OnDeath()
+	{
+		GameObject.Destroy(gameObject);
+		
+		GameController.instance.AddScore(pointValue);
 	}
 }
