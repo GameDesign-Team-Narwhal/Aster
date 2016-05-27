@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21236144}
   - 114: {fileID: 11418406}
   m_Layer: 0
-  m_Name: SmallConnecter
+  m_Name: SS Small Connector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   - -90
   markerPrefab: {fileID: 198914, guid: 67fe4107950deae40940a5edb8b9d24f, type: 2}
   visualizeAttachments: 1
+  maxGenerationDepth: 4
 --- !u!212 &21236144
 SpriteRenderer:
   m_ObjectHideFlags: 1

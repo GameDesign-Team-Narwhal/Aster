@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 959.24823, y: -201.030304, z: 0}
+  m_LocalPosition: {x: 908.178406, y: -208.154053, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,11 +41,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachmentPoints:
-  - {x: 0, y: 0}
+  - {x: 19, y: 0}
   attachmentAngles:
   - -90
   markerPrefab: {fileID: 198914, guid: 67fe4107950deae40940a5edb8b9d24f, type: 2}
   visualizeAttachments: 1
+  maxGenerationDepth: 4
 --- !u!212 &21232784
 SpriteRenderer:
   m_ObjectHideFlags: 1

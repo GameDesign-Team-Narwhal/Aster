@@ -86,9 +86,14 @@ public class GeneratedSpaceStation : MonoBehaviour {
 
 					int subPartAttachmentIndex = Mathf.FloorToInt(Random.Range(0, subPartScript.numAttachments));
 
+					subPart.transform.rotation = Quaternion.Euler(0, 0, attachmentAngles[index] - subPartScript.attachmentAngles[subPartAttachmentIndex]);
+
 					//its attachment needs to match ours
-					Vector3 attachmentPosWorld = transform.TransformPoint(attachmentPoints[index]);
-					subPart.transform.position = attachmentPosWorld + ((Vector3)subPartScript.attachmentPoints[subPartAttachmentIndex]);
+					subPart.transform.parent = transform;
+
+					Debug.Log("Attaching subpart at " + (attachmentPoints[index] - subPartScript.attachmentPoints[subPartAttachmentIndex]));
+
+					subPart.transform.position = transform.TransformPoint(attachmentPoints[index] - subPartScript.attachmentPoints[subPartAttachmentIndex]);
 
 					subPartScript.subParts[subPartAttachmentIndex] = gameObject;
 
@@ -113,7 +118,7 @@ public class GeneratedSpaceStation : MonoBehaviour {
                 GameObject marker = attachmentMarkers[markerIndex];
 
                 marker.transform.position = transform.TransformPoint(attachmentPoints[markerIndex]);
-                marker.transform.rotation = Quaternion.Euler(0, 0, attachmentAngles[markerIndex]);
+                marker.transform.rotation = Quaternion.Euler(0, 0, attachmentAngles[markerIndex]) * transform.rotation;
             }
         }
 	}
