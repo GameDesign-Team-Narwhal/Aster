@@ -19,12 +19,15 @@ public class GeneratedSpaceStation : MonoBehaviour {
 
 	private static string[] STATION_PART_PREFABS = new string[]
 	{
-		"SS Large Connector",
-		"SS Large Ring",
-		"SS Solar Panel",
-		"SS Small Connector",
-		"SS Small Large Connector"
-	};
+        "SS Large Connector",
+        "SS Large Ring",
+        "SS Solar Panel",
+        "SS Small Connector",
+        "SS Small Large Connector",
+        "SS Laser",
+        "SS Small T",
+        "SS Portal"
+    };
 
 	// Use this for initialization
 	void Awake () 
@@ -35,18 +38,6 @@ public class GeneratedSpaceStation : MonoBehaviour {
 			return;
 		}
 		numAttachments = (uint)attachmentPoints.Count;
-
-		if(visualizeAttachments)
-		{
-			attachmentMarkers = new List<GameObject>((int)numAttachments);
-			
-			for(int counter = 0; counter < numAttachments; ++counter)
-			{
-                GameObject marker = GameObject.Instantiate(markerPrefab);
-
-                attachmentMarkers.Add(marker);
-			}
-		}
 
 		subParts = new List<GameObject>((int)numAttachments);
 
@@ -64,13 +55,27 @@ public class GeneratedSpaceStation : MonoBehaviour {
 		if(isTopLevel)
 		{
 			GenerateSubParts(1, maxGenerationDepth);
-		}
+
+            if (visualizeAttachments)
+            {
+                attachmentMarkers = new List<GameObject>((int)numAttachments);
+
+                for (int counter = 0; counter < numAttachments; ++counter)
+                {
+                    GameObject marker = GameObject.Instantiate(markerPrefab);
+
+                    attachmentMarkers.Add(marker);
+                }
+            }
+        }
 	}
 
 	void GenerateSubParts(uint currentDepth, uint maxDepth)
 	{
 		if(currentDepth <= maxDepth)
 		{
+            Debug.Log(">>>Depth: " + currentDepth);
+
 			for(int index = 0; index < numAttachments; ++index)
 			{
 				bool attachmentAvailable = subParts.Count <= index || subParts[index] == null;
@@ -86,17 +91,46 @@ public class GeneratedSpaceStation : MonoBehaviour {
 
 					int subPartAttachmentIndex = Mathf.FloorToInt(Random.Range(0, subPartScript.numAttachments));
 
-					subPart.transform.rotation = Quaternion.Euler(0, 0, attachmentAngles[index] - subPartScript.attachmentAngles[subPartAttachmentIndex]);
+                    float rotationAngle = Utils.NormalizeAngle(attachmentAngles[index] + subPartScript.attachmentAngles[subPartAttachmentIndex]);
+
+                    float subPartAngle = Utils.NormalizeAngle(subPartScript.attachmentAngles[subPartAttachmentIndex]);
+
+                    float positionAddSign = 1;
+
+                    bool swapAttachmentPosition = false;
+
+                    if((subPartAngle > 135 && subPartAngle < 225) || subPartAngle < 45 || subPartAngle > 315)
+                    {
+                        //no idea why this is necessary, but it is
+                        //subPartAngle += 180;
+                        positionAddSign = -1;
+                        swapAttachmentPosition = true;
+
+                       // Debug.Log("Flipping next...");
+                    }
+
+                    //Debug.Log("Attachment angle: " + attachmentAngles[index] + ", other part AA: " + subPartAngle);
+
+                    subPart.transform.localRotation = transform.rotation * subPart.transform.rotation * Quaternion.Euler(0, 0, rotationAngle);
 
 					//its attachment needs to match ours
 					subPart.transform.parent = transform;
+					subPart.transform.localPosition = ((Vector3)attachmentPoints[index]) + positionAddSign * (Quaternion.Euler(0, 0, subPartScript.transform.localRotation.eulerAngles.z - 180) * subPartScript.attachmentPoints[subPartAttachmentIndex]);
+                    Debug.Log("Attaching subpart (point " + subPartAttachmentIndex + ") in slot " + index);
 
-					Debug.Log("Attaching subpart at " + (attachmentPoints[index] - subPartScript.attachmentPoints[subPartAttachmentIndex]));
+                    int subPartIndexToFill = subPartAttachmentIndex;
 
-					subPart.transform.position = transform.TransformPoint(attachmentPoints[index] - subPartScript.attachmentPoints[subPartAttachmentIndex]);
-
-					subPartScript.subParts[subPartAttachmentIndex] = gameObject;
-
+                    if (swapAttachmentPosition)
+                    {
+                        for (int attachmentIndex = 0; attachmentIndex < subPartScript.numAttachments; ++attachmentIndex)
+                        {
+                            if (Mathf.Abs(Mathf.Abs(Utils.NormalizeAngle(subPartScript.attachmentAngles[subPartAttachmentIndex]) - Utils.NormalizeAngle(subPartScript.attachmentAngles[attachmentIndex])) - 180) < 1)
+                            {
+                                subPartIndexToFill = attachmentIndex;
+                            }
+                        }
+                    }
+                    subPartScript.subParts[subPartIndexToFill] = gameObject;
 					subParts[index] = subPart;
 
 					//have the sub-part generate its sub-sub-parts
