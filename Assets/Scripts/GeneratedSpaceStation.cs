@@ -21,16 +21,27 @@ public class GeneratedSpaceStation : MonoBehaviour {
 	{
         "SS Large Connector",
         "SS Large Ring",
-        "SS Solar Panel",
         "SS Small Connector",
         "SS Small Large Connector",
-        "SS Laser",
         "SS Small T",
-        "SS Portal"
+        "SS Portal",
+        "SS Small 4-Way",
+        "SS Small Elbow",
+        "SS Small Connector With Pod",
     };
 
-	// Use this for initialization
-	void Awake () 
+    private static string[] STATION_END_CAP_PREFABS = new string[]
+    {
+            "SS Solar Panel",
+            "SS Small End Pod",
+            "SS Doodad",
+            "SS Shield Emitter",
+            "SS Laser",
+
+    };
+
+    // Use this for initialization
+    void Awake () 
 	{
 		if(attachmentPoints.Count != attachmentAngles.Count)
 		{
@@ -47,6 +58,11 @@ public class GeneratedSpaceStation : MonoBehaviour {
 			subParts.Add(null);
 		}
 		
+        //can't visualize without a marker
+        if(markerPrefab == null)
+        {
+            visualizeAttachments = false;
+        }
 	}
 
 	void Start()
@@ -68,13 +84,17 @@ public class GeneratedSpaceStation : MonoBehaviour {
                 }
             }
         }
+        else
+        {
+            visualizeAttachments = false;
+        }
 	}
 
 	void GenerateSubParts(uint currentDepth, uint maxDepth)
 	{
 		if(currentDepth <= maxDepth)
 		{
-            Debug.Log(">>>Depth: " + currentDepth);
+            //Debug.Log(">>>Depth: " + currentDepth);
 
 			for(int index = 0; index < numAttachments; ++index)
 			{
@@ -82,7 +102,20 @@ public class GeneratedSpaceStation : MonoBehaviour {
 				
 				if(attachmentAvailable)
 				{
-					string partPrefabPath = STATION_PREFAB_BASE_PATH + STATION_PART_PREFABS[Random.Range(0, STATION_PART_PREFABS.Length)];
+                    string partPrefabPath;
+
+                    if (currentDepth == maxDepth)
+                    {
+                        //generate pieces with no other attachments
+                        partPrefabPath = STATION_PREFAB_BASE_PATH + STATION_END_CAP_PREFABS[Random.Range(0, STATION_END_CAP_PREFABS.Length)];
+                    }
+                    else
+                    {
+                        partPrefabPath = STATION_PREFAB_BASE_PATH + STATION_PART_PREFABS[Random.Range(0, STATION_PART_PREFABS.Length)];
+                    }
+
+                   // Debug.Log("Instantiating part: " + partPrefabPath);
+
 					GameObject subPart = GameObject.Instantiate((GameObject)Resources.Load(partPrefabPath));
 
 					//stop it from generating its own parts
@@ -91,45 +124,33 @@ public class GeneratedSpaceStation : MonoBehaviour {
 
 					int subPartAttachmentIndex = Mathf.FloorToInt(Random.Range(0, subPartScript.numAttachments));
 
-                    float rotationAngle = Utils.NormalizeAngle(attachmentAngles[index] + subPartScript.attachmentAngles[subPartAttachmentIndex]);
+                    float rotationAngle = Utils.NormalizeAngle(subPartScript.attachmentAngles[subPartAttachmentIndex] - attachmentAngles[index]);
 
                     float subPartAngle = Utils.NormalizeAngle(subPartScript.attachmentAngles[subPartAttachmentIndex]);
 
-                    float positionAddSign = 1;
+                    float angleDifference = Mathf.Abs(attachmentAngles[index] - subPartAngle);
 
-                    bool swapAttachmentPosition = false;
-
-                    if((subPartAngle > 135 && subPartAngle < 225) || subPartAngle < 45 || subPartAngle > 315)
+                    if (angleDifference < 45 || (angleDifference > 135 && angleDifference < 225) || angleDifference > 315)
                     {
                         //no idea why this is necessary, but it is
-                        //subPartAngle += 180;
-                        positionAddSign = -1;
-                        swapAttachmentPosition = true;
+                        rotationAngle += 180;
+                        //positionAddSign = -1;
+                        //swapAttachmentPosition = true;
 
-                       // Debug.Log("Flipping next...");
+                        // Debug.Log("Flipping next...");
                     }
 
-                    //Debug.Log("Attachment angle: " + attachmentAngles[index] + ", other part AA: " + subPartAngle);
+                    //Debug.Log("Attachment angle: " + attachmentAngles[index] + ", other part AA: " + subPartAngle + ", planned angle: " + rotationAngle);
 
                     subPart.transform.localRotation = transform.rotation * subPart.transform.rotation * Quaternion.Euler(0, 0, rotationAngle);
 
 					//its attachment needs to match ours
 					subPart.transform.parent = transform;
-					subPart.transform.localPosition = ((Vector3)attachmentPoints[index]) + positionAddSign * (Quaternion.Euler(0, 0, subPartScript.transform.localRotation.eulerAngles.z - 180) * subPartScript.attachmentPoints[subPartAttachmentIndex]);
-                    Debug.Log("Attaching subpart (point " + subPartAttachmentIndex + ") in slot " + index);
+					subPart.transform.localPosition = ((Vector3)attachmentPoints[index]) + (Quaternion.Euler(0, 0, subPartScript.transform.localRotation.eulerAngles.z - 180) * subPartScript.attachmentPoints[subPartAttachmentIndex]);
+                    //Debug.Log("Attaching subpart (point " + subPartAttachmentIndex + ") in slot " + index);
 
                     int subPartIndexToFill = subPartAttachmentIndex;
 
-                    if (swapAttachmentPosition)
-                    {
-                        for (int attachmentIndex = 0; attachmentIndex < subPartScript.numAttachments; ++attachmentIndex)
-                        {
-                            if (Mathf.Abs(Mathf.Abs(Utils.NormalizeAngle(subPartScript.attachmentAngles[subPartAttachmentIndex]) - Utils.NormalizeAngle(subPartScript.attachmentAngles[attachmentIndex])) - 180) < 1)
-                            {
-                                subPartIndexToFill = attachmentIndex;
-                            }
-                        }
-                    }
                     subPartScript.subParts[subPartIndexToFill] = gameObject;
 					subParts[index] = subPart;
 
