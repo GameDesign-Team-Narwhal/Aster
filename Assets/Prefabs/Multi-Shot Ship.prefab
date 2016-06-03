@@ -1,77 +1,77 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &100796
+--- !u!1 &144714
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 424432}
-  - 212: {fileID: 21202264}
-  - 95: {fileID: 9586612}
-  - 61: {fileID: 6179542}
-  - 50: {fileID: 5085618}
-  - 114: {fileID: 11447564}
-  - 114: {fileID: 11499874}
-  - 114: {fileID: 11461084}
+  - 4: {fileID: 462428}
+  - 212: {fileID: 21210862}
+  - 95: {fileID: 9507058}
+  - 114: {fileID: 11405138}
+  - 114: {fileID: 11497886}
+  - 114: {fileID: 11414538}
+  - 61: {fileID: 6124350}
+  - 50: {fileID: 5060590}
   m_Layer: 0
-  m_Name: FactionShipLight
-  m_TagString: Cruft to Clean Up
+  m_Name: Multi-Shot Ship
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &424432
+--- !u!4 &462428
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100796}
+  m_GameObject: {fileID: 144714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.2496338, y: -83.4128418, z: 0}
+  m_LocalPosition: {x: 63.5999985, y: 540.900024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5085618
+--- !u!50 &5060590
 Rigidbody2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100796}
-  m_Mass: 10
+  m_GameObject: {fileID: 144714}
+  m_Mass: 40
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &6179542
+--- !u!61 &6124350
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100796}
+  m_GameObject: {fileID: 144714}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 4}
+  m_Offset: {x: 0, y: 5.50274658}
   serializedVersion: 2
-  m_Size: {x: 13, y: 15}
---- !u!95 &9586612
+  m_Size: {x: 39, y: 18.9944458}
+--- !u!95 &9507058
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100796}
+  m_GameObject: {fileID: 144714}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8810e07f65df84445be45e2941ab2892, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6c486296637ffef4785737be9c0406d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -79,69 +79,71 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11447564
+--- !u!114 &11405138
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7b88cec0e5b17540af2a977ff604f47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pelletPrefab: {fileID: 129508, guid: e72d53b1290fccf429c33245047b0bd1, type: 2}
-  pelletSpeed: 500
-  pelletsConstantSpeed: 1
-  pelletDamage: 25
-  pelletTeam: Enemies
-  firingLocations:
-  - {x: 3, y: 17}
-  - {x: -3, y: 17}
-  rangeInSec: 1
-  playSound: 0
---- !u!114 &11461084
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100796}
+  m_GameObject: {fileID: 144714}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fd7694662a41294dac4ef6a7d8f91d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTurningTorque: 6
-  forwardThrust: 50
-  shootingRange: 300
+  maxTurningTorque: 4
+  forwardThrust: 40
+  shootingRange: 100
   shotCooldown: 1
   shotPredictionFactor: 50
   shotDistancePredictionFactor: .100000001
   playerAngularSpeedThreshold: 50
-  health: 200
-  pointValue: 10
+  health: 400
+  pointValue: 30
   team: Enemies
   Desabled: 0
   DesabledTime: 0
   TimeStartDesabled: 0
---- !u!114 &11499874
+--- !u!114 &11414538
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100796}
+  m_GameObject: {fileID: 144714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b88cec0e5b17540af2a977ff604f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pelletPrefab: {fileID: 165502, guid: 4022b722c5bce6b44aba473fe2eac3f3, type: 2}
+  pelletSpeed: 200
+  pelletsConstantSpeed: 0
+  pelletDamage: 100
+  pelletTeam: Enemies
+  firingLocations:
+  - {x: -10, y: 15}
+  - {x: -5, y: 15}
+  - {x: 5, y: 15}
+  - {x: 10, y: 15}
+  rangeInSec: 0
+  playSound: 0
+--- !u!114 &11497886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144714}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 692d1713f2f5c1e4eb009bf2112fff5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 16
---- !u!212 &21202264
+--- !u!212 &21210862
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100796}
+  m_GameObject: {fileID: 144714}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -160,7 +162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1aefb9cd747c25748aa7df7b6e3628c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22070c33ac04461429a6c67b7b571e7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -171,5 +173,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 100796}
+  m_RootGameObject: {fileID: 144714}
   m_IsPrefabParent: 1

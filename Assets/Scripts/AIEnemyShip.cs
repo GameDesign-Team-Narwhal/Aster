@@ -12,7 +12,7 @@ public class AIEnemyShip : MonoBehaviour, IShootable
     public float shootingRange = 100; //distance from the player at which the AI will begin to shoot 
 	public float shotCooldown = .25f; // cooldown time before the AI can shoot again
 
-    public float shotPredictionFactor = 50;
+    public float shotPredictionFactor = 1;
     public float shotDistancePredictionFactor = .1f;
 
     //if the player is moving slower than this around the AI, shot prediction will be disabled.
@@ -57,14 +57,14 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 
 
             PolarVec2 predictedTargetPos;
-            if (Mathf.Abs(targetSpeed.r) < playerAngularSpeedThreshold)
-            {
-                predictedTargetPos = targetPosPolar;
-            }
-            else
-            {
-                predictedTargetPos = targetPosPolar + targetSpeed * Time.deltaTime * shotPredictionFactor * shotDistancePredictionFactor * targetPosPolar.r;
-            }
+           // if (Mathf.Abs(targetSpeed.r) < playerAngularSpeedThreshold)
+           // {
+          //      predictedTargetPos = targetPosPolar;
+          //  }
+          //  else
+          //  {
+                predictedTargetPos = targetPosPolar + targetSpeed * (shotPredictionFactor/pelletShooter.pelletSpeed);
+           // }
 
 
             //turn towards player
