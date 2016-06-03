@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0fe763a366f86a446aca5ec0eb805365
-timeCreated: 1464898337
+timeCreated: 1464982623
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -70,7 +70,7 @@ TextureImporter:
         width: 27
         height: 28
       alignment: 9
-      pivot: {x: .499999613, y: .830305934}
+      pivot: {x: .499999672, y: .808877647}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_2
       rect:
@@ -80,7 +80,7 @@ TextureImporter:
         width: 27
         height: 28
       alignment: 9
-      pivot: {x: .490484744, y: .821130455}
+      pivot: {x: .494188517, y: .810416639}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_3
       rect:
@@ -90,7 +90,7 @@ TextureImporter:
         width: 27
         height: 28
       alignment: 9
-      pivot: {x: .490484655, y: .839480817}
+      pivot: {x: .497892022, y: .793052673}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_4
       rect:
@@ -100,7 +100,7 @@ TextureImporter:
         width: 27
         height: 28
       alignment: 9
-      pivot: {x: .509515107, y: .821130455}
+      pivot: {x: .498404056, y: .792559505}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_5
       rect:
@@ -110,7 +110,7 @@ TextureImporter:
         width: 27
         height: 28
       alignment: 9
-      pivot: {x: .519029975, y: .784429848}
+      pivot: {x: .504215121, y: .770144343}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_6
       rect:
@@ -140,7 +140,7 @@ TextureImporter:
         width: 22
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_9
       rect:
@@ -150,7 +150,7 @@ TextureImporter:
         width: 15
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_10
       rect:
@@ -160,7 +160,7 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_11
       rect:
@@ -170,7 +170,7 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_12
       rect:
@@ -180,7 +180,7 @@ TextureImporter:
         width: 27
         height: 28
       alignment: 9
-      pivot: {x: .499999851, y: .811955452}
+      pivot: {x: .49999994, y: .80838424}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Transport_Ship_13
       rect:
@@ -190,7 +190,7 @@ TextureImporter:
         width: 27
         height: 28
       alignment: 9
-      pivot: {x: .499999732, y: .830305755}
+      pivot: {x: .507407129, y: .808877289}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
