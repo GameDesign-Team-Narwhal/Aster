@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingColor: {r: 1, g: 0, b: 0, a: 1}
   endingColor: {r: 0, g: 0, b: 0, a: 0}
-  lifetimeSec: 10
+  lifetimeSec: 3
 --- !u!114 &11491296
 MonoBehaviour:
   m_ObjectHideFlags: 1
