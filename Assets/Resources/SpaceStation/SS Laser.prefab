@@ -79,6 +79,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserBeamPrefab: {fileID: 154506, guid: a5902460bdd92b844b16f1c978913ef2, type: 2}
   range: 400
+  shotStartPoint: {x: 15, y: 0}
+  maxFiringAngle: 60
+  laserBeamActive: 0
+  laserBeamInstantiated: 0
 --- !u!212 &21232328
 SpriteRenderer:
   m_ObjectHideFlags: 1

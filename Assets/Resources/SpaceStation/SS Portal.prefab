@@ -11,9 +11,10 @@ GameObject:
   - 212: {fileID: 21255790}
   - 95: {fileID: 9506734}
   - 114: {fileID: 11472734}
+  - 114: {fileID: 11435438}
   m_Layer: 0
   m_Name: SS Portal
-  m_TagString: Untagged
+  m_TagString: Cruft to Clean Up
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +48,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11435438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3175a91d111ceab4aa5ddf9f7e092c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 150184, guid: f9c973c11797ff34695cc3d4a419658e, type: 2}
+  - {fileID: 100796, guid: 7acc4bca434006345b788690164fc4b9, type: 2}
+  active: 1
+  delayRange: {x: 8, y: 16}
 --- !u!114 &11472734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,7 +87,7 @@ MonoBehaviour:
   - 270
   markerPrefab: {fileID: 198914, guid: 67fe4107950deae40940a5edb8b9d24f, type: 2}
   visualizeAttachments: 1
-  maxGenerationDepth: 0
+  maxGenerationDepth: 4
 --- !u!212 &21255790
 SpriteRenderer:
   m_ObjectHideFlags: 1

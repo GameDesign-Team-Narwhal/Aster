@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11450980}
   m_Layer: 0
   m_Name: SS Small 4-Way
-  m_TagString: Untagged
+  m_TagString: Cruft to Clean Up
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   - 270
   markerPrefab: {fileID: 198914, guid: 67fe4107950deae40940a5edb8b9d24f, type: 2}
   visualizeAttachments: 1
-  maxGenerationDepth: 0
+  maxGenerationDepth: 4
 --- !u!212 &21299602
 SpriteRenderer:
   m_ObjectHideFlags: 1
