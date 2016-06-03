@@ -41,6 +41,13 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+        if(GameController.instance == null)
+        {
+            Debug.LogError("GameController instance is null!!!!! AAAAAAAAAAAAHHHHHHHHH!!!!!!!!!  This is VERY BAD!!!!!!!");
+            return; 
+        }
+
         if (GameController.instance.playerShipInstance != null && Desabled == false) //this is null if the game is not started
         {
 
@@ -96,7 +103,6 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 		{
 			Desabled = false;
 		}
-		Debug.Log ("working");
 		animator.SetBool ("Desabled", Desabled);
 
 	}
