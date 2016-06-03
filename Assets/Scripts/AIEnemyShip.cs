@@ -17,7 +17,7 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 
     //if the player is moving slower than this around the AI, shot prediction will be disabled.
     public float playerAngularSpeedThreshold = 50;
-
+	public float preditionVaule;
 	public int health = 2;
     public uint pointValue = 0;
 	public string team = "Enemies";
@@ -25,6 +25,7 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 	public float DesabledTime = 0;
 	public float TimeStartDesabled = 0f;
 	float lastShotTime = 0f;
+	float offset;
     PolarVec2 prevTargetPos;
 
 	// Use this for initialization
@@ -48,18 +49,22 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 
             PolarVec2 targetPosPolar = PolarVec2.FromCartesian(targetPosition - ((Vector2)transform.position));
 
-			PolarVec2 targetSpeed = (targetPosPolar - prevTargetPos) / Time.deltaTime;
+			PolarVec2 targetSpeed = (targetPosPolar - prevTargetPos) * 30;
 
+			PolarVec2 predictionLine;
 
             PolarVec2 predictedTargetPos;
-            if (Mathf.Abs(targetSpeed.r) < playerAngularSpeedThreshold)
-            {
-                predictedTargetPos = targetPosPolar;
-            }
-            else
-            {
-                predictedTargetPos = targetPosPolar + targetSpeed * Time.deltaTime * shotPredictionFactor * shotDistancePredictionFactor * targetPosPolar.r;
-            }
+
+
+
+            //if (Mathf.Abs(targetSpeed.r) < playerAngularSpeedThreshold)
+           // {
+          //      predictedTargetPos = targetPosPolar;
+           // }
+           // else
+            //{
+			predictedTargetPos = targetPosPolar + targetSpeed * (preditionVaule/pelletShooter.pelletSpeed);
+         //   }
 
 
             //turn towards player
@@ -127,5 +132,10 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 		GameObject.Destroy(gameObject);
 		
 		GameController.instance.AddScore(pointValue);
+	}
+
+	void MR()
+	{
+		Debug.Log ("print");
 	}
 }

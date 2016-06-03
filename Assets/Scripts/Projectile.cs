@@ -54,7 +54,7 @@ public class Projectile : MonoBehaviour {
                     }
                     else
                     {
-                        GameObject.Destroy(this);
+						GameObject.Destroy(gameObject);
                     }
                 }
             }
