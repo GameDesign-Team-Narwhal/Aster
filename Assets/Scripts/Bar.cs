@@ -45,7 +45,7 @@ public class Bar : MonoBehaviour
 		//now move and scale it to the right place
 		Vector2 healthbarPos = barImage.rectTransform.anchoredPosition;
 		
-		healthbarPos.x = initialXPos - ((initialSize.x * (1 - valuePercentage)) / 2); //divide by 2 because it's anchored to the center
+		healthbarPos.x = initialXPos - ((initialSize.x * (1 - valuePercentage))); //no idea why this is not divided by 2, it should be
 		
 		barImage.rectTransform.anchoredPosition = healthbarPos;
 
