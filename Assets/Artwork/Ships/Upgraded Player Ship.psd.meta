@@ -1,0 +1,341 @@
+fileFormatVersion: 2
+guid: 4ed122f5f9b6a7142a11a79588d21e6d
+timeCreated: 1464898238
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Upgraded Player Ship_0
+    21300002: Upgraded Player Ship_1
+    21300004: Upgraded Player Ship_3
+    21300006: Upgraded Player Ship_4
+    21300008: Upgraded Player Ship_5
+    21300010: Upgraded Player Ship_6
+    21300012: Upgraded Player Ship_7
+    21300014: Upgraded Player Ship_8
+    21300016: Upgraded Player Ship_9
+    21300018: Upgraded Player Ship_10
+    21300020: Upgraded Player Ship_12
+    21300022: Upgraded Player Ship_13
+    21300024: Upgraded Player Ship_14
+    21300026: Upgraded Player Ship_17
+    21300028: Upgraded Player Ship_18
+    21300030: Upgraded Player Ship_2
+    21300032: Upgraded Player Ship_19
+    21300034: Upgraded Player Ship_20
+    21300036: Upgraded Player Ship_21
+    21300038: Upgraded Player Ship_11
+    21300040: Upgraded Player Ship_22
+    21300042: Upgraded Player Ship_23
+    21300044: Upgraded Player Ship_24
+    21300046: Upgraded Player Ship_15
+    21300048: Upgraded Player Ship_16
+    21300050: Upgraded Player Ship_25
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Upgraded Player Ship_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 124
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 124
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 141
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 141
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_5
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 141
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 97
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: .49247697, y: .268249929}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_7
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 97
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: .488425195, y: .268250793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_8
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 91
+        width: 19
+        height: 22
+      alignment: 9
+      pivot: {x: .484210581, y: .295454532}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_9
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 111
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_10
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 111
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 67
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: .488235146, y: .262925476}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 67
+        width: 19
+        height: 18
+      alignment: 9
+      pivot: {x: .499140292, y: .261375844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_14
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 64
+        width: 35
+        height: 29
+      alignment: 9
+      pivot: {x: .55634594, y: .264719993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 37
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_18
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 4
+        width: 17
+        height: 18
+      alignment: 9
+      pivot: {x: .507338345, y: .244352072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 124
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_19
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 124
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_20
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 124
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_21
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 124
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_11
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 111
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_22
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 112
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_23
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 112
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_24
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 113
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 33
+        height: 31
+      alignment: 9
+      pivot: {x: .515501618, y: .442243397}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_16
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 30
+        width: 29
+        height: 29
+      alignment: 9
+      pivot: {x: .517639697, y: .429440469}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Upgraded Player Ship_25
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 16
+        height: 18
+      alignment: 9
+      pivot: {x: .523390949, y: .233420268}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

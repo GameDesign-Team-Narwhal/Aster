@@ -4,7 +4,15 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-    public static GameController instance;
+    public static GameController _instance;
+
+    public static GameController instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
 
     public GameObject playerShipPrefab;
     public GameObject asteroidSpawnerObject;
@@ -17,8 +25,8 @@ public class GameController : MonoBehaviour {
     public new GameObject camera;
     public GameObject background;
     public uint asteroidsToPrespawn = 100;
+    public GameObject scoreTextObject, startGameTextObject;
     public Text scoreText;
-	public Text healthText;
     public Text startGameText;
     public GameObject playerShipInstance;
     public uint spawnSafezoneRadius = 20;
@@ -42,26 +50,30 @@ public class GameController : MonoBehaviour {
 
     void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Debug.LogError("Multiple GameController instances in one scene!  There's only supposed to be one!");
         }
 
-        instance = this;
+        _instance = this;
 
     }
 
 	void Start () {
+
+
         playerFollowingCam = camera.GetComponent<PlayerFollowingCamera>();
         asteroidSpawner = asteroidSpawnerObject.GetComponent<Spawner>();
         backgroundTiler = background.GetComponent<TiledBackground>();
         jukebox = GetComponent<Jukebox>();
+        scoreText = scoreTextObject.GetComponent<Text>();
+        startGameText = startGameTextObject.GetComponent<Text>();
         levelSizePx = backgroundTiler.textureSize * backgroundTiler.numTiles;
 
         shieldBar = shieldBarObject.GetComponent<Bar>();
         healthBar = healthBarObject.GetComponent<Bar>();
-        ResetGame();
 
+        ResetGame();
     }
 
     void Update ()
@@ -103,7 +115,10 @@ public class GameController : MonoBehaviour {
     void ResetGame()
     {
 
-        startGameText.enabled = false;
+        if(startGameText != null)
+        {
+            startGameText.enabled = false;
+        }
         gameStarted = true;
 
         score = 0;
@@ -165,8 +180,6 @@ public class GameController : MonoBehaviour {
 	}
 	public void UpdateHealth()
 	{
-		healthText.text = "Health: " + playerHealth;
-
         healthBar.UpdateBar(playerHealth, maxPlayerHealth);
 	}
 

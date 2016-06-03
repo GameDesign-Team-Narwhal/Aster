@@ -1,6 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
+/**
+    Script for a 2D arrow which represents a polar vector.
+
+    The pivot of the texture must be on the LEFT for this to work.
+*/
 public class PolarVecArrow : MonoBehaviour 
 {
 	public float textureLength = 128;
