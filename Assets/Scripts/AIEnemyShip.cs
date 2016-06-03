@@ -36,8 +36,6 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 		animator = GetComponent<Animator>();
 	}
 	void Start () {
-
-        transform.position = GameController.instance.RandomLocationInLevel();
 	}
 	
 	// Update is called once per frame

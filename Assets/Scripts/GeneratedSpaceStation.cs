@@ -33,8 +33,7 @@ public class GeneratedSpaceStation : MonoBehaviour {
     private static string[] STATION_END_CAP_PREFABS = new string[]
     {
             "SS Solar Panel",
-            "SS Small End Pod",
-            "SS Doodad",
+            "SS Turret End Pod",
             "SS Shield Emitter",
             "SS Laser",
 

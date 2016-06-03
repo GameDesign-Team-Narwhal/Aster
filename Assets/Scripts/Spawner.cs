@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour {
 	
     public void SpawnOne()
     {
-        GameObjectUtil.Instantiate(prefabs[Random.Range(0, prefabs.Length)], transform.position); 
+        GameObjectUtil.Instantiate(prefabs[Random.Range(0, prefabs.Length)], GameController.instance.RandomLocationInLevel()); 
     }
 
     IEnumerator EnemyGenerator(){
