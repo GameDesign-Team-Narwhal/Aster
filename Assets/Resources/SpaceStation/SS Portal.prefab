@@ -63,7 +63,8 @@ MonoBehaviour:
   - {fileID: 150184, guid: f9c973c11797ff34695cc3d4a419658e, type: 2}
   - {fileID: 100796, guid: 7acc4bca434006345b788690164fc4b9, type: 2}
   active: 1
-  delayRange: {x: 8, y: 16}
+  WorldSpawner: 0
+  delayRange: {x: 30, y: 40}
 --- !u!114 &11472734
 MonoBehaviour:
   m_ObjectHideFlags: 1

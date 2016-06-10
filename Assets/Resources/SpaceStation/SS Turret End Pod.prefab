@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2224.09302, y: -666.082031, z: 0}
+  m_LocalPosition: {x: 2929.14697, y: 461.710266, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 458692}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .200000003, y: -7.5, z: 0}
+  m_LocalPosition: {x: .200000003, y: -7.5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424032}
@@ -75,7 +75,7 @@ MonoBehaviour:
   attachmentAngles:
   - 0
   markerPrefab: {fileID: 198914, guid: 67fe4107950deae40940a5edb8b9d24f, type: 2}
-  visualizeAttachments: 1
+  visualizeAttachments: 0
   maxGenerationDepth: 0
 --- !u!114 &11478164
 MonoBehaviour:

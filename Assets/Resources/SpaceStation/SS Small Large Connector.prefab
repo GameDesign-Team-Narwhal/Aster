@@ -47,7 +47,7 @@ MonoBehaviour:
   - 0
   - 180
   markerPrefab: {fileID: 198914, guid: 67fe4107950deae40940a5edb8b9d24f, type: 2}
-  visualizeAttachments: 1
+  visualizeAttachments: 0
   maxGenerationDepth: 4
 --- !u!212 &21240478
 SpriteRenderer:

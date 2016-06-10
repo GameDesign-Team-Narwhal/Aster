@@ -38,7 +38,7 @@ PlayerSettings:
   useOSAutorotation: 1
   use32BitDisplayBuffer: 1
   disableDepthAndStencilBuffers: 0
-  defaultIsFullScreen: 1
+  defaultIsFullScreen: 0
   defaultIsNativeResolution: 1
   runInBackground: 0
   captureSingleScreen: 0
@@ -134,7 +134,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: b622d27d90bc43c4fb5d8b889089690e, type: 3}
       m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default

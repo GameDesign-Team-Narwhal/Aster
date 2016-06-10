@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour {
 	public GameObject [] prefabs;
 	float delay = 2.0f;
 	public bool active = true;
-	
+	public bool WorldSpawner = true;
 	public Vector2 delayRange = new Vector2 (1, 2);
 	
 	// Use this for initialization
@@ -17,7 +17,15 @@ public class Spawner : MonoBehaviour {
 	
     public void SpawnOne()
     {
-        GameObjectUtil.Instantiate(prefabs[Random.Range(0, prefabs.Length)], GameController.instance.RandomLocationInLevel()); 
+		Vector3 location = new Vector3();
+		location.x = transform.position.x;
+		location.y = transform.position.y;
+		location.z = transform.position.z;
+		if (WorldSpawner) {
+			GameObjectUtil.Instantiate (prefabs [Random.Range (0, prefabs.Length)], GameController.instance.RandomLocationInLevel ()); 
+		} else {
+			GameObjectUtil.Instantiate (prefabs [Random.Range (0, prefabs.Length)],  location); 
+		}
     }
 
     IEnumerator EnemyGenerator(){
