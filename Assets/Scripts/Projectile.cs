@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour {
 	public string team = "";
 	public float ion = 0;
 	public int damage = 2;
-
+    public int penitration = 0;
     //true if the projectile has an explosion animation with a call to OnDestructionAnimationComplete() at the end.
     public bool hasDestructionAnimation = false;
 
@@ -39,8 +39,8 @@ public class Projectile : MonoBehaviour {
 
                 shootableBehavior.OnShotBy(shooter, team, damage, ion);
 
-                if (!penetrating)
-                {
+ 
+                
                     if(hasDestructionAnimation)
                     {
                         if(animator == null)
@@ -54,18 +54,30 @@ public class Projectile : MonoBehaviour {
                     }
                     else
                     {
-                        GameObject.Destroy(this);
+                        if (penitration >= 0)
+                        {
+                            penitration--;
+                        }else
+                        {
+                            GameObject.Destroy(gameObject);
+                        }
                     }
-                }
+                
             }
             else
             {
                 //Debug.Log("Projectile hit a non-shootable object, like a teammate or a rock");
-                if (!penetrating) //hit a non-shootable object, like a rock (though not an asteroid).  destroy.
-                {
-                    GameObject.Destroy(gameObject);
+                
+                    if (penitration >= 0)
+                    {
+                        penitration--;
+                    }
+                    else
+                    {
+                        GameObject.Destroy(gameObject);
+                    }
 
-                }
+                
 
             }
         }

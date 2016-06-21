@@ -16,7 +16,6 @@ public class PlayerControlledShip : MonoBehaviour, IShootable
 	public float shieldEnergy = 1000;
 	public float shieldUsePerSec = 10;
 	public float shieldRegenPerSec = 2;
-
 	public GameObject shieldsSprite;
     private ColorOscillator shieldsColorer;
 

@@ -497,7 +497,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 117420, guid: 8550acfc45aac0245acc3b7d445f3491, type: 2}
   active: 1
-  delayRange: {x: 120, y: 250}
+  delayRange: {x: 50, y: 100}
 --- !u!1 &847719768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   - {fileID: 145764, guid: f65929c5d10e0c54ea3932d13280098b, type: 2}
   - {fileID: 199388, guid: 0fa393f8d64f5a8448bd6a8e97fa593d, type: 2}
   active: 1
-  delayRange: {x: 120, y: 240}
+  delayRange: {x: 150, y: 250}
 --- !u!4 &1589766622
 Transform:
   m_ObjectHideFlags: 0
@@ -1115,7 +1115,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1 &1624560053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,33 +1254,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!1 &1684144102
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1684144103}
-  m_Layer: 0
-  m_Name: SpaceStationSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1684144103
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1684144102}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 348.139862, y: 872.024658, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
 --- !u!1 &1775318678
 GameObject:
   m_ObjectHideFlags: 0

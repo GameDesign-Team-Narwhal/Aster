@@ -105,7 +105,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
   team: Enemies
+  ion: 0
   damage: 2
+  penitration: 0
   hasDestructionAnimation: 1
   destructionTriggerName: Explode
   acceleration: 50

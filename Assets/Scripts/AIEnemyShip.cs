@@ -17,8 +17,9 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 
     //if the player is moving slower than this around the AI, shot prediction will be disabled.
     public float playerAngularSpeedThreshold = 50;
-
-	public int health = 2;
+    public GameObject[] upgrades;
+    public int[] upgradeProb;
+    public int health = 2;
     public uint pointValue = 0;
 	public string team = "Enemies";
 	public bool Desabled = false;
@@ -113,8 +114,17 @@ public class AIEnemyShip : MonoBehaviour, IShootable
 		if(health <= 0 )
 		{
 			animator.SetTrigger("Destruction");
-
-		}
+            for (uint counter = 0; counter < upgrades.Length; ++counter)
+            {
+                int prob = upgradeProb[counter];
+                int toSpawn = (int)UnityEngine.Random.Range(1, 100);
+                if (prob >= toSpawn)
+                {
+                    GameObject newUpgrade = GameObject.Instantiate(upgrades[counter]);
+                    newUpgrade.transform.position = transform.position;
+                }
+            }
+        }
 		if (ion != 0) {
 			Desabled = true;
 			DesabledTime = ion;

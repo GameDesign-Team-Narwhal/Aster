@@ -285,7 +285,7 @@ MonoBehaviour:
   pelletDamage: 300
   pelletTeam: 
   firingLocations:
-  - {x: 0, y: 0}
+  - {x: 0, y: 20}
   rangeInSec: 0
   playSound: 1
 --- !u!114 &11468604
@@ -301,11 +301,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTurningTorque: 4
   forwardThrust: 25
-  shootingRange: 1000
+  shootingRange: 5000
   shotCooldown: 6
-  shotPredictionFactor: 1
+  shotPredictionFactor: 50
   shotDistancePredictionFactor: .100000001
   playerAngularSpeedThreshold: 50
+  upgrades:
+  - {fileID: 178508, guid: 29c830049283f16428d54d9debea7036, type: 2}
+  - {fileID: 178468, guid: 6711d652114de1743ad52cba609c04b3, type: 2}
+  - {fileID: 105240, guid: 38bb0871fa0b717458df13445c4807f2, type: 2}
+  upgradeProb: 0f0000000f0000000a000000
   health: 925
   pointValue: 100
   team: Enemies

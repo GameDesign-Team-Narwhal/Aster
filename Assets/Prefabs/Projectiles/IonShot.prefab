@@ -107,6 +107,7 @@ MonoBehaviour:
   team: Enemies
   ion: 0
   damage: 2
+  penitration: 1
   hasDestructionAnimation: 0
   destructionTriggerName: Destroy
 --- !u!212 &21283268

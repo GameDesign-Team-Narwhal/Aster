@@ -118,6 +118,10 @@ MonoBehaviour:
   shotPredictionFactor: 50
   shotDistancePredictionFactor: .100000001
   playerAngularSpeedThreshold: 50
+  upgrades:
+  - {fileID: 199490, guid: bfa7ae9f8021b6e45a2e2f319d9959b3, type: 2}
+  - {fileID: 105240, guid: 38bb0871fa0b717458df13445c4807f2, type: 2}
+  upgradeProb: 0a0000000a000000
   health: 200
   pointValue: 10
   team: Enemies
