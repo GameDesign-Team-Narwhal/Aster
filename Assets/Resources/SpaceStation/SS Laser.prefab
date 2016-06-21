@@ -64,7 +64,7 @@ MonoBehaviour:
   attachmentAngles:
   - 90
   markerPrefab: {fileID: 198914, guid: 67fe4107950deae40940a5edb8b9d24f, type: 2}
-  visualizeAttachments: 1
+  visualizeAttachments: 0
   maxGenerationDepth: 0
 --- !u!114 &11491464
 MonoBehaviour:

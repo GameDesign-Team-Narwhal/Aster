@@ -20,7 +20,7 @@ public class SSLaserCannon : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        PolarVec2 playerPos = PolarVec2.FromCartesian(GameController.instance.playerShipInstance.transform.position - transform.position);
+        PolarVec2 playerPos = PolarVec2.FromCartesian(transform.InverseTransformPoint(GameController.instance.playerShipInstance.transform.position));
 
         //Debug.Log("Player pos: " + playerPos.ToString());
 
